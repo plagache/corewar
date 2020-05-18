@@ -44,7 +44,7 @@ t_op    op_tab[17] =
 	"instruction_keyword",
 	nbr of arguments,
 	{type(s) of arg1, type(s) of arg2},
-	X, #instruction nbr/id
+	X, #instruction opcode
 	X, #cycle time?
 	"Full instruction name/description",
 	X,	#carry?
