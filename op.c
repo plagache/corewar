@@ -12,7 +12,7 @@
 
 #include "op.h"
 
-t_op    op_tab[17] =
+t_op	op_tab[17] =
 {
 	{"live", 1, {T_DIR}, 1, 10, "alive", 0, 0},
 	{"ld", 2, {T_DIR | T_IND, T_REG}, 2, 5, "load", 1, 0},
@@ -44,10 +44,25 @@ t_op    op_tab[17] =
 	"instruction_keyword",
 	nbr of arguments,
 	{type(s) of arg1, type(s) of arg2},
-	X, #instruction opcode
-	X, #cycle time?
+	#instruction opcode,
+	#cycle time,
 	"Full instruction name/description",
-	X,	#carry?
-	X	#carry?
+	Carry,
+	direct size value (0 = 2 octet; 1 = 4 octet)
 	}
+
+
+
+
+
+r2, 23, %34 donne l’octet de codage 0b01 11 10 00, soit 0x78
+
+REG 
+DIR
+IND
+LAB
+
+
+
+
 */
