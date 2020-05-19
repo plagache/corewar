@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zaz <marvin@42.fr>                         +#+  +:+       +#+        */
+/*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:43:01 by zaz               #+#    #+#             */
-/*   Updated: 2020/05/18 15:24:16 by alagache         ###   ########.fr       */
+/*   Updated: 2020/05/19 17:34:10 by plagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,21 +48,14 @@ t_op	op_tab[17] =
 	#cycle time,
 	"Full instruction name/description",
 	Carry,
-	direct size value (0 = 2 octet; 1 = 4 octet)
+	direct size value (1 = 2 octet; 0 = 4 octet)
 	}
 
-
-
-
-
 r2, 23, %34 donne l’octet de codage 0b01 11 10 00, soit 0x78
-
-REG 
-DIR
-IND
+01100100
+REG 01 
+DIR	10
+IND	11
 LAB
-
-
-
 
 */
