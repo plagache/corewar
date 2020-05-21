@@ -85,4 +85,4 @@ typedef struct		s_op
 	char		*name_description;
 	char		carry;
 	char		direct_size;
-}					t_op
+}					t_op;

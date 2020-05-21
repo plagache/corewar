@@ -17,5 +17,6 @@ COMMENT
 
 Bytcode
 
+an executable files has a header wich is PROG_NAME_LENGTH (128) and COMMENT_LENGHT (2048)
 
 VM : ne prend que le instructions possibles
