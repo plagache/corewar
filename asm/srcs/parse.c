@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   asm.c                                              :+:      :+:    :+:   */
+/*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/25 18:51:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/26 10:22:25 by plagache         ###   ########.fr       */
+/*   Created: 2020/05/25 19:25:29 by plagache          #+#    #+#             */
+/*   Updated: 2020/05/26 10:22:32 by plagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "op.h"
 #include "asm.h"
+#include "libft.h"
 
-int		main(int ac, char **av)
+int		parse_file(t_file *file, t_header *header, t_cor *cor)
 {
-	t_header	header;
-	t_cor		cor;
-	t_file		file;
 
-	if (get_params(ac, av, &file) == FAILURE)
-		return (EXIT_FAILURE);
-	if (read_file(&file) == FAILURE)
-		return (EXIT_FAILURE);
-	if (parse_file(&file, &header, &cor) == FAILURE)
-		return (EXIT_FAILURE);
-	return (EXIT_SUCCESS);
-	/*
-	write_file(&file, &cor);
-	*/
 }

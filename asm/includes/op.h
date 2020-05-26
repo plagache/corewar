@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zaz <marvin@42.fr>                         +#+  +:+       +#+        */
+/*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2020/05/25 00:26:03 by alagache         ###   ########.fr       */
+/*   Updated: 2020/05/26 09:56:03 by plagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 # define CHAMP_MAX_SIZE		(MEM_SIZE / 6)
 
 # define COMMENT_CHAR		'#'
+# define ALT_COMMENT_CHAR	';'
 # define LABEL_CHAR			':'
 # define DIRECT_CHAR		'%'
 # define SEPARATOR_CHAR		','
