@@ -6,14 +6,16 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 09:12:48 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/26 10:58:16 by plagache         ###   ########.fr       */
+/*   Updated: 2020/05/27 15:15:53 by plagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 #include "libft.h"
 #include "asm.h"
 #include "ft_printf.h"
+#include "manage_error.h"
 
 static	void	del_comment(char *str)
 {
@@ -49,13 +51,13 @@ static	int		fill_content(t_file *file)
 		file->content = ft_strjoinfree(1, file->content, buff);
 		if (file->content == NULL)
 			return (FAILURE);
-		if (ft_strlen(buff) != ret)
+		if (ft_strlen(buff) != (size_t)ret)
 			return (SUCCESS);
 	}
 	if (ret == -1)
 	{
 		free(file->content);
-		ft_printf(ERROR_OPEN, file->name);
+		perror("read");
 		return (FAILURE);
 	}
 	return (SUCCESS);

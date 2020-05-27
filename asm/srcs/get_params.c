@@ -6,15 +6,16 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:24:10 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/26 10:24:01 by plagache         ###   ########.fr       */
+/*   Updated: 2020/05/27 15:10:26 by plagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <fcntl.h>
 #include "asm.h"
 #include "op.h"
 #include "ft_printf.h"
 #include "libft.h"
-#include <fcntl.h>
+#include "manage_error.h"
 
 /*
 ** procedure
@@ -57,6 +58,7 @@ static	int		get_name(int ac, char **av, t_file *file)
 			return (SUCCESS);
 		}
 	}
+	errno = ENOENT;
 	return (FAILURE);
 }
 
@@ -70,13 +72,13 @@ int		get_params(int ac, char **av, t_file *file)
 	ft_memset(file, 0, sizeof(t_file));
 	if (get_name(ac, av, file) == FAILURE)
 	{
-		ft_printf(NO_FILE);
+		perror("get_name");
 		return (FAILURE);
 	}
 	get_option(ac, av, file);
 	if (get_fd(file) == FAILURE)
 	{
-		ft_printf(ERROR_OPEN, file->name);
+		perror("open");
 		return (FAILURE);
 	}
 	return (SUCCESS);

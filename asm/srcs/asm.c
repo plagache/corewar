@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 18:51:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/26 10:22:25 by plagache         ###   ########.fr       */
+/*   Updated: 2020/05/27 15:19:15 by plagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int		main(int ac, char **av)
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
 	/*
+	(void)cor;
+	(void)header;
 	write_file(&file, &cor);
 	*/
 }

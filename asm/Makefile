@@ -3,6 +3,9 @@ NAME = asm
 SRC	=	op.c\
 		asm.c\
 		get_params.c\
+		read.c\
+		parse.c\
+		parse_tools.c\
 
 SRCS = $(addprefix srcs/,$(SRCS))
 
@@ -33,7 +36,7 @@ $(NAME): $(OBJECT)
 	$(CC) $(CFLAGS) -I includes -I $(LIBDIR)/includes -o $(NAME) $(OBJECT) $(LIBA)
 	printf "$(LNECLR)$(GREEN)make asm done$(WHITE)\n"
 
-out/%.o: srcs/%.c includes/asm.h includes/op.h
+out/%.o: srcs/%.c includes/asm.h includes/op.h includes/manage_error.h
 	mkdir -p out
 	printf "$(LNECLR)$(NAME): $<"
 	$(CC) $(CFLAGS) -I includes -I $(LIBDIR)/includes -o $@ -c $<
