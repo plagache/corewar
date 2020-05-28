@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 10:29:19 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/28 19:47:30 by plagache         ###   ########.fr       */
+/*   Updated: 2020/05/29 00:13:50 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "op.h"
 #include "ft_printf.h"
 
-int		whitespace(char *str, int len)
+static int	whitespace(char *str, int len)
 {
 	int counter;
 
@@ -28,7 +28,7 @@ int		whitespace(char *str, int len)
 	return (SUCCESS);
 }
 
-int		is_header_name(char *str)
+int			is_header_name(char *str)
 {
 	char	*dot;
 	char	*quote_one;
@@ -45,15 +45,17 @@ int		is_header_name(char *str)
 		return (QUOTES);
 	quote_one = ft_strchr(dot + 5, '"');
 	quote_two = ft_strchr(quote_one + 1, '"');
+	if (whitespace(dot + 5, quote_one - (dot + 5)) == FAILURE)
+		return (GARBAGE);
 	if (((quote_two - quote_one) - 1) > PROG_NAME_LENGTH)
 		return (TOO_LONG);
 	if (whitespace(quote_two + 1, (ft_strlen(str) - (quote_two + 1 - str)))
-		== FAILURE)	
+		== FAILURE)
 		return (GARBAGE);
 	return (SUCCESS);
 }
 
-int		is_header_comment(char *str)
+int			is_header_comment(char *str)
 {
 	char	*dot;
 	char	*quote_one;
@@ -70,15 +72,17 @@ int		is_header_comment(char *str)
 		return (QUOTES);
 	quote_one = ft_strchr(dot + 8, '"');
 	quote_two = ft_strchr(quote_one + 1, '"');
+	if (whitespace(dot + 8, quote_one - (dot + 8)) == FAILURE)
+		return (GARBAGE);
 	if (((quote_two - quote_one) - 1) > COMMENT_LENGTH)
 		return (TOO_LONG);
 	if (whitespace(quote_two + 1, (ft_strlen(str) - (quote_two + 1 - str)))
-		== FAILURE)	
+		== FAILURE)
 		return (GARBAGE);
 	return (SUCCESS);
 }
 
-void	fill_header(char *str, t_header *header, int code)
+void		fill_header(char *str, t_header *header, int code)
 {
 	char	*quote1;
 	char	*quote2;

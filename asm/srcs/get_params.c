@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:24:10 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/27 15:10:26 by plagache         ###   ########.fr       */
+/*   Updated: 2020/05/29 00:35:47 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 ** ac = 1 >> usage
 ** ac > 1 >> set file name from av / set option
 ** try open / set fd
-** 
 */
-static	int		get_fd(t_file * file)
+
+static	int		get_fd(t_file *file)
 {
 	file->fd = open(file->name, O_RDONLY);
 	if (file->fd < 0)
@@ -44,7 +44,6 @@ static	void	get_option(int ac, char **av, t_file *file)
 	}
 }
 
-
 static	int		get_name(int ac, char **av, t_file *file)
 {
 	int counter;
@@ -62,11 +61,13 @@ static	int		get_name(int ac, char **av, t_file *file)
 	return (FAILURE);
 }
 
-int		get_params(int ac, char **av, t_file *file)
+int				get_params(int ac, char **av, t_file *file)
 {
 	if (ac == 1)
 	{
-		ft_printf(USAGE);
+		ft_printf("Usage: ./asm [-a] <sourcefile.s>\n	-a : Instead of "
+	"creating a .cor file, outputs a stripped and annotated version of "
+	"the code to the standard output\n");
 		return (FAILURE);
 	}
 	ft_memset(file, 0, sizeof(t_file));

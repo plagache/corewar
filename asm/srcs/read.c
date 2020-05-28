@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 09:12:48 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/28 19:28:44 by plagache         ###   ########.fr       */
+/*   Updated: 2020/05/29 00:13:05 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ static	int		split_content(t_file *file)
 
 static	int		fill_content(t_file *file)
 {
-	char buff[BUFF_SIZE + 1];
-	int ret;
+	char	buff[BUFF_SIZE + 1];
+	int		ret;
 
 	file->content = ft_strnew(0);
 	if (file->content == NULL)

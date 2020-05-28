@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 18:58:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/27 16:53:44 by plagache         ###   ########.fr       */
+/*   Updated: 2020/05/29 00:11:55 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,37 +33,36 @@ typedef struct	s_cor
 	int		ocp;
 }				t_cor;
 
-typedef struct  s_file
+typedef struct	s_file
 {
-    int			fd;
+	int			fd;
 	char		**lines;
-    char		*content;
-    char		*name;
-    char		option;
+	char		*content;
+	char		*name;
+	char		option;
 	t_header	*header;
 	t_cor		*cor;
-}               t_file;
+}				t_file;
 
 /*
 ** PARAMS
 */
 
-int		get_params(int ac, char **av, t_file *file);
+int				get_params(int ac, char **av, t_file *file);
 
 /*
 ** READ
 */
 
-int			read_file(t_file *file);
+int				read_file(t_file *file);
 
 /*
 ** PARSE
 */
 
-int		parse_file(t_file *file, t_header *header, t_cor *cor);
-void	fill_header(char *str, t_header *header, int code);
-int		whitespace(char *str, int len);
-int		is_header_name(char *str);
-int		is_header_comment(char *str);
+int				parse_file(t_file *file, t_header *header, t_cor *cor);
+void			fill_header(char *str, t_header *header, int code);
+int				is_header_name(char *str);
+int				is_header_comment(char *str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:29 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/28 19:53:06 by plagache         ###   ########.fr       */
+/*   Updated: 2020/05/28 23:54:47 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,16 @@ int		parse_header(t_file *file)
 		else if (ret == GARBAGE || ret == QUOTES || ret == TOO_LONG)
 			return (ret);
 	}
+	file->header->magic = COREWAR_EXEC_MAGIC;
 	if (file->header->comment[0] == '\0' || file->header->prog_name[0] == '\0')
 		return (FAILURE);
 	return (SUCCESS);
 }
 
-int		handle_parse_error(int ret)
+int		handle_parse_error(int ret, t_file *file)
 {
+	if (ret == SUCCESS)
+		return (SUCCESS);
 	if (ret == FAILURE || ret == GARBAGE)
 		ft_dprintf(STDERR_FILENO, "Syntax error\n");
 	if (ret == TOO_LONG)
@@ -48,8 +51,8 @@ int		handle_parse_error(int ret)
 			PROG_NAME_LENGTH);
 	if (ret == QUOTES)
 		ft_dprintf(STDERR_FILENO, "Wrong number of quotes\n");
-	if (ret == SUCCESS)
-		return (SUCCESS);	
+	free_arr((void**)file->lines);
+	free(file->content);
 	return (FAILURE);
 }
 
@@ -59,7 +62,7 @@ int		parse_file(t_file *file, t_header *header, t_cor *cor)
 	ft_memset(cor, '\0', sizeof(t_cor));
 	file->header = header;
 	file->cor = cor;
-	if (handle_parse_error(parse_header(file)) == FAILURE)
+	if (handle_parse_error(parse_header(file), file) == FAILURE)
 		return (FAILURE);
 	ft_printf("progname = |%s|\nprogcomment = |%s|\n", header->prog_name, header->comment);
 	/*
