@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 10:29:19 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/27 17:35:32 by plagache         ###   ########.fr       */
+/*   Updated: 2020/05/28 19:47:30 by plagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		whitespace(char *str, int len)
 	counter = -1;
 	while (++counter < len && str[counter])
 	{
-		if (ft_strchr(WHITESPACE, str[counter]) != NULL)
+		if (ft_strchr(WHITESPACE, str[counter]) == NULL)
 			return (FAILURE);
 	}
 	return (SUCCESS);

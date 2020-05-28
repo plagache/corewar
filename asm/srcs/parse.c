@@ -6,11 +6,12 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:29 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/28 19:27:33 by plagache         ###   ########.fr       */
+/*   Updated: 2020/05/28 19:53:06 by plagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 #include "op.h"
 #include "asm.h"
 #include "libft.h"
@@ -61,5 +62,13 @@ int		parse_file(t_file *file, t_header *header, t_cor *cor)
 	if (handle_parse_error(parse_header(file)) == FAILURE)
 		return (FAILURE);
 	ft_printf("progname = |%s|\nprogcomment = |%s|\n", header->prog_name, header->comment);
+	/*
+	**FREE
+	*/
+	free_arr((void**)file->lines);
+	free(file->content);
+	/*
+	**FREE
+	*/
 	return (SUCCESS);
 }
