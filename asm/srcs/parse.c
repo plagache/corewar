@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:29 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/27 17:39:24 by plagache         ###   ########.fr       */
+/*   Updated: 2020/05/28 19:27:33 by plagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,12 @@ int		parse_header(t_file *file)
 int		handle_parse_error(int ret)
 {
 	if (ret == FAILURE || ret == GARBAGE)
-		//ft_dprintf(STDERR_FILENO, "Syntax error\n");
-		ft_printf("Syntax error\n");
+		ft_dprintf(STDERR_FILENO, "Syntax error\n");
 	if (ret == TOO_LONG)
-		//ft_dprintf(STDERR_FILENO, "Champion name too long (Max Lenght %i)\n",
-		//	PROG_NAME_LENGTH);
-		ft_printf("Champion name too long (Max Lenght %i)\n", PROG_NAME_LENGTH);
+		ft_dprintf(STDERR_FILENO, "Champion name too long (Max Lenght %i)\n",
+			PROG_NAME_LENGTH);
 	if (ret == QUOTES)
-		//ft_dprintf(STDERR_FILENO, "Wrong number of quotes\n");
-		ft_printf("Wrong number of quotes\n");
+		ft_dprintf(STDERR_FILENO, "Wrong number of quotes\n");
 	if (ret == SUCCESS)
 		return (SUCCESS);	
 	return (FAILURE);

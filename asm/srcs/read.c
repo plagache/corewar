@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 09:12:48 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/27 15:15:53 by plagache         ###   ########.fr       */
+/*   Updated: 2020/05/28 19:28:44 by plagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static	int		fill_content(t_file *file)
 	while ((ret = read(file->fd, buff, BUFF_SIZE)) > 0)
 	{
 		buff[ret] = '\0';
-		file->content = ft_strjoinfree(1, file->content, buff);
+		file->content = ft_strjoinfree(file->content, buff, 1);
 		if (file->content == NULL)
 			return (FAILURE);
 		if (ft_strlen(buff) != (size_t)ret)
