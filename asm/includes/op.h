@@ -89,4 +89,6 @@ typedef struct		s_op
 	char		direct_size;
 }					t_op;
 
+extern t_op	g_op_tab[17];
+
 #endif
