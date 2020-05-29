@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 18:58:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/29 03:26:58 by alagache         ###   ########.fr       */
+/*   Updated: 2020/05/29 21:14:31 by plagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # define OPTION_A 1
 # define COMMENT 1
 # define NAME 2
+# define NOT_LABEL -2
 # define BUFF_SIZE 4096
 # define WHITESPACE " \t"
 
@@ -70,8 +71,10 @@ int				read_file(t_file *file);
 */
 
 int				parse_file(t_file *file, t_header *header);
+int				whitespace(char *str, int len);
 void			fill_header(char *str, t_header *header, int code);
 int				is_header_name(char *str);
 int				is_header_comment(char *str);
+int				parse_op(t_file *file);
 
 #endif

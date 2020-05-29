@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 10:29:19 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/29 03:00:03 by alagache         ###   ########.fr       */
+/*   Updated: 2020/05/29 19:22:52 by plagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "op.h"
 #include "ft_printf.h"
 
-static int	whitespace(char *str, int len)
+int			whitespace(char *str, int len)
 {
 	int counter;
 

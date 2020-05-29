@@ -2,3 +2,4 @@
 .comment "I'M ALIVE"
 
 l2:		sti r1, 1, %1
+		res 

@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2020/05/26 09:56:03 by plagache         ###   ########.fr       */
+/*   Updated: 2020/05/29 19:49:07 by plagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,8 @@ typedef struct		s_op
 	char		direct_size;
 }					t_op;
 
-extern t_op	g_op_tab[17];
+# define NB_OF_INSTRUCTION 16
+
+extern t_op	g_op_tab[NB_OF_INSTRUCTION + 1];
 
 #endif

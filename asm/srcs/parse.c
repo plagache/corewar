@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:29 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/29 18:07:28 by alagache         ###   ########.fr       */
+/*   Updated: 2020/05/29 21:13:20 by plagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int		parse_header(t_file *file)
 	int ret;
 
 	counter = -1;
-	while (file->lines[++counter])
+	while (file->lines[++counter]
+			&& valid_line(file->lines[counter]) != SUCCESS)
 	{
 		if ((ret = is_header_name(file->lines[counter])) == SUCCESS)
 			fill_header(file->lines[counter], file->header, NAME);
@@ -57,11 +58,6 @@ int		handle_parse_error(int ret, t_file *file)
 }
 
 /*
-** parse_op
-** 1) count lines that are correct (label:inst param1,param2)
-** tool is_op
-** 2) alloc an array of t_cor and fill line fields
-** function alloc_arr
 ** 3) set label, op_str, op for each lines
 ** get_label/op_str/op
 ** 4) check param validity using op and labels
@@ -76,18 +72,14 @@ int		parse_file(t_file *file, t_header *header)
 	file->header = header;
 	if (handle_parse_error(parse_header(file), file) == FAILURE)
 		return (FAILURE);
-	/*
 	if (parse_op(file) == FAILURE)
+	{
+		free_arr((void**)file->lines);
+		free(file->content);
 		return (FAILURE);
-	*/
-	ft_printf("progname = |%s|\nprogcomment = |%s|\n", header->prog_name, header->comment);
-	/*
-	**FREE
-	*/
+	}
+	free(file->cor);
 	free_arr((void**)file->lines);
 	free(file->content);
-	/*
-	**FREE
-	*/
 	return (SUCCESS);
 }
