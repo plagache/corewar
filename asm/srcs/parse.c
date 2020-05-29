@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:29 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/28 23:54:47 by alagache         ###   ########.fr       */
+/*   Updated: 2020/05/29 03:40:59 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,30 @@ int		handle_parse_error(int ret, t_file *file)
 	return (FAILURE);
 }
 
-int		parse_file(t_file *file, t_header *header, t_cor *cor)
+/*
+** parse_op
+** 1) count lines that are correct (label:inst param1,param2)
+** tool is_op
+** 2) alloc an array of t_cor and fill line fields
+** function alloc_arr
+** 3) set label, op_str, op for each lines
+** get_label/op_str/op
+** 4) check param validity using op and labels
+** is_dir/reg/ind
+** 5) create OCP and set size
+** 6) get values
+*/
+
+int		parse_file(t_file *file, t_header *header)
 {
 	ft_memset(header, '\0', sizeof(t_header));
-	ft_memset(cor, '\0', sizeof(t_cor));
 	file->header = header;
-	file->cor = cor;
 	if (handle_parse_error(parse_header(file), file) == FAILURE)
 		return (FAILURE);
+	/*
+	if (parse_op(file) == FAILURE)
+		return (FAILURE);
+	*/
 	ft_printf("progname = |%s|\nprogcomment = |%s|\n", header->prog_name, header->comment);
 	/*
 	**FREE

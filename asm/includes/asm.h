@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 18:58:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/29 00:11:55 by alagache         ###   ########.fr       */
+/*   Updated: 2020/05/29 03:26:58 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ASM_H
 
 # include "op.h"
+# include "stddef.h"
 
 # define SUCCESS 0
 # define FAILURE -1
@@ -30,7 +31,15 @@
 
 typedef struct	s_cor
 {
-	int		ocp;
+	char	*line;
+	char	*exec;
+	char	*label;
+	t_op	*op;
+	char	*op_str;
+	char	*params[3];
+	int		value[3];
+	char	ocp;
+	size_t	size;
 }				t_cor;
 
 typedef struct	s_file
@@ -60,7 +69,7 @@ int				read_file(t_file *file);
 ** PARSE
 */
 
-int				parse_file(t_file *file, t_header *header, t_cor *cor);
+int				parse_file(t_file *file, t_header *header);
 void			fill_header(char *str, t_header *header, int code);
 int				is_header_name(char *str);
 int				is_header_comment(char *str);
