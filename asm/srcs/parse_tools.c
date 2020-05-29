@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 10:29:19 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/29 19:22:52 by plagache         ###   ########.fr       */
+/*   Updated: 2020/05/29 23:42:50 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,15 +82,16 @@ int			is_header_comment(char *str)
 	return (SUCCESS);
 }
 
-void		fill_header(char *str, t_header *header, int code)
+void		fill_header(char *str, t_file *file, int code, int line)
 {
 	char	*quote1;
 	char	*quote2;
 
 	quote1 = ft_strchr(str, '"');
 	quote2 = ft_strchr(quote1 + 1, '"');
+	file->line = line;
 	if (code == NAME)
-		ft_strncpy(header->prog_name, quote1 + 1, (quote2 - 1) - quote1);
+		ft_strncpy(file->header->prog_name, quote1 + 1, (quote2 - 1) - quote1);
 	else
-		ft_strncpy(header->comment, quote1 + 1, (quote2 - 1) - quote1);
+		ft_strncpy(file->header->comment, quote1 + 1, (quote2 - 1) - quote1);
 }

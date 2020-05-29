@@ -6,7 +6,7 @@ SRC	=	op.c\
 		read.c\
 		parse.c\
 		parse_tools.c\
-		parse_op_tools.c\
+		parse_op_tool.c\
 
 SRCS = $(addprefix srcs/,$(SRCS))
 

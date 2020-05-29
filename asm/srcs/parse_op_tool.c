@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 18:19:12 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/29 21:17:09 by plagache         ###   ########.fr       */
+/*   Updated: 2020/05/30 00:41:26 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int	is_op(char *str)
 
 	while (ft_strchr(WHITESPACE, *str) != NULL)
 		str++;
-	iterator = -1;
+	iterator = NB_OF_INSTRUCTION;
 	found = 0;
-	while (found == 0 && ++iterator < NB_OF_INSTRUCTION)
+	while (found == 0 && --iterator >= 0)
 	{
 		op = g_op_tab[iterator];
 		len_key = ft_strlen(op.keyword);
@@ -59,7 +59,7 @@ int	is_label(char *str)
 		colon--;
 	if (colon == str)
 		return (SUCCESS);
-	if (whitespace(str, colon - 1 - str) == SUCCESS)
+	if (whitespace(str, colon - str) == SUCCESS)
 		return (SUCCESS);
 	return (FAILURE);
 }
@@ -74,7 +74,9 @@ int	valid_line(char *str)
 	if (ret_label == SUCCESS)
 		str = ft_strchr(str, LABEL_CHAR) + 1;
 	ret_op = is_op(str);
-	if (ret_op == SUCCESS || ret_label == SUCCESS)
+	if (ret_op == SUCCESS)
+		return (SUCCESS);
+	if (ret_label == SUCCESS && whitespace(str, ft_strlen(str)) == SUCCESS)
 		return (SUCCESS);
 	return (FAILURE);
 }
@@ -84,7 +86,7 @@ void		fill_cor(t_file *file, int counter)
 	int		iterator;
 	int		cor_iter;
 
-	iterator = 0;
+	iterator = file->line + 1;
 	cor_iter = 0;
 	while (counter > cor_iter && file->lines[iterator] != NULL)
 	{
@@ -102,7 +104,7 @@ int	parse_op(t_file *file)
 	int	iterator;
 	int counter;
 
-	iterator = 0;
+	iterator = file->line + 1;
 	counter = 0;
 	while (file->lines[iterator] != NULL)
 	{

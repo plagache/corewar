@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 18:58:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/29 21:14:31 by plagache         ###   ########.fr       */
+/*   Updated: 2020/05/29 23:38:42 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct	s_cor
 typedef struct	s_file
 {
 	int			fd;
+	int			line;
 	char		**lines;
 	char		*content;
 	char		*name;
@@ -72,7 +73,7 @@ int				read_file(t_file *file);
 
 int				parse_file(t_file *file, t_header *header);
 int				whitespace(char *str, int len);
-void			fill_header(char *str, t_header *header, int code);
+void			fill_header(char *str, t_file *file, int code, int line);
 int				is_header_name(char *str);
 int				is_header_comment(char *str);
 int				parse_op(t_file *file);

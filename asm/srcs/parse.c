@@ -6,7 +6,7 @@
 /*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:29 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/29 21:13:20 by plagache         ###   ########.fr       */
+/*   Updated: 2020/05/30 00:08:16 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ int		parse_header(t_file *file)
 	int ret;
 
 	counter = -1;
-	while (file->lines[++counter]
-			&& valid_line(file->lines[counter]) != SUCCESS)
+	file->line = -1;
+	while (file->lines[++counter])
 	{
 		if ((ret = is_header_name(file->lines[counter])) == SUCCESS)
-			fill_header(file->lines[counter], file->header, NAME);
+			fill_header(file->lines[counter], file, NAME, counter);
 		else if (ret == GARBAGE || ret == QUOTES || ret == TOO_LONG)
 			return (ret);
 		if ((ret = is_header_comment(file->lines[counter])) == SUCCESS)
-			fill_header(file->lines[counter], file->header, COMMENT);
+			fill_header(file->lines[counter], file, COMMENT, counter);
 		else if (ret == GARBAGE || ret == QUOTES || ret == TOO_LONG)
 			return (ret);
 	}
@@ -57,6 +57,30 @@ int		handle_parse_error(int ret, t_file *file)
 	return (FAILURE);
 }
 
+int		whitespace_header(t_file *file)
+{
+	int		iterator;
+
+	iterator= 0;
+	while (iterator < file->line)
+	{
+		if (is_header_name(file->lines[iterator]) == SUCCESS
+			|| is_header_comment(file->lines[iterator]) == SUCCESS)
+			iterator++;
+		if (whitespace(file->lines[iterator], ft_strlen(file->lines[iterator]))
+			== FAILURE)
+		{
+			ft_dprintf(STDERR_FILENO, "Error on line |%s|\n",
+						file->lines[iterator]);
+			free_arr((void**)file->lines);
+			free(file->content);
+			return (FAILURE);
+		}
+		iterator++;
+	}
+	return (SUCCESS);
+}
+
 /*
 ** 3) set label, op_str, op for each lines
 ** get_label/op_str/op
@@ -71,6 +95,8 @@ int		parse_file(t_file *file, t_header *header)
 	ft_memset(header, '\0', sizeof(t_header));
 	file->header = header;
 	if (handle_parse_error(parse_header(file), file) == FAILURE)
+		return (FAILURE);
+	if (whitespace_header(file) == FAILURE)
 		return (FAILURE);
 	if (parse_op(file) == FAILURE)
 	{
