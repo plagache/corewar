@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 09:12:48 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/29 23:49:33 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/01 23:05:17 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static	void	del_comment(char *str)
 	ret = ft_strchr(str, ALT_COMMENT_CHAR);
 	if (ret != NULL)
 		ret[0] = '\0';
-	//maybe put a \0 on whitespace only lines
 }
 
 static	int		split_content(t_file *file)

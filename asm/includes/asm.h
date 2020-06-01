@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   asm.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 18:58:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/29 23:38:42 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/01 22:11:33 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@
 # define COMMENT 1
 # define NAME 2
 # define NOT_LABEL -2
+# define NOT_OP -2
 # define BUFF_SIZE 4096
 # define WHITESPACE " \t"
+# define PARAMS_CHAR "abcdefghijklmnopqrstuvwxyz_0123456789:%"
 
 typedef struct	s_cor
 {
@@ -77,5 +79,8 @@ void			fill_header(char *str, t_file *file, int code, int line);
 int				is_header_name(char *str);
 int				is_header_comment(char *str);
 int				parse_op(t_file *file);
+int				set_label_op(t_cor *cor);
+char			gen_ocp(t_cor *cor);
+int				check_ocp(t_cor *cor);
 
 #endif

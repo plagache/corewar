@@ -7,6 +7,8 @@ SRC	=	op.c\
 		parse.c\
 		parse_tools.c\
 		parse_op_tool.c\
+		set_label_op_params.c\
+		param_tools.c\
 
 SRCS = $(addprefix srcs/,$(SRCS))
 

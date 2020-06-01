@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_op_tool.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 18:19:12 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/30 00:41:26 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/01 23:04:53 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 ** WS INST WS PARAM, PARAM
 */
 
-int	is_op(char *str)
+int		is_op(char *str)
 {
-	int 	iterator;
+	int		iterator;
 	int		found;
 	size_t	len_key;
 	t_op	op;
@@ -49,7 +49,7 @@ int	is_op(char *str)
 	return (SUCCESS);
 }
 
-int	is_label(char *str)
+int		is_label(char *str)
 {
 	char *colon;
 
@@ -64,7 +64,7 @@ int	is_label(char *str)
 	return (FAILURE);
 }
 
-int	valid_line(char *str)
+int		valid_line(char *str)
 {
 	int		ret_label;
 	int		ret_op;
@@ -81,7 +81,7 @@ int	valid_line(char *str)
 	return (FAILURE);
 }
 
-void		fill_cor(t_file *file, int counter)
+void	fill_cor(t_file *file, int counter)
 {
 	int		iterator;
 	int		cor_iter;
@@ -99,7 +99,7 @@ void		fill_cor(t_file *file, int counter)
 	}
 }
 
-int	parse_op(t_file *file)
+int		parse_op(t_file *file)
 {
 	int	iterator;
 	int counter;
