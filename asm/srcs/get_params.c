@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   get_params.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:24:10 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/29 00:35:47 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/02 18:51:04 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
+#include <unistd.h>
 #include "asm.h"
 #include "op.h"
 #include "ft_printf.h"
@@ -65,9 +66,9 @@ int				get_params(int ac, char **av, t_file *file)
 {
 	if (ac == 1)
 	{
-		ft_printf("Usage: ./asm [-a] <sourcefile.s>\n	-a : Instead of "
-	"creating a .cor file, outputs a stripped and annotated version of "
-	"the code to the standard output\n");
+		ft_dprintf(STDERR_FILENO ,"Usage: ./asm [-a] <sourcefile.s>\n	-a : "
+			"Instead ofcreating a .cor file, outputs a stripped and annotated "
+			"version of the code to the standard output\n");
 		return (FAILURE);
 	}
 	ft_memset(file, 0, sizeof(t_file));

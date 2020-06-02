@@ -6,10 +6,11 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/01 16:33:31 by alagache          #+#    #+#             */
-/*   Updated: 2020/06/01 23:06:16 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/02 20:32:49 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "op.h"
 #include "asm.h"
 #include "libft.h"
@@ -64,7 +65,7 @@ int		clean_params(t_cor *cor)
 		if (whitespace(cor->params[iterator - 1],
 			ft_strlen(cor->params[iterator - 1])) == SUCCESS)
 		{
-			ft_printf("Empty argument found\n");
+			ft_dprintf(STDERR_FILENO, "Empty argument found\n");
 			return (FAILURE);
 		}
 		while (ft_strchr(WHITESPACE, *(cor->params[iterator - 1])) != NULL)
@@ -77,7 +78,7 @@ int		clean_params(t_cor *cor)
 	return (SUCCESS);
 }
 
-int		set_params(t_cor *cor)
+int		set_params_str(t_cor *cor)
 {
 	int	iterator;
 
@@ -94,10 +95,7 @@ int		set_params(t_cor *cor)
 	while (++iterator <= cor->op->nbr_arg)
 		*(cor->params[iterator - 1] - 1) = '\0';
 	if (clean_params(cor) == FAILURE)
-	{
-		ft_printf("Empty argument found");
 		return (FAILURE);
-	}
 	gen_ocp(cor);
 	if (check_ocp(cor) == FAILURE)
 		return (FAILURE);
@@ -114,7 +112,7 @@ int		set_label_op(t_cor *cor)
 		set_label(cor + iterator);
 		if (set_op(cor + iterator) == SUCCESS)
 		{
-			if (set_params(cor + iterator) == FAILURE)
+			if (set_params_str(cor + iterator) == FAILURE)
 				return (FAILURE);
 		}
 	}

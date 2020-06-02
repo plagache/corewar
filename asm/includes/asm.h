@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 18:58:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/01 22:11:33 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/02 19:33:07 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,6 @@ int				parse_op(t_file *file);
 int				set_label_op(t_cor *cor);
 char			gen_ocp(t_cor *cor);
 int				check_ocp(t_cor *cor);
+int				set_params(t_cor *cor);
 
 #endif

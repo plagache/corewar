@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parse_tools.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 10:29:19 by plagache          #+#    #+#             */
-/*   Updated: 2020/05/29 23:42:50 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/02 18:53:50 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "asm.h"
 #include "op.h"
-#include "ft_printf.h"
 
 int			whitespace(char *str, int len)
 {

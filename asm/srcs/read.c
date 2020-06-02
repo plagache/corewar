@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 09:12:48 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/01 23:05:17 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/02 18:53:31 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <stdlib.h>
 #include "libft.h"
 #include "asm.h"
-#include "ft_printf.h"
 #include "manage_error.h"
 
 static	void	del_comment(char *str)

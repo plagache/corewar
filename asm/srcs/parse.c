@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:29 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/01 23:14:10 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/02 22:57:04 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,11 @@ int		handle_parse_error(int ret, t_file *file)
 }
 
 /*
-** 4) check param content
-** 5) get values
-** 6) set size (!!no OCP for 1 arg operation except opcode 16)
+** lexer parser
+** !!\n in header
+** 1) get values
+** 1.1) wrong_param_content for error output in set_param
+** 2) write
 */
 
 int		parse_file(t_file *file, t_header *header)
@@ -99,13 +101,14 @@ int		parse_file(t_file *file, t_header *header)
 		free(file->content);
 		return (FAILURE);
 	}
-	if (set_label_op(file->cor))
+	if (set_label_op(file->cor) == FAILURE)
 	{
 		free(file->cor);
 		free_arr((void**)file->lines);
 		free(file->content);
 		return (FAILURE);
 	}
+	set_params(file->cor);
 	free(file->cor);
 	free_arr((void**)file->lines);
 	free(file->content);

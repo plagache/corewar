@@ -7,4 +7,4 @@
 l2:		 	 
 	sti r1, 2, %1   	 	 
 	st r1, 2 	 
-	live %toto
+	live %1
