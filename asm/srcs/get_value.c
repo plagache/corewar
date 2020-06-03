@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/03 19:19:45 by alagache          #+#    #+#             */
-/*   Updated: 2020/06/03 23:42:30 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/04 01:40:48 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	 get_value(t_cor *array, t_cor *cell, int param_nb, int code)
 				cell->value[param_nb] = (array + iter_arr)->inc_size - cell->inc_size;
 		}
 	}
-	ft_printf("%i\n", cell->value[param_nb]);
 }
 
 void	iter_params(t_cor *array, t_cor *cell)

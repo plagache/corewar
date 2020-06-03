@@ -92,8 +92,6 @@ int	set_sizes(t_cor *cor, t_cor *array)
 			param += (cor->op->direct_size == 1 ? 2 : 4);
 	}
 	cor->size = size + param;
-	cor->inc_size = (cor == array ? 0 :
-					(cor - 1)->inc_size + (cor - 1)->size);
 	return (SUCCESS);
 }
 
@@ -113,6 +111,8 @@ int set_params(t_cor *cor)
 			if (set_param(cor, cor + iterator) == FAILURE)
 				return (FAILURE);
 		}
+		(cor + iterator)->inc_size = (cor == (cor + iterator) ? 0:
+			(cor + iterator - 1)->inc_size + (cor + iterator - 1)->size);
 	}
 	return (SUCCESS);
 }
