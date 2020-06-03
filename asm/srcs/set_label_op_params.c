@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/01 16:33:31 by alagache          #+#    #+#             */
-/*   Updated: 2020/06/02 20:32:49 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/03 23:06:57 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,14 @@
 #include "asm.h"
 #include "libft.h"
 #include "ft_printf.h"
+#include "manage_error.h"
 
 void	set_label(t_cor *cor)
 {
-	if (ft_strchr(cor->line, LABEL_CHAR) != NULL)
+	char *ptr;
+
+	if ((ptr = ft_strchr(cor->line, LABEL_CHAR)) != NULL
+		&& ft_strchr(SEP_CHARS, *(ptr - 1)) == NULL)
 	{
 		cor->label = cor->line;
 		while (ft_strchr(WHITESPACE, *(cor->label)) != NULL)
@@ -65,7 +69,7 @@ int		clean_params(t_cor *cor)
 		if (whitespace(cor->params[iterator - 1],
 			ft_strlen(cor->params[iterator - 1])) == SUCCESS)
 		{
-			ft_dprintf(STDERR_FILENO, "Empty argument found\n");
+			ft_dprintf(STDERR_FILENO, EMPTY_ARG);
 			return (FAILURE);
 		}
 		while (ft_strchr(WHITESPACE, *(cor->params[iterator - 1])) != NULL)
@@ -94,10 +98,9 @@ int		set_params_str(t_cor *cor)
 	iterator = 0;
 	while (++iterator <= cor->op->nbr_arg)
 		*(cor->params[iterator - 1] - 1) = '\0';
-	if (clean_params(cor) == FAILURE)
-		return (FAILURE);
-	gen_ocp(cor);
-	if (check_ocp(cor) == FAILURE)
+	if (clean_params(cor) == FAILURE
+		||gen_ocp(cor) == FAILURE
+		||check_ocp(cor) == FAILURE)
 		return (FAILURE);
 	return (SUCCESS);
 }

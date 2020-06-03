@@ -6,26 +6,27 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/01 16:52:30 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/01 23:03:43 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/03 23:16:48 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "op.h"
 #include "asm.h"
 #include "libft.h"
 #include "ft_printf.h"
+#include "manage_error.h"
 
 static void	wrong_parameter(int nb, char param_code, char *str)
 {
+	if (param_code == 0)
+		ft_dprintf(STDERR_FILENO, NOT_PARAM, nb + 1, str);
 	if (param_code == DIR_CODE)
-		ft_printf("Invalid parameter %i type %s for instruction %s\n",
-				nb, "direct", str);
+		ft_dprintf(STDERR_FILENO, INVALID_TYPE, nb + 1, "direct", str);
 	if (param_code == IND_CODE)
-		ft_printf("Invalid parameter %i type %s for instruction %s\n",
-				nb, "indirect", str);
+		ft_dprintf(STDERR_FILENO, INVALID_TYPE, nb + 1, "indirect", str);
 	if (param_code == REG_CODE)
-		ft_printf("Invalid parameter %i type %s for instruction %s\n",
-				nb, "register", str);
+		ft_dprintf(STDERR_FILENO, INVALID_TYPE, nb + 1, "register", str);
 }
 
 int			check_ocp(t_cor *cor)
@@ -73,7 +74,10 @@ char		gen_ocp(t_cor *cor)
 	{
 		type = what_type(cor->params[counter]);
 		if (type == FAILURE)
+		{
+			wrong_parameter(counter, 0, cor->op->keyword);
 			return (FAILURE);
+		}
 		cor->ocp ^= type << ((3 - counter) * 2);
 		counter++;
 	}

@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 18:58:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/02 19:33:07 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/03 23:42:32 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@
 
 # define SUCCESS 0
 # define FAILURE -1
+# define ERR_MALLOC -2
 # define NO_DOT -1
 # define NO_NAME -2
 # define QUOTES -3
 # define GARBAGE -4
-# define TOO_LONG -5
+# define TOO_LONG_NAME -5
+# define TOO_LONG_COMMENT -5
 # define OPTION_A 1
 # define COMMENT 1
 # define NAME 2
@@ -30,7 +32,8 @@
 # define NOT_OP -2
 # define BUFF_SIZE 4096
 # define WHITESPACE " \t"
-# define PARAMS_CHAR "abcdefghijklmnopqrstuvwxyz_0123456789:%"
+# define PARAMS_CHAR "abcdefghijklmnopqrstuvwxyz_0123456789:%-"
+# define SEP_CHARS "% ,"
 
 typedef struct	s_cor
 {
@@ -41,8 +44,9 @@ typedef struct	s_cor
 	char	*op_str;
 	char	*params[3];
 	int		value[3];
-	char	ocp;
+	short	ocp;
 	size_t	size;
+	size_t	inc_size;
 }				t_cor;
 
 typedef struct	s_file
@@ -83,5 +87,6 @@ int				set_label_op(t_cor *cor);
 char			gen_ocp(t_cor *cor);
 int				check_ocp(t_cor *cor);
 int				set_params(t_cor *cor);
+void			get_values(t_cor *cor);
 
 #endif

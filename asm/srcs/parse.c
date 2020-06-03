@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:29 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/02 22:57:04 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/03 23:36:17 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "asm.h"
 #include "libft.h"
 #include "ft_printf.h"
+#include "manage_error.h"
 
 int		whitespace_header(t_file *file)
 {
@@ -27,11 +28,10 @@ int		whitespace_header(t_file *file)
 		if (is_header_name(file->lines[iterator]) == SUCCESS
 			|| is_header_comment(file->lines[iterator]) == SUCCESS)
 			iterator++;
-		if (whitespace(file->lines[iterator], ft_strlen(file->lines[iterator]))
+		else if (whitespace(file->lines[iterator], ft_strlen(file->lines[iterator]))
 			== FAILURE)
 		{
-			ft_dprintf(STDERR_FILENO, "Error on line |%s|\n",
-						file->lines[iterator]);
+			ft_dprintf(STDERR_FILENO, WS_HEADER, file->lines[iterator]);
 			return (FAILURE);
 		}
 		iterator++;
@@ -50,11 +50,11 @@ int		parse_header(t_file *file)
 	{
 		if ((ret = is_header_name(file->lines[counter])) == SUCCESS)
 			fill_header(file->lines[counter], file, NAME, counter);
-		else if (ret == GARBAGE || ret == QUOTES || ret == TOO_LONG)
+		else if (ret == GARBAGE || ret == QUOTES || ret == TOO_LONG_NAME)
 			return (ret);
 		if ((ret = is_header_comment(file->lines[counter])) == SUCCESS)
 			fill_header(file->lines[counter], file, COMMENT, counter);
-		else if (ret == GARBAGE || ret == QUOTES || ret == TOO_LONG)
+		else if (ret == GARBAGE || ret == QUOTES || ret == TOO_LONG_COMMENT)
 			return (ret);
 	}
 	file->header->magic = COREWAR_EXEC_MAGIC;
@@ -70,12 +70,13 @@ int		handle_parse_error(int ret, t_file *file)
 	if (ret == SUCCESS)
 		return (SUCCESS);
 	if (ret == FAILURE || ret == GARBAGE)
-		ft_dprintf(STDERR_FILENO, "Syntax error\n");
-	if (ret == TOO_LONG)
-		ft_dprintf(STDERR_FILENO, "Champion name too long (Max Lenght %i)\n",
-			PROG_NAME_LENGTH);
+		ft_dprintf(STDERR_FILENO, SYNTAX);
+	if (ret == TOO_LONG_NAME)
+		ft_dprintf(STDERR_FILENO, LONG_NAME, PROG_NAME_LENGTH);
+	if (ret == TOO_LONG_COMMENT)
+		ft_dprintf(STDERR_FILENO, LONG_COMMENT, COMMENT_LENGTH);
 	if (ret == QUOTES)
-		ft_dprintf(STDERR_FILENO, "Wrong number of quotes\n");
+		ft_dprintf(STDERR_FILENO, ERR_QUOTES);
 	free_arr((void**)file->lines);
 	free(file->content);
 	return (FAILURE);
@@ -101,14 +102,15 @@ int		parse_file(t_file *file, t_header *header)
 		free(file->content);
 		return (FAILURE);
 	}
-	if (set_label_op(file->cor) == FAILURE)
+	if (set_label_op(file->cor) == FAILURE
+		|| set_params(file->cor) == FAILURE)
 	{
 		free(file->cor);
 		free_arr((void**)file->lines);
 		free(file->content);
 		return (FAILURE);
 	}
-	set_params(file->cor);
+	get_values(file->cor);
 	free(file->cor);
 	free_arr((void**)file->lines);
 	free(file->content);

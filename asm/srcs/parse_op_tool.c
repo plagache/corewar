@@ -6,21 +6,16 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 18:19:12 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/01 23:04:53 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/03 23:29:03 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 #include "op.h"
 #include "asm.h"
-
-/*
-** valid_line
-** (label:op param,param)
-** 1)label
-** 2)op (inside aray)
-** WS INST WS PARAM, PARAM
-*/
+#include "ft_printf.h"
+#include "manage_error.h"
 
 int		is_op(char *str)
 {
@@ -55,13 +50,13 @@ int		is_label(char *str)
 
 	if ((colon = ft_strchr(str, LABEL_CHAR)) == NULL)
 		return (NOT_LABEL);
-	while (colon != str && ft_strchr(LABEL_CHARS, *(colon - 1)) != NULL)
-		colon--;
+	while (*str != '\0' && ft_strchr(WHITESPACE, *str) != NULL)
+		str++;
+	while (*str != '\0' && ft_strchr(LABEL_CHARS, *str) != NULL)
+		str++;
 	if (colon == str)
 		return (SUCCESS);
-	if (whitespace(str, colon - str) == SUCCESS)
-		return (SUCCESS);
-	return (FAILURE);
+	return (NOT_LABEL);
 }
 
 int		valid_line(char *str)
@@ -69,8 +64,7 @@ int		valid_line(char *str)
 	int		ret_label;
 	int		ret_op;
 
-	if ((ret_label = is_label(str)) == FAILURE)
-		return (FAILURE);
+	ret_label = is_label(str);
 	if (ret_label == SUCCESS)
 		str = ft_strchr(str, LABEL_CHAR) + 1;
 	ret_op = is_op(str);
@@ -112,7 +106,10 @@ int		parse_op(t_file *file)
 			counter++;
 		else if (whitespace(file->lines[iterator],
 				ft_strlen(file->lines[iterator])) == FAILURE)
+		{
+			ft_dprintf(STDERR_FILENO, NON_EMPTY_LNE, file->lines[iterator]);
 			return (FAILURE);
+		}
 		iterator++;
 	}
 	file->cor = ft_memalloc(sizeof(t_cor) * (counter + 1));

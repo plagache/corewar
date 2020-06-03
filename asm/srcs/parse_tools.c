@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 10:29:19 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/02 18:53:50 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/03 22:52:28 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int			is_header_name(char *str)
 	if (whitespace(dot + 5, quote_one - (dot + 5)) == FAILURE)
 		return (GARBAGE);
 	if (((quote_two - quote_one) - 1) > PROG_NAME_LENGTH)
-		return (TOO_LONG);
+		return (TOO_LONG_NAME);
 	if (whitespace(quote_two + 1, (ft_strlen(str) - (quote_two + 1 - str)))
 		== FAILURE)
 		return (GARBAGE);
@@ -74,7 +74,7 @@ int			is_header_comment(char *str)
 	if (whitespace(dot + 8, quote_one - (dot + 8)) == FAILURE)
 		return (GARBAGE);
 	if (((quote_two - quote_one) - 1) > COMMENT_LENGTH)
-		return (TOO_LONG);
+		return (TOO_LONG_COMMENT);
 	if (whitespace(quote_two + 1, (ft_strlen(str) - (quote_two + 1 - str)))
 		== FAILURE)
 		return (GARBAGE);

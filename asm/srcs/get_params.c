@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:24:10 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/02 18:51:04 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/03 01:47:06 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static	void	get_option(int ac, char **av, t_file *file)
 	int counter;
 
 	counter = ac;
+	file->option = 0;
 	while (--counter > 0)
 	{
 		if ((file->option & OPTION_A) == 0 && ft_strcmp(av[counter], "-a") == 0)

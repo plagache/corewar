@@ -10,6 +10,7 @@ SRC	=	op.c\
 		set_label_op_params.c\
 		param_tools.c\
 		set_params.c\
+		get_value.c\
 
 SRCS = $(addprefix srcs/,$(SRCS))
 
@@ -20,7 +21,9 @@ LIBDIR = ../libft
 LIBA = $(LIBDIR)/libft.a
 
 CFLAGS = -Wall -Wextra -Werror
-CFLAGS += -g -fsanitize=address -fno-omit-frame-pointer
+CFLAGS += -g -fsanitize=address,undefined -fno-omit-frame-pointer
+#CFLAGS += -g -fsanitize=thread,undefined 
+#CFLAGS += -g -fsanitize=memory,undefined
 
 CC = clang
 #CC = gcc

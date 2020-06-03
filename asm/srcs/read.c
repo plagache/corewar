@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 09:12:48 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/02 18:53:31 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/03 22:45:43 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "libft.h"
 #include "asm.h"
 #include "manage_error.h"
+#include "ft_printf.h"
 
 static	void	del_comment(char *str)
 {
@@ -32,7 +33,10 @@ static	int		split_content(t_file *file)
 {
 	file->lines = ft_strsplit(file->content, '\n');
 	if (file->lines == NULL)
+	{
+		ft_printf(SPLIT_MALLOC);
 		return (FAILURE);
+	}
 	return (SUCCESS);
 }
 
@@ -43,13 +47,13 @@ static	int		fill_content(t_file *file)
 
 	file->content = ft_strnew(0);
 	if (file->content == NULL)
-		return (FAILURE);
+		return (ERR_MALLOC);
 	while ((ret = read(file->fd, buff, BUFF_SIZE)) > 0)
 	{
 		buff[ret] = '\0';
 		file->content = ft_strjoinfree(file->content, buff, 1);
 		if (file->content == NULL)
-			return (FAILURE);
+			return (ERR_MALLOC);
 		if (ft_strlen(buff) != (size_t)ret)
 			return (SUCCESS);
 	}
@@ -64,17 +68,20 @@ static	int		fill_content(t_file *file)
 
 int				read_file(t_file *file)
 {
+	int		ret;
 	int		counter;
 
-	if (fill_content(file) == FAILURE)
+	if ((ret = fill_content(file)) == FAILURE)
 		return (FAILURE);
+	if (ret == ERR_MALLOC)
+	{
+		ft_printf(READ_MALLOC);
+		return (FAILURE);
+	}
 	if (split_content(file) == FAILURE)
 		return (FAILURE);
-	counter = 0;
-	while (file->lines[counter] != NULL)
-	{
+	counter = -1;
+	while (file->lines[++counter] != NULL)
 		del_comment(file->lines[counter]);
-		counter++;
-	}
 	return (SUCCESS);
 }
