@@ -11,6 +11,7 @@ SRC	=	op.c\
 		param_tools.c\
 		set_params.c\
 		get_value.c\
+		correct_values.c\
 
 SRCS = $(addprefix srcs/,$(SRCS))
 

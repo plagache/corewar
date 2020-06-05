@@ -98,7 +98,7 @@ int	set_sizes(t_cor *cor, t_cor *array)
 //iterate over cor array and set param values according to OCP
 //reg are followed only by numbers
 //direct and indirect are only numbers or label
-int set_params(t_cor *cor)
+int set_params(t_cor *cor, t_header *header)
 {
 	int iterator;
 
@@ -114,5 +114,7 @@ int set_params(t_cor *cor)
 		(cor + iterator)->inc_size = (cor == (cor + iterator) ? 0:
 			(cor + iterator - 1)->inc_size + (cor + iterator - 1)->size);
 	}
+	header->prog_size = (cor + iterator - 1)->inc_size
+		+ (cor + iterator - 1)->size;
 	return (SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:29 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/03 23:36:17 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/05 06:46:50 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,7 @@ int		handle_parse_error(int ret, t_file *file)
 /*
 ** lexer parser
 ** !!\n in header
-** 1) get values
-** 1.1) wrong_param_content for error output in set_param
+** 1.9) overflows || max reg value
 ** 2) write
 */
 
@@ -103,7 +102,7 @@ int		parse_file(t_file *file, t_header *header)
 		return (FAILURE);
 	}
 	if (set_label_op(file->cor) == FAILURE
-		|| set_params(file->cor) == FAILURE)
+		|| set_params(file->cor, file->header) == FAILURE)
 	{
 		free(file->cor);
 		free_arr((void**)file->lines);
@@ -111,6 +110,13 @@ int		parse_file(t_file *file, t_header *header)
 		return (FAILURE);
 	}
 	get_values(file->cor);
+	if (correct_values(file->cor) == FAILURE)
+	{
+		free(file->cor);
+		free_arr((void**)file->lines);
+		free(file->content);
+		return (FAILURE);
+	}
 	free(file->cor);
 	free_arr((void**)file->lines);
 	free(file->content);

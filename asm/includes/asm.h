@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 18:58:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/03 23:42:32 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/05 07:03:45 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 # define WHITESPACE " \t"
 # define PARAMS_CHAR "abcdefghijklmnopqrstuvwxyz_0123456789:%-"
 # define SEP_CHARS "% ,"
+# define AFF_OCP 40
 
 typedef struct	s_cor
 {
@@ -44,6 +45,9 @@ typedef struct	s_cor
 	char	*op_str;
 	char	*params[3];
 	int		value[3];
+	char	val0[4];
+	char	val1[4];
+	char	val2[4];
 	short	ocp;
 	size_t	size;
 	size_t	inc_size;
@@ -86,7 +90,7 @@ int				parse_op(t_file *file);
 int				set_label_op(t_cor *cor);
 char			gen_ocp(t_cor *cor);
 int				check_ocp(t_cor *cor);
-int				set_params(t_cor *cor);
+int				set_params(t_cor *cor, t_header *header);
 void			get_values(t_cor *cor);
 
 #endif
