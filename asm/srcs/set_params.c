@@ -72,14 +72,14 @@ int set_param(t_cor *array, t_cor *cell)
 	return (SUCCESS);
 }
 
-int	set_sizes(t_cor *cor, t_cor *array)
+int	set_sizes(t_cor *cor)
 {
 	int size;
 	int	iterator;
 	int	param;
 
 	size = (cor->op->nbr_arg != 1
-			|| cor->op->instruction_op_code == 16 ? 2 : 1);
+			|| cor->op->op_code == 16 ? 2 : 1);
 	param = 0;
 	iterator = -1;
 	while (++iterator < cor->op->nbr_arg)
@@ -107,7 +107,7 @@ int set_params(t_cor *cor, t_header *header)
 	{
 		if ((cor + iterator)->op != NULL)
 		{
-			set_sizes(cor + iterator, cor);
+			set_sizes(cor + iterator);
 			if (set_param(cor, cor + iterator) == FAILURE)
 				return (FAILURE);
 		}

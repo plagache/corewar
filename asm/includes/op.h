@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2020/06/01 20:34:59 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/07 03:58:21 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ typedef struct		s_op
 	char		*keyword;
 	char		nbr_arg;
 	t_arg_type	type_arr[3];
-	char		instruction_op_code;
+	char		op_code;
 	short		cycle_time;
 	char		*name_description;
 	char		carry;

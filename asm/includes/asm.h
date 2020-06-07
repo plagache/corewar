@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 18:58:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/05 07:03:45 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/07 07:10:09 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,7 @@ typedef struct	s_cor
 	char	*op_str;
 	char	*params[3];
 	int		value[3];
-	char	val0[4];
-	char	val1[4];
-	char	val2[4];
+	char	val[3][4];
 	short	ocp;
 	size_t	size;
 	size_t	inc_size;
@@ -92,5 +90,8 @@ char			gen_ocp(t_cor *cor);
 int				check_ocp(t_cor *cor);
 int				set_params(t_cor *cor, t_header *header);
 void			get_values(t_cor *cor);
+int				what_size(char direct_size, short ocp, int param_nb);
+int				correct_arr(t_cor *cor);
+int				write_infile(t_file *file);
 
 #endif

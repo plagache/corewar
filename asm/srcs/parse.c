@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:29 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/05 06:46:50 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/07 04:54:29 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,8 @@ int		parse_file(t_file *file, t_header *header)
 		return (FAILURE);
 	}
 	get_values(file->cor);
-	if (correct_values(file->cor) == FAILURE)
+	if (correct_arr(file->cor) == FAILURE
+		|| write_infile(file) == FAILURE)
 	{
 		free(file->cor);
 		free_arr((void**)file->lines);
