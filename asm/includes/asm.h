@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 18:58:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/07 07:41:40 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/07 12:20:16 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,29 +38,28 @@
 
 typedef struct	s_cor
 {
-	char	*line;
-	char	*exec;
-	char	*label;
-	t_op	*op;
-	char	*op_str;
 	char	*params[3];
-	int		value[3];
 	char	val[3][4];
-	short	ocp;
+	char	*line;
+	char	*label;
+	char	*op_str;
+	t_op	*op;
+	int		value[3];
 	size_t	size;
 	size_t	inc_size;
+	short	ocp;
 }				t_cor;
 
 typedef struct	s_file
 {
-	int			fd;
-	int			line;
+	t_header	*header;
+	t_cor		*cor;
 	char		**lines;
 	char		*content;
 	char		*name;
+	int			fd;
+	int			line;
 	char		option;
-	t_header	*header;
-	t_cor		*cor;
 }				t_file;
 
 /*
