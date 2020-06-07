@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 05:58:32 by alagache          #+#    #+#             */
-/*   Updated: 2020/06/07 05:42:007 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/07 07:24:53 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "ft_printf.h"
 #include "manage_error.h"
 
-int		swap_bytes_2(int value)
+int		swap_bytes(int value)
 {
 	long tmp;
 
@@ -68,7 +68,7 @@ int		correct_values(t_cor *cor)
 		new_value = correct_value(size, cor->value[param_nb]);
 		if (new_value == FAILURE || (size == 1 && new_value > 99))
 			return (FAILURE);
-		new_value = swap_bytes_2(new_value);
+		new_value = swap_bytes(new_value);
 		ft_memcpy(cor->val[param_nb], &new_value, sizeof(int));
 		param_nb++;
 	}
