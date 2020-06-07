@@ -4,6 +4,7 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AFF_OCP	asm/includes/asm.h	37;"	d
 ALT_COMMENT_CHAR	asm/includes/op.h	36;"	d
 ARG_H	libft/includes/arg.h	14;"	d
 ASM	Makefile	/^ASM = asm\/$/;"	m
@@ -11,7 +12,7 @@ ASM_H	asm/includes/asm.h	14;"	d
 BLUE	asm/Makefile	/^BLUE = "\\\\033[36m"$/;"	m
 BLUE	libft/Makefile	/^BLUE = "\\\\033[36m"$/;"	m
 BLUE	vm/Makefile	/^BLUE = "\\\\033[36m"$/;"	m
-BUFF_SIZE	asm/includes/asm.h	31;"	d
+BUFF_SIZE	asm/includes/asm.h	33;"	d
 BUFF_SIZE	libft/includes/get_next_line.h	16;"	d
 CC	asm/Makefile	/^CC = clang$/;"	m
 CC	libft/Makefile	/^CC= clang$/;"	m
@@ -21,7 +22,7 @@ CFLAGS	libft/Makefile	/^CFLAGS= -Wall -Werror -Wextra$/;"	m
 CFLAGS	vm/Makefile	/^CFLAGS = -Wall -Wextra -Werror$/;"	m
 CHAMP_MAX_SIZE	asm/includes/op.h	33;"	d
 CHAMP_MAX_SIZE	vm/includes/op.h	33;"	d
-COMMENT	asm/includes/asm.h	27;"	d
+COMMENT	asm/includes/asm.h	29;"	d
 COMMENT_CHAR	asm/includes/op.h	35;"	d
 COMMENT_CHAR	vm/includes/op.h	35;"	d
 COMMENT_CMD_STRING	asm/includes/op.h	44;"	d
@@ -40,12 +41,15 @@ DIR_CODE	asm/includes/op.h	26;"	d
 DIR_CODE	vm/includes/op.h	26;"	d
 DIR_SIZE	asm/includes/op.h	23;"	d
 DIR_SIZE	vm/includes/op.h	23;"	d
+EMPTY_ARG	asm/includes/manage_error.h	32;"	d
 ERROR_OPEN	asm/includes/manage_error.h	23;"	d
+ERR_MALLOC	asm/includes/asm.h	21;"	d
+ERR_QUOTES	asm/includes/manage_error.h	29;"	d
 FAILURE	asm/includes/asm.h	20;"	d
 FALSE	libft/includes/libft.h	20;"	d
 FLAGSMAX	libft/includes/arg.h	16;"	d
 FT_PRINTF_H	libft/includes/ft_printf.h	14;"	d
-GARBAGE	asm/includes/asm.h	24;"	d
+GARBAGE	asm/includes/asm.h	25;"	d
 GET_NEXT_LINE_H	libft/includes/get_next_line.h	14;"	d
 GNLHEADER	libft/Makefile	/^GNLHEADER = $(HEADERPATH)\/get_next_line.h$/;"	m
 GNLOBJ	libft/Makefile	/^GNLOBJ= $(addprefix $(OBJDIR)\/gnl\/,$(GNLSRCS:.c=.o))$/;"	m
@@ -61,6 +65,7 @@ IND_CODE	asm/includes/op.h	27;"	d
 IND_CODE	vm/includes/op.h	27;"	d
 IND_SIZE	asm/includes/op.h	21;"	d
 IND_SIZE	vm/includes/op.h	21;"	d
+INVALID_TYPE	asm/includes/manage_error.h	33;"	d
 LABEL_CHAR	asm/includes/op.h	37;"	d
 LABEL_CHAR	vm/includes/op.h	36;"	d
 LABEL_CHARS	asm/includes/op.h	41;"	d
@@ -76,6 +81,8 @@ LIBSRCS	libft/Makefile	/^LIBSRCS = ft_memset.c\\$/;"	m
 LNECLR	asm/Makefile	/^LNECLR = "\\\\33[2K\\\\r"$/;"	m
 LNECLR	libft/Makefile	/^LNECLR = "\\\\33[2K\\\\r"$/;"	m
 LNECLR	vm/Makefile	/^LNECLR = "\\\\33[2K\\\\r"$/;"	m
+LONG_COMMENT	asm/includes/manage_error.h	28;"	d
+LONG_NAME	asm/includes/manage_error.h	27;"	d
 MANAGE_ERROR_H	asm/includes/manage_error.h	14;"	d
 MAX_ARGS_NUMBER	asm/includes/op.h	29;"	d
 MAX_ARGS_NUMBER	vm/includes/op.h	29;"	d
@@ -86,7 +93,7 @@ MAX_PLAYERS	vm/includes/op.h	30;"	d
 MEM_SIZE	asm/includes/op.h	31;"	d
 MEM_SIZE	vm/includes/op.h	31;"	d
 NAME	asm/Makefile	/^NAME = asm$/;"	m
-NAME	asm/includes/asm.h	28;"	d
+NAME	asm/includes/asm.h	30;"	d
 NAME	libft/Makefile	/^NAME= libft.a$/;"	m
 NAME	vm/Makefile	/^NAME = corewar$/;"	m
 NAME_CMD_STRING	asm/includes/op.h	43;"	d
@@ -94,18 +101,20 @@ NAME_CMD_STRING	vm/includes/op.h	42;"	d
 NBR_LIVE	asm/includes/op.h	50;"	d
 NBR_LIVE	vm/includes/op.h	49;"	d
 NB_OF_INSTRUCTION	asm/includes/op.h	92;"	d
-NOT_LABEL	asm/includes/asm.h	29;"	d
-NOT_OP	asm/includes/asm.h	30;"	d
-NO_DOT	asm/includes/asm.h	21;"	d
+NON_EMPTY_LNE	asm/includes/manage_error.h	30;"	d
+NOT_LABEL	asm/includes/asm.h	31;"	d
+NOT_OP	asm/includes/asm.h	32;"	d
+NOT_PARAM	asm/includes/manage_error.h	34;"	d
+NO_DOT	asm/includes/asm.h	22;"	d
 NO_FILE	asm/includes/manage_error.h	22;"	d
-NO_NAME	asm/includes/asm.h	22;"	d
+NO_NAME	asm/includes/asm.h	23;"	d
 OBJDIR	libft/Makefile	/^OBJDIR= obj$/;"	m
 OBJECT	asm/Makefile	/^OBJECT = $(addprefix out\/,$(SRC:.c=.o))$/;"	m
 OBJECT	vm/Makefile	/^OBJECT = $(addprefix out\/,$(SRC:.c=.o))$/;"	m
-OPTION_A	asm/includes/asm.h	26;"	d
+OPTION_A	asm/includes/asm.h	28;"	d
 OP_H	asm/includes/op.h	19;"	d
 OP_H	vm/includes/op.h	19;"	d
-PARAMS_CHAR	asm/includes/asm.h	33;"	d
+PARAMS_CHAR	asm/includes/asm.h	35;"	d
 PRINTFHEADER	libft/Makefile	/^PRINTFHEADER = $(HEADERPATH)\/arg.h $(HEADERPATH)\/ft_printf.h$/;"	m
 PRINTFOBJ	libft/Makefile	/^PRINTFOBJ= $(addprefix $(OBJDIR)\/printf\/,$(PRINTFSRCS:.c=.o))$/;"	m
 PROG_NAME_LENGTH	asm/includes/op.h	68;"	d
@@ -113,7 +122,8 @@ PROG_NAME_LENGTH	vm/includes/op.h	67;"	d
 PURPLE	asm/Makefile	/^PURPLE = "\\\\033[35m"$/;"	m
 PURPLE	libft/Makefile	/^PURPLE = "\\\\033[35m"$/;"	m
 PURPLE	vm/Makefile	/^PURPLE = "\\\\033[35m"$/;"	m
-QUOTES	asm/includes/asm.h	23;"	d
+QUOTES	asm/includes/asm.h	24;"	d
+READ_MALLOC	asm/includes/manage_error.h	25;"	d
 RED	asm/Makefile	/^RED = "\\\\033[31m"$/;"	m
 RED	libft/Makefile	/^RED = "\\\\033[31m"$/;"	m
 RED	vm/Makefile	/^RED = "\\\\033[31m"$/;"	m
@@ -125,13 +135,17 @@ REG_SIZE	asm/includes/op.h	22;"	d
 REG_SIZE	vm/includes/op.h	22;"	d
 SEPARATOR_CHAR	asm/includes/op.h	39;"	d
 SEPARATOR_CHAR	vm/includes/op.h	38;"	d
+SEP_CHARS	asm/includes/asm.h	36;"	d
+SPLIT_MALLOC	asm/includes/manage_error.h	24;"	d
 SRC	asm/Makefile	/^SRC	=	op.c\\$/;"	m
 SRC	vm/Makefile	/^SRC	=	op.c\\$/;"	m
 SRCDIR	libft/Makefile	/^SRCDIR = srcs$/;"	m
 SRCS	asm/Makefile	/^SRCS = $(addprefix srcs\/,$(SRCS))$/;"	m
 SRCS	vm/Makefile	/^SRCS = $(addprefix srcs\/,$(SRCS))$/;"	m
 SUCCESS	asm/includes/asm.h	19;"	d
-TOO_LONG	asm/includes/asm.h	25;"	d
+SYNTAX	asm/includes/manage_error.h	26;"	d
+TOO_LONG_COMMENT	asm/includes/asm.h	27;"	d
+TOO_LONG_NAME	asm/includes/asm.h	26;"	d
 TRUE	libft/includes/libft.h	19;"	d
 T_DIR	asm/includes/op.h	60;"	d
 T_DIR	vm/includes/op.h	59;"	d
@@ -149,7 +163,10 @@ VPATH	libft/Makefile	/^VPATH = $(SRCDIR):$(SRCDIR)\/lib:$(SRCDIR)\/gnl:$(SRCDIR)
 WHITE	asm/Makefile	/^WHITE = "\\\\033[0m"$/;"	m
 WHITE	libft/Makefile	/^WHITE = "\\\\033[0m"$/;"	m
 WHITE	vm/Makefile	/^WHITE = "\\\\033[0m"$/;"	m
-WHITESPACE	asm/includes/asm.h	32;"	d
+WHITESPACE	asm/includes/asm.h	34;"	d
+WRONG_LABEL	asm/includes/manage_error.h	31;"	d
+WRONG_PARAM	asm/includes/manage_error.h	35;"	d
+WS_HEADER	asm/includes/manage_error.h	36;"	d
 add_strings	libft/srcs/printf/float_tools.c	/^void	add_strings(char *dst, char *src, int len)$/;"	f
 apply_d_rounding	libft/srcs/printf/float_tools.c	/^void	apply_d_rounding(t_d_arrs *a_ptr, int prec)$/;"	f
 apply_ld_rounding	libft/srcs/printf/float_tools.c	/^void	apply_ld_rounding(t_ld_arrs *a_ptr, int prec)$/;"	f
@@ -165,7 +182,7 @@ calc_len_string	libft/srcs/printf/string.c	/^int			calc_len_string(t_conv_id *s_
 calc_len_unsigned	libft/srcs/printf/unsigned_tools.c	/^int		calc_len_unsigned(t_conv_id *s_ptr, unsigned long long value)$/;"	f
 carry	asm/includes/op.h	/^	char		carry;$/;"	m	struct:s_op
 carry	vm/includes/op.h	/^	char		carry;$/;"	m	struct:s_op
-check_content	asm/srcs/set_params.c	/^int check_content(t_cor *array, t_cor *cell, int param_nb, int code)$/;"	f
+check_content	asm/srcs/set_params.c	/^int		check_content(t_cor *array, t_cor *cell, int param_nb, int code)$/;"	f
 check_conversion	libft/srcs/printf/ft_dprintf.c	/^int			check_conversion(const char *str)$/;"	f
 check_int_struct	libft/srcs/printf/int_tools.c	/^int		check_int_struct(t_conv_id *ptr)$/;"	f
 check_ocp	asm/srcs/param_tools.c	/^int			check_ocp(t_cor *cor)$/;"	f
@@ -182,6 +199,10 @@ content_size	libft/includes/libft.h	/^	size_t			content_size;$/;"	m	struct:s_lis
 conv	libft/includes/arg.h	/^	char	conv;$/;"	m	struct:s_conv_info
 conv_path	libft/srcs/printf/ft_dprintf.c	/^t_point		conv_path(int fd, const char *fmt, va_list *arg_ptr)$/;"	f
 cor	asm/includes/asm.h	/^	t_cor		*cor;$/;"	m	struct:s_file
+correct_arr	asm/srcs/correct_values.c	/^int		correct_arr(t_cor *cor)$/;"	f
+correct_value	asm/srcs/correct_values.c	/^int		correct_value(int size, int value)$/;"	f
+correct_values	asm/srcs/correct_values.c	/^int		correct_values(t_cor *cor)$/;"	f
+create_fd	asm/srcs/write.c	/^int		create_fd(t_file *file)$/;"	f
 cycle_time	asm/includes/op.h	/^	short		cycle_time;$/;"	m	struct:s_op
 cycle_time	vm/includes/op.h	/^	short		cycle_time;$/;"	m	struct:s_op
 del_comment	asm/srcs/read.c	/^static	void	del_comment(char *str)$/;"	f	file:
@@ -310,18 +331,22 @@ get_next_line	libft/srcs/gnl/get_next_line.c	/^int		get_next_line(int fd, char *
 get_option	asm/srcs/get_params.c	/^static	void	get_option(int ac, char **av, t_file *file)$/;"	f	file:
 get_params	asm/srcs/get_params.c	/^int				get_params(int ac, char **av, t_file *file)$/;"	f
 get_unsigned_value	libft/srcs/printf/unsigned_tools.c	/^void	get_unsigned_value(unsigned long long *val_ptr, va_list *arg_ptr,$/;"	f
+get_value	asm/srcs/get_value.c	/^void	get_value(t_cor *array, t_cor *cell, int param_nb, int code)$/;"	f
+get_values	asm/srcs/get_value.c	/^void	get_values(t_cor *cor)$/;"	f
 handle_parse_error	asm/srcs/parse.c	/^int		handle_parse_error(int ret, t_file *file)$/;"	f
 header	asm/includes/asm.h	/^	t_header	*header;$/;"	m	struct:s_file
+inc_size	asm/includes/asm.h	/^	size_t	inc_size;$/;"	m	struct:s_cor
 init	libft/srcs/gnl/get_next_line.c	/^t_data	*init(int fd, t_list **alst)$/;"	f
-instruction_op_code	asm/includes/op.h	/^	char		instruction_op_code;$/;"	m	struct:s_op
 instruction_op_code	vm/includes/op.h	/^	char		instruction_op_code;$/;"	m	struct:s_op
 int_len	libft/srcs/printf/int_tools.c	/^int		int_len(long long int val)$/;"	f
 is_header_comment	asm/srcs/parse_tools.c	/^int			is_header_comment(char *str)$/;"	f
 is_header_name	asm/srcs/parse_tools.c	/^int			is_header_name(char *str)$/;"	f
 is_label	asm/srcs/parse_op_tool.c	/^int		is_label(char *str)$/;"	f
 is_op	asm/srcs/parse_op_tool.c	/^int		is_op(char *str)$/;"	f
+iter_params	asm/srcs/get_value.c	/^void	iter_params(t_cor *array, t_cor *cell)$/;"	f
 keyword	asm/includes/op.h	/^	char		*keyword;$/;"	m	struct:s_op
 keyword	vm/includes/op.h	/^	char		*keyword;$/;"	m	struct:s_op
+l2	asm/toto.s	/^l2:		sti r99,  1, %2147483648$/;"	l
 label	asm/includes/asm.h	/^	char	*label;$/;"	m	struct:s_cor
 ldouble_exponant	libft/srcs/printf/ldouble_tools.c	/^void	ldouble_exponant(t_s_e_m *dble_ptr, t_ld_arrs *a_ptr)$/;"	f
 ldouble_mantissa	libft/srcs/printf/ldouble_tools.c	/^void	ldouble_mantissa(unsigned long long mant, t_ld_arrs *a_ptr)$/;"	f
@@ -337,6 +362,7 @@ len_modifier_in_struct	libft/srcs/printf/plenmodifier.c	/^int	len_modifier_in_st
 line	asm/includes/asm.h	/^	char	*line;$/;"	m	struct:s_cor
 line	asm/includes/asm.h	/^	int			line;$/;"	m	struct:s_file
 lines	asm/includes/asm.h	/^	char		**lines;$/;"	m	struct:s_file
+live	asm/toto.s	/^live:	live %1$/;"	l
 longd_special_value	libft/srcs/printf/special.c	/^int		longd_special_value(t_s_e_m *dble_ptr)$/;"	f
 loop	libft/srcs/printf/ft_dprintf.c	/^int			loop(int fd, const char *fmt, va_list *arg_ptr, int written)$/;"	f
 m	libft/includes/arg.h	/^	unsigned long long	m;$/;"	m	struct:s_double
@@ -379,6 +405,7 @@ null_string	libft/srcs/printf/string.c	/^int			null_string(t_conv_id *s_ptr)$/;"
 occurrence_of	libft/srcs/lib/ft_occurence_of.c	/^int		occurrence_of(char *str, char c)$/;"	f
 ocp	asm/includes/asm.h	/^	short	ocp;$/;"	m	struct:s_cor
 op	asm/includes/asm.h	/^	t_op	*op;$/;"	m	struct:s_cor
+op_code	asm/includes/op.h	/^	char		op_code;$/;"	m	struct:s_op
 op_str	asm/includes/asm.h	/^	char	*op_str;$/;"	m	struct:s_cor
 option	asm/includes/asm.h	/^	char		option;$/;"	m	struct:s_file
 output	libft/includes/arg.h	/^	char	*output;$/;"	m	struct:s_conv_info
@@ -398,6 +425,7 @@ prog_size	vm/includes/op.h	/^	unsigned int		prog_size;$/;"	m	struct:s_header
 read	libft/includes/arg.h	/^	int	read;$/;"	m	struct:s_point
 read_file	asm/srcs/read.c	/^int				read_file(t_file *file)$/;"	f
 read_until	libft/srcs/gnl/get_next_line.c	/^int		read_until(t_data *current)$/;"	f
+reverse_write	asm/srcs/write.c	/^void	reverse_write(void *to_write, int fd)$/;"	f
 s	libft/includes/arg.h	/^	char				s;$/;"	m	struct:s_double
 s_conv_info	libft/includes/arg.h	/^typedef struct	s_conv_info$/;"	s
 s_cor	asm/includes/asm.h	/^typedef struct	s_cor$/;"	s
@@ -416,15 +444,16 @@ s_point	libft/includes/arg.h	/^typedef struct	s_point$/;"	s
 set_label	asm/srcs/set_label_op_params.c	/^void	set_label(t_cor *cor)$/;"	f
 set_label_op	asm/srcs/set_label_op_params.c	/^int		set_label_op(t_cor *cor)$/;"	f
 set_op	asm/srcs/set_label_op_params.c	/^int		set_op(t_cor *cor)$/;"	f
-set_param	asm/srcs/set_params.c	/^int set_param(t_cor *array, t_cor *cell)$/;"	f
-set_params	asm/srcs/set_params.c	/^int set_params(t_cor *cor)$/;"	f
+set_param	asm/srcs/set_params.c	/^int		set_param(t_cor *array, t_cor *cell)$/;"	f
+set_params	asm/srcs/set_params.c	/^int		set_params(t_cor *cor, t_header *header)$/;"	f
 set_params_str	asm/srcs/set_label_op_params.c	/^int		set_params_str(t_cor *cor)$/;"	f
-set_size	asm/srcs/set_params.c	/^int	set_size(t_cor *cor)$/;"	f
+set_sizes	asm/srcs/set_params.c	/^int		set_sizes(t_cor *cor)$/;"	f
 size	asm/includes/asm.h	/^	size_t	size;$/;"	m	struct:s_cor
 special_value	libft/srcs/printf/special_tools.c	/^void	special_value(t_s_e_m *dble_ptr, t_conv_id *s_ptr, int len)$/;"	f
 split_content	asm/srcs/read.c	/^static	int		split_content(t_file *file)$/;"	f	file:
 str	libft/includes/arg.h	/^	char				*str;$/;"	m	struct:s_double
 str_fill_char	libft/srcs/printf/global_tools.c	/^int	str_fill_char(char *str, char c, int len)$/;"	f
+swap_bytes	asm/srcs/correct_values.c	/^int		swap_bytes(int value)$/;"	f
 t_2list	libft/includes/libft.h	/^}				t_2list;$/;"	t	typeref:struct:s_double_linked_list
 t_arg_type	asm/includes/op.h	/^typedef char	t_arg_type;$/;"	t
 t_arg_type	vm/includes/op.h	/^typedef char	t_arg_type;$/;"	t
@@ -451,15 +480,22 @@ total	libft/includes/arg.h	/^	char	*total;$/;"	m	struct:s_long_double_arrs
 type_arr	asm/includes/op.h	/^	t_arg_type	type_arr[3];$/;"	m	struct:s_op
 type_arr	vm/includes/op.h	/^	t_arg_type	type_arr[3];$/;"	m	struct:s_op
 unsigned_len_base	libft/srcs/printf/global_tools.c	/^int	unsigned_len_base(unsigned long long val, unsigned base)$/;"	f
+val	asm/includes/asm.h	/^	char	val[3][4];$/;"	m	struct:s_cor
 valid_line	asm/srcs/parse_op_tool.c	/^int		valid_line(char *str)$/;"	f
 value	asm/includes/asm.h	/^	int		value[3];$/;"	m	struct:s_cor
+what_size	asm/srcs/correct_values.c	/^int		what_size(char direct_size, short ocp, int param_nb)$/;"	f
 what_type	asm/srcs/param_tools.c	/^static int	what_type(char *str)$/;"	f	file:
 whitespace	asm/srcs/parse_tools.c	/^int			whitespace(char *str, int len)$/;"	f
 whitespace_header	asm/srcs/parse.c	/^int		whitespace_header(t_file *file)$/;"	f
 width	libft/includes/arg.h	/^	int		width;$/;"	m	struct:s_conv_info
 width	libft/srcs/printf/pwidth.c	/^int		width(char *ptr, int end, t_conv_id *struct_ptr)$/;"	f
 width_in_struct	libft/srcs/printf/pwidth.c	/^void	width_in_struct(char c, t_conv_id *struct_ptr)$/;"	f
+write_file	asm/srcs/write_file.c	/^int	write_file(t_file *file)$/;"	f
+write_header	asm/srcs/write.c	/^void	write_header(t_header *header, int fd)$/;"	f
+write_infile	asm/srcs/write.c	/^int		write_infile(t_file *file)$/;"	f
+write_instruction	asm/srcs/write.c	/^void	write_instruction(t_cor *cor, int fd)$/;"	f
 written	libft/includes/arg.h	/^	int	written;$/;"	m	struct:s_point
+wrong_param_content	asm/srcs/set_params.c	/^void	wrong_param_content(t_cor *cell, int iterator)$/;"	f
 wrong_parameter	asm/srcs/param_tools.c	/^static void	wrong_parameter(int nb, char param_code, char *str)$/;"	f	file:
 zero_flag_double	libft/srcs/printf/double.c	/^void	zero_flag_double(t_d_arrs *a_ptr, t_conv_id *s_ptr, t_s_e_m *dble_ptr,$/;"	f
 zero_flag_hexa	libft/srcs/printf/hexa.c	/^void	zero_flag_hexa(t_conv_id *s_ptr, int len, unsigned long long nb)$/;"	f

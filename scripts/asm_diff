@@ -1,0 +1,37 @@
+#! /bin/bash
+
+BLUE="\\033[36m"
+RED="\\033[31m"
+WHITE="\\033[0m"
+GREEN="\\033[32m"
+PURPLE="\\033[35m"
+
+read -e -p "What file should be tested ?" FILE;
+read -e -p "Path to original ASM ? (./...)" ASM;
+read -e -p "Path to your ASM ? (./...)" TO_TEST;
+
+SUFFIX=".cor"
+STR=${FILE/%.s};
+echo $STR;
+FILE2="$STR$SUFFIX";
+
+OUTPUT1="asm.out";
+OUTPUT2="test.out";
+OUTPUTDIFF="output.diff"
+
+$ASM $FILE 
+hexdump -C $FILE2 > $OUTPUT1;
+$TO_TEST $FILE
+hexdump -C $FILE2 > $OUTPUT2;
+
+diff $OUTPUT1 $OUTPUT2 > $OUTPUTDIFF;
+
+if [[ $? -eq 0 ]]
+then
+	printf "$GREEN NO DIFF FOUND WELL DONE\n$WHITE";
+	rm $OUTPUTDIFF
+else
+	printf "$RED SAD A DIFF WAS FOUND\n$WHITE";
+fi
+
+rm $OUTPUT1 $OUTPUT2
