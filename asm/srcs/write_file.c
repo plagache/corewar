@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   asm.c                                              :+:      :+:    :+:   */
+/*   write_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/25 18:51:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/07 07:41:22 by alagache         ###   ########.fr       */
+/*   Created: 2020/06/07 07:36:27 by alagache          #+#    #+#             */
+/*   Updated: 2020/06/07 07:41:54 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 #include "asm.h"
 #include "libft.h"
 
-int		main(int ac, char **av)
+int	write_file(t_file *file)
 {
-	t_header	header;
-	t_file		file;
-
-	if (get_params(ac, av, &file) == FAILURE)
-		return (EXIT_FAILURE);
-	if (read_file(&file) == FAILURE)
-		return (EXIT_FAILURE);
-	if (parse_file(&file, &header) == FAILURE)
-		return (EXIT_FAILURE);
-	if (write_file(&file) == FAILURE)
-		return (EXIT_FAILURE);
-	return (EXIT_SUCCESS);
+	if (correct_arr(file->cor) == FAILURE
+		|| write_infile(file) == FAILURE)
+	{
+		free(file->cor);
+		free_arr((void**)file->lines);
+		free(file->content);
+		return (FAILURE);
+	}
+	free(file->cor);
+	free_arr((void**)file->lines);
+	free(file->content);
+	return (SUCCESS);
 }

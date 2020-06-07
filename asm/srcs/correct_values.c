@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 05:58:32 by alagache          #+#    #+#             */
-/*   Updated: 2020/06/07 07:24:53 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/07 07:46:20 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int		swap_bytes(int value)
 	tmp = value;
 	tmp = ((tmp & 0x0000ffff) << 16) | ((tmp & 0xffff0000) >> 16);
 	tmp = (tmp & 0xffff0000) | ((tmp & 0x000000ff) << 8)
-		| ((tmp & 0x0000ff00) >> 8);
-	tmp =((tmp & 0xff000000) >> 8) | ((tmp & 0x00ff0000) << 8)
-		| (tmp & 0x0000ffff);
+			| ((tmp & 0x0000ff00) >> 8);
+	tmp = ((tmp & 0xff000000) >> 8) | ((tmp & 0x00ff0000) << 8)
+			| (tmp & 0x0000ffff);
 	value = tmp;
 	return (value);
 }
@@ -75,7 +75,7 @@ int		correct_values(t_cor *cor)
 	return (SUCCESS);
 }
 
-int	correct_arr(t_cor *cor)
+int		correct_arr(t_cor *cor)
 {
 	int iterator;
 

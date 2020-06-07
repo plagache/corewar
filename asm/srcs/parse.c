@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:29 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/07 04:54:29 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/07 07:43:22 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int		whitespace_header(t_file *file)
 		if (is_header_name(file->lines[iterator]) == SUCCESS
 			|| is_header_comment(file->lines[iterator]) == SUCCESS)
 			iterator++;
-		else if (whitespace(file->lines[iterator], ft_strlen(file->lines[iterator]))
+		else if (whitespace(file->lines[iterator],
+					ft_strlen(file->lines[iterator]))
 			== FAILURE)
 		{
 			ft_dprintf(STDERR_FILENO, WS_HEADER, file->lines[iterator]);
@@ -110,16 +111,5 @@ int		parse_file(t_file *file, t_header *header)
 		return (FAILURE);
 	}
 	get_values(file->cor);
-	if (correct_arr(file->cor) == FAILURE
-		|| write_infile(file) == FAILURE)
-	{
-		free(file->cor);
-		free_arr((void**)file->lines);
-		free(file->content);
-		return (FAILURE);
-	}
-	free(file->cor);
-	free_arr((void**)file->lines);
-	free(file->content);
 	return (SUCCESS);
 }

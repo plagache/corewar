@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_params.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agache <alagache@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/02 18:59:44 by alagache          #+#    #+#             */
-/*   Updated: 2020/06/02 19:39:09 by alagache         ###   ########.fr       */
+/*   Created: 2020/06/07 07:32:07 by alagache          #+#    #+#             */
+/*   Updated: 2020/06/07 07:34:08 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 #include "ft_printf.h"
 #include "manage_error.h"
 
-int check_content(t_cor *array, t_cor *cell, int param_nb, int code)
+int		check_content(t_cor *array, t_cor *cell, int param_nb, int code)
 {
-	int		iterator;
-	int 	iter_arr;
+	int	iterator;
+	int iter_arr;
 
 	iterator = (code == DIR_CODE || code == REG_CODE ? 1 : 0);
 	if (cell->params[param_nb][iterator] != LABEL_CHAR)
@@ -51,10 +51,7 @@ void	wrong_param_content(t_cor *cell, int iterator)
 				cell->op->keyword);
 }
 
-//iterate over nbr_arg parameter,
-//	//call check_content to check validity of param content
-//	//get_value of param
-int set_param(t_cor *array, t_cor *cell)
+int		set_param(t_cor *array, t_cor *cell)
 {
 	int iterator;
 	int code;
@@ -72,7 +69,7 @@ int set_param(t_cor *array, t_cor *cell)
 	return (SUCCESS);
 }
 
-int	set_sizes(t_cor *cor)
+int		set_sizes(t_cor *cor)
 {
 	int size;
 	int	iterator;
@@ -95,10 +92,7 @@ int	set_sizes(t_cor *cor)
 	return (SUCCESS);
 }
 
-//iterate over cor array and set param values according to OCP
-//reg are followed only by numbers
-//direct and indirect are only numbers or label
-int set_params(t_cor *cor, t_header *header)
+int		set_params(t_cor *cor, t_header *header)
 {
 	int iterator;
 
@@ -111,7 +105,7 @@ int set_params(t_cor *cor, t_header *header)
 			if (set_param(cor, cor + iterator) == FAILURE)
 				return (FAILURE);
 		}
-		(cor + iterator)->inc_size = (cor == (cor + iterator) ? 0:
+		(cor + iterator)->inc_size = (cor == (cor + iterator) ? 0 :
 			(cor + iterator - 1)->inc_size + (cor + iterator - 1)->size);
 	}
 	header->prog_size = (cor + iterator - 1)->inc_size

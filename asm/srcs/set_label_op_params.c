@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/01 16:33:31 by alagache          #+#    #+#             */
-/*   Updated: 2020/06/03 23:06:57 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/07 07:34:36 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,8 +99,8 @@ int		set_params_str(t_cor *cor)
 	while (++iterator <= cor->op->nbr_arg)
 		*(cor->params[iterator - 1] - 1) = '\0';
 	if (clean_params(cor) == FAILURE
-		||gen_ocp(cor) == FAILURE
-		||check_ocp(cor) == FAILURE)
+		|| gen_ocp(cor) == FAILURE
+		|| check_ocp(cor) == FAILURE)
 		return (FAILURE);
 	return (SUCCESS);
 }

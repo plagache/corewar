@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:24 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/07 07:09:58 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/07 07:31:13 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 #include "ft_printf.h"
 #include "manage_error.h"
 
-//0) fd = open("path.cor", O_TRUNC);
 /*
-get_name strip ".s" and add "cor" to create the output  filename
+** get_name strip ".s" and add "cor" to create the output  filename
 */
+
 int		create_fd(t_file *file)
 {
 	int	fd;
@@ -33,15 +33,15 @@ int		create_fd(t_file *file)
 	return (fd);
 }
 
-void	reverse_write(void *to_write, size_t size, int fd)
+void	reverse_write(void *to_write, int fd)
 {
 	char	arr[4];
 	int		iterator;
 
 	iterator = -1;
-	while (++iterator < (int)size)
+	while (++iterator < 4)
 		arr[iterator] = ((char*)to_write)[3 - iterator];
-	write(fd, &arr, size);
+	write(fd, &arr, 4);
 }
 
 void	write_header(t_header *header, int fd)
@@ -49,19 +49,21 @@ void	write_header(t_header *header, int fd)
 	unsigned int	padding;
 
 	padding = 0;
-	reverse_write(&(header->magic), sizeof(header->magic), fd);
+	reverse_write(&(header->magic), fd);
 	write(fd, &(header->prog_name), PROG_NAME_LENGTH);
-	reverse_write(&padding, sizeof(padding), fd);
-	reverse_write(&(header->prog_size), sizeof(header->prog_size), fd);
+	reverse_write(&padding, fd);
+	reverse_write(&(header->prog_size), fd);
 	write(fd, &(header->comment), COMMENT_LENGTH);
-	reverse_write(&padding, sizeof(padding), fd);
+	reverse_write(&padding, fd);
 }
+
 /*
-2) write isntructions:
-char	instruction[1 + 1 + 4 + 4 + 4] = 14
-param(s)
-write (fd, &instruction, op->size);
+** 2) write isntructions:
+** char	instruction[1 + 1 + 4 + 4 + 4] = 14
+** param(s)
+** write (fd, &instruction, op->size);
 */
+
 void	write_instruction(t_cor *cor, int fd)
 {
 	char	instruction[14];
@@ -85,14 +87,13 @@ void	write_instruction(t_cor *cor, int fd)
 	write(fd, &instruction, cor->size);
 }
 
-int	write_infile(t_file *file)
+int		write_infile(t_file *file)
 {
 	int	fd;
 	int	iterator;
 
 	if ((fd = create_fd(file)) == FAILURE)
 		return (FAILURE);
-	//return (FAILURE);
 	write_header(file->header, fd);
 	iterator = -1;
 	while ((file->cor + (++iterator))->line != NULL)
@@ -103,8 +104,3 @@ int	write_infile(t_file *file)
 	close(fd);
 	return (SUCCESS);
 }
-/*
-**
-2) close_fd;
-**
-*/

@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:24:10 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/03 01:47:06 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/07 07:45:21 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int				get_params(int ac, char **av, t_file *file)
 {
 	if (ac == 1)
 	{
-		ft_dprintf(STDERR_FILENO ,"Usage: ./asm [-a] <sourcefile.s>\n	-a : "
+		ft_dprintf(STDERR_FILENO, "Usage: ./asm [-a] <sourcefile.s>\n	-a : "
 			"Instead ofcreating a .cor file, outputs a stripped and annotated "
 			"version of the code to the standard output\n");
 		return (FAILURE);
