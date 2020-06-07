@@ -1,22 +1,10 @@
-to do :
+#ASM
 
-read file.s
-check file
-2 first line
-name comment (and sizes)
+Assembler is done,
+only a few changes to make it perfect:
+- parse header using a substr ('\n' can be founs inside name or comment)
+- create output filename uising input filename
 
-line by line
-instruction param1, param2... (REG, ...)
+#VM
 
-and transform instruction in bytecode
-OP_CODE OCP(optional) CODED_PARAMS
-
-Exec:
-NAME
-COMMENT
-
-Bytcode
-
-an executable files has a header wich is PROG_NAME_LENGTH (128) and COMMENT_LENGHT (2048)
-
-VM : ne prend que le instructions possibles
+Work in progress
