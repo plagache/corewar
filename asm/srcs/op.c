@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   op.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plagache <plagache@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:43:01 by zaz               #+#    #+#             */
-/*   Updated: 2020/05/29 19:50:12 by plagache         ###   ########.fr       */
+/*   Updated: 2020/06/08 16:50:39 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "op.h"
+#include "asm.h"
 
 t_op	g_op_tab[NB_OF_INSTRUCTION + 1] =
 {

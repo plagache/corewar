@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 09:12:48 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/03 22:45:43 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/08 17:05:28 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,20 @@ static	void	del_comment(char *str)
 
 static	int		split_content(t_file *file)
 {
-	file->lines = ft_strsplit(file->content, '\n');
+	char	*quote;
+	size_t	len;
+
+	if ((quote = ft_strrchr(file->content, '"')) == NULL)
+		return (FAILURE);
+	len = quote - file->content + 1;
+	file->header_str = ft_strsub(file->content, 0, len);
+	if (file->header_str == NULL)
+		return (FAILURE);
+	file->lines = ft_strsplit(file->content + len, '\n');
 	if (file->lines == NULL)
 	{
 		ft_printf(SPLIT_MALLOC);
+		free(file->header_str);
 		return (FAILURE);
 	}
 	return (SUCCESS);

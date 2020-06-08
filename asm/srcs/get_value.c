@@ -6,14 +6,12 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/03 19:19:45 by alagache          #+#    #+#             */
-/*   Updated: 2020/06/07 07:44:42 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/08 16:59:19 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "op.h"
 #include "asm.h"
 #include "libft.h"
-#include "ft_printf.h"
 
 void	get_value(t_cor *array, t_cor *cell, int param_nb, int code)
 {

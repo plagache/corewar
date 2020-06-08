@@ -6,14 +6,13 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 18:51:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/07 07:41:22 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/08 16:55:08 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "op.h"
 #include "asm.h"
-#include "libft.h"
 
 int		main(int ac, char **av)
 {

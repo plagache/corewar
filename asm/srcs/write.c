@@ -6,18 +6,16 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:24 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/08 11:27:40 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/08 17:03:38 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
-#include "op.h"
 #include "asm.h"
 #include "libft.h"
 #include "ft_printf.h"
-#include "manage_error.h"
 
 /*
 ** get_name strip ".s" and add "cor" to create the output  filename

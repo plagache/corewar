@@ -6,13 +6,12 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 10:29:19 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/03 22:52:28 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/08 17:05:48 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "asm.h"
-#include "op.h"
 
 int			whitespace(char *str, int len)
 {
@@ -81,14 +80,13 @@ int			is_header_comment(char *str)
 	return (SUCCESS);
 }
 
-void		fill_header(char *str, t_file *file, int code, int line)
+void		fill_header(char *str, t_file *file, int code)
 {
 	char	*quote1;
 	char	*quote2;
 
 	quote1 = ft_strchr(str, '"');
 	quote2 = ft_strchr(quote1 + 1, '"');
-	file->line = line;
 	if (code == NAME)
 		ft_strncpy(file->header->prog_name, quote1 + 1, (quote2 - 1) - quote1);
 	else

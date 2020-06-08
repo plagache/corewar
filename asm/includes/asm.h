@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 18:58:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/08 11:27:10 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/08 16:53:07 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,30 @@
 # define NAME 2
 # define NOT_LABEL -2
 # define NOT_OP -2
+
 # define BUFF_SIZE 4096
 # define WHITESPACE " \t"
 # define PARAMS_CHAR "abcdefghijklmnopqrstuvwxyz_0123456789:%-"
 # define SEP_CHARS "% ,"
 # define OUTPUT_STR "Writing output program to %s\n"
 # define AFF_OCP 40
+
+# define NB_OF_INSTRUCTION 16
+# define ALT_COMMENT_CHAR	';'
+
+typedef struct	s_op
+{
+	char		*keyword;
+	char		nbr_arg;
+	t_arg_type	type_arr[3];
+	char		op_code;
+	short		cycle_time;
+	char		*name_description;
+	char		carry;
+	char		direct_size;
+}				t_op;
+
+extern t_op	g_op_tab[NB_OF_INSTRUCTION + 1];
 
 typedef struct	s_cor
 {
@@ -57,10 +75,11 @@ typedef struct	s_file
 	t_cor		*cor;
 	char		**lines;
 	char		*content;
+	char		*header_str;
 	char		*name;
 	char		*file_name;
+	size_t		len_header;
 	int			fd;
-	int			line;
 	char		option;
 }				t_file;
 
@@ -82,7 +101,7 @@ int				read_file(t_file *file);
 
 int				parse_file(t_file *file, t_header *header);
 int				whitespace(char *str, int len);
-void			fill_header(char *str, t_file *file, int code, int line);
+void			fill_header(char *str, t_file *file, int code);
 int				is_header_name(char *str);
 int				is_header_comment(char *str);
 int				parse_op(t_file *file);

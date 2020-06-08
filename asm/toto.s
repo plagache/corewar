@@ -1,6 +1,16 @@
-.name "toto"
-.comment "BEST TEST FILE FOR ASM"
- 	
+
+
+
+	    .name "toto"    
+
+
+
+
+.comment "BEST TEST FILE FOR 
+
+
+ASM"
+
 live %42
 ld %42, r1
 ld 41, r2

@@ -6,13 +6,12 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 18:19:12 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/03 23:29:03 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/08 17:01:39 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
-#include "op.h"
 #include "asm.h"
 #include "ft_printf.h"
 #include "manage_error.h"
@@ -80,7 +79,7 @@ void	fill_cor(t_file *file, int counter)
 	int		iterator;
 	int		cor_iter;
 
-	iterator = file->line + 1;
+	iterator = 0;
 	cor_iter = 0;
 	while (counter > cor_iter && file->lines[iterator] != NULL)
 	{
@@ -98,7 +97,7 @@ int		parse_op(t_file *file)
 	int	iterator;
 	int counter;
 
-	iterator = file->line + 1;
+	iterator = 0;
 	counter = 0;
 	while (file->lines[iterator] != NULL)
 	{

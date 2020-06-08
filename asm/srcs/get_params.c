@@ -6,14 +6,13 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:24:10 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/07 07:45:21 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/08 16:58:48 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 #include <unistd.h>
 #include "asm.h"
-#include "op.h"
 #include "ft_printf.h"
 #include "libft.h"
 #include "manage_error.h"

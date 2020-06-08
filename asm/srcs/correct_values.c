@@ -6,16 +6,12 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 05:58:32 by alagache          #+#    #+#             */
-/*   Updated: 2020/06/07 07:46:20 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/08 16:56:24 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "op.h"
 #include "asm.h"
 #include "libft.h"
-#include "ft_printf.h"
-#include "manage_error.h"
 
 int		swap_bytes(int value)
 {

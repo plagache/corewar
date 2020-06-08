@@ -6,12 +6,11 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/07 07:36:27 by alagache          #+#    #+#             */
-/*   Updated: 2020/06/07 07:41:54 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/08 17:02:03 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "op.h"
 #include "asm.h"
 #include "libft.h"
 
@@ -23,10 +22,12 @@ int	write_file(t_file *file)
 		free(file->cor);
 		free_arr((void**)file->lines);
 		free(file->content);
+		free(file->header_str);
 		return (FAILURE);
 	}
-	free(file->cor);
 	free_arr((void**)file->lines);
 	free(file->content);
+	free(file->header_str);
+	free(file->cor);
 	return (SUCCESS);
 }
