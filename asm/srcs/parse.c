@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:29 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/07 07:43:22 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/08 10:55:59 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,7 @@ int		handle_parse_error(int ret, t_file *file)
 }
 
 /*
-** lexer parser
 ** !!\n in header
-** 1.9) overflows || max reg value
-** 2) write
 */
 
 int		parse_file(t_file *file, t_header *header)

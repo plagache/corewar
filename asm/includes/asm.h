@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 18:58:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/07 12:20:16 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/08 11:27:10 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 # define WHITESPACE " \t"
 # define PARAMS_CHAR "abcdefghijklmnopqrstuvwxyz_0123456789:%-"
 # define SEP_CHARS "% ,"
+# define OUTPUT_STR "Writing output program to %s\n"
 # define AFF_OCP 40
 
 typedef struct	s_cor
@@ -57,6 +58,7 @@ typedef struct	s_file
 	char		**lines;
 	char		*content;
 	char		*name;
+	char		*file_name;
 	int			fd;
 	int			line;
 	char		option;

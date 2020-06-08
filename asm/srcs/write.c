@@ -6,12 +6,13 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:24 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/07 07:31:13 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/08 11:27:40 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <fcntl.h>
+#include <stdlib.h>
 #include "op.h"
 #include "asm.h"
 #include "libft.h"
@@ -24,12 +25,26 @@
 
 int		create_fd(t_file *file)
 {
-	int	fd;
+	int		fd;
+	size_t	len;
 
-	(void)file;
-	fd = open("toto.cor", O_CREAT | O_TRUNC | O_WRONLY, S_IRWXU | S_IRWXG);
+	file->file_name = ".cor";
+	len = ft_strlen(file->name);
+	if (file->name[len - 1] == 's' && file->name[len - 2] == '.')
+	{
+		file->file_name = ft_strnew(len + 2);
+		if (file->file_name == NULL)
+			return (FAILURE);
+		ft_strncpy(file->file_name, file->name, len - 2);
+		ft_strcpy(file->file_name + len - 2, ".cor");
+	}
+	fd = open(file->file_name, O_CREAT | O_TRUNC | O_WRONLY,
+			S_IRWXU | S_IRWXG | S_IRWXO);
 	if (fd == -1)
 		return (FAILURE);
+	ft_printf(OUTPUT_STR, file->file_name);
+	if (file->name[len - 1] == 's' && file->name[len - 2] == '.')
+		free(file->file_name);
 	return (fd);
 }
 
