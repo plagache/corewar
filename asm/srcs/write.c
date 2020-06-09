@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:24 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/08 17:03:38 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/09 14:38:43 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int		create_fd(t_file *file)
 	int		fd;
 	size_t	len;
 
-	file->file_name = ".cor";
 	len = ft_strlen(file->name);
 	if (file->name[len - 1] == 's' && file->name[len - 2] == '.')
 	{
@@ -36,13 +35,14 @@ int		create_fd(t_file *file)
 		ft_strncpy(file->file_name, file->name, len - 2);
 		ft_strcpy(file->file_name + len - 2, ".cor");
 	}
+	else if ((file->file_name = ft_strjoin(file->name, ".cor")) == NULL)
+		return (FAILURE);
 	fd = open(file->file_name, O_CREAT | O_TRUNC | O_WRONLY,
 			S_IRWXU | S_IRWXG | S_IRWXO);
 	if (fd == -1)
 		return (FAILURE);
 	ft_printf(OUTPUT_STR, file->file_name);
-	if (file->name[len - 1] == 's' && file->name[len - 2] == '.')
-		free(file->file_name);
+	free(file->file_name);
 	return (fd);
 }
 

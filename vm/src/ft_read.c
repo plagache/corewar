@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_read.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agardina <agardina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/03 15:33:50 by agardina          #+#    #+#             */
-/*   Updated: 2020/06/03 15:33:51 by agardina         ###   ########.fr       */
+/*   Updated: 2020/06/09 12:52:06 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "prototypes.h"
 
+//if data->vm.dump == 3;
 void			ft_read(int ac, char **av, t_data *data)
 {
 	uint32_t i;

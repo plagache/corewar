@@ -11,6 +11,7 @@ SRC_FILES = announce_players.c \
 				delete_carriage.c \
 				do_cycles.c \
 				do_ope.c \
+				dump.c \
 				free_data.c \
 				ft_read.c \
 				get_flags.c \
@@ -64,7 +65,7 @@ INCLUDES += -I $(LIB_INC)
 all: $(OBJ_DIR) $(NAME)
 
 $(NAME): $(LIB) $(OBJ)
-	@$(CC) $(CFLAGS) $(INCLUDES) $(LIB_FLAGS) $(OBJ) -o $@
+	@$(CC) $(CFLAGS) $(INCLUDES) $(OBJ) -o $@ $(LIB_FLAGS)
 	@echo "\n\033[1m\033[3m$(NAME)\033[0m [\033[32mOK\033[0m]"
 
 $(LIB): FORCE

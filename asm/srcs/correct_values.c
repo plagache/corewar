@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 05:58:32 by alagache          #+#    #+#             */
-/*   Updated: 2020/06/08 16:56:24 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/09 14:41:31 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int		correct_values(t_cor *cor)
 		else
 			size = cor->size - 1 - (cor->op->op_code == 16 ? 1 : 0);
 		new_value = correct_value(size, cor->value[param_nb]);
-		if (new_value == FAILURE || (size == 1 && new_value > 99))
+		if (size == 1 && new_value > 99)
 			return (FAILURE);
 		new_value = swap_bytes(new_value);
 		ft_memcpy(cor->val[param_nb], &new_value, sizeof(int));

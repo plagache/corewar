@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agardina <agardina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 10:42:03 by agardina          #+#    #+#             */
-/*   Updated: 2020/06/02 10:42:04 by agardina         ###   ########.fr       */
+/*   Updated: 2020/06/09 13:46:38 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,5 +114,11 @@ int32_t		op_lld(t_data *data, t_carriage *current);
 int32_t		op_lldi(t_data *data, t_carriage *current);
 int32_t		op_lfork(t_data *data, t_carriage *current);
 int32_t		op_aff(t_data *data, t_carriage *current);
+
+/*
+**	Dump
+*/
+
+void		dump_memory(t_data *data);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   defines.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agardina <agardina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 15:39:36 by agardina          #+#    #+#             */
-/*   Updated: 2020/06/08 15:39:38 by agardina         ###   ########.fr       */
+/*   Updated: 2020/06/09 12:52:00 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,8 @@
 
 # define SMALL_DIR	2
 # define BIG_DIR	4
+
+# define D_FLAG		1
+# define DUMP_FLAG	2
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 09:12:48 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/08 17:05:28 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/09 14:52:06 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ static	int		split_content(t_file *file)
 	char	*quote;
 	size_t	len;
 
-	if ((quote = ft_strrchr(file->content, '"')) == NULL)
+	if ((quote = ft_strrchr(file->content, '"')) == NULL
+		|| (quote = ft_strchr(quote, '\n')) == NULL)
 		return (FAILURE);
 	len = quote - file->content + 1;
 	file->header_str = ft_strsub(file->content, 0, len);

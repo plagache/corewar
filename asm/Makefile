@@ -23,10 +23,15 @@ LIBDIR = ../libft
 
 LIBA = $(LIBDIR)/libft.a
 
-CFLAGS = -Wall -Wextra -Werror
-CFLAGS += -g -fsanitize=address,undefined -fno-omit-frame-pointer
-#CFLAGS += -g -fsanitize=thread,undefined 
-#CFLAGS += -g -fsanitize=memory,undefined
+INC_FLAG = -I includes
+INC_FLAG += -I $(LIBDIR)/includes
+
+LIB_FLAG = -L $(LIBDIR) -lft
+
+CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS += -fsanitize=address,undefined -fno-omit-frame-pointer
+#CFLAGS += -fsanitize=thread,undefined 
+#CFLAGS += -fsanitize=memory,undefined
 
 CC = clang
 #CC = gcc
@@ -43,13 +48,15 @@ all: $(NAME)
 
 $(NAME): $(OBJECT)
 	make -s -C $(LIBDIR)
-	$(CC) $(CFLAGS) -I includes -I $(LIBDIR)/includes -o $(NAME) $(OBJECT) $(LIBA)
+#	$(CC) $(CFLAGS) -I includes -I $(LIBDIR)/includes -o $(NAME) $(OBJECT) $(LIBA)
+	$(CC) $(CFLAGS) $(INC_FLAG) -o $(NAME) $(OBJECT) $(LIB_FLAG)
 	printf "$(LNECLR)$(GREEN)make asm done$(WHITE)\n"
 
 out/%.o: srcs/%.c includes/asm.h includes/op.h includes/manage_error.h
 	mkdir -p out
 	printf "$(LNECLR)$(NAME): $<"
-	$(CC) $(CFLAGS) -I includes -I $(LIBDIR)/includes -o $@ -c $<
+#	$(CC) $(CFLAGS) -I includes -I $(LIBDIR)/includes -o $@ -c $<
+	$(CC) $(CFLAGS) $(INC_FLAG) -o $@ -c $<
 
 clean:
 	$(RM) -rf out
