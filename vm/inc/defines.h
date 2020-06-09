@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 15:39:36 by agardina          #+#    #+#             */
-/*   Updated: 2020/06/09 12:52:00 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/09 17:44:02 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,10 @@
 
 # define D_FLAG		1
 # define DUMP_FLAG	2
+
+# define FAILURE 	-1
+# define SUCCESS 	0
+
+# define NBR_CHARSET	"+-123456789"
 
 #endif

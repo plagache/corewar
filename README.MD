@@ -8,6 +8,5 @@ only a few changes to make it perfect:
 #VM
 
 Work in progress
-- option parse (-d/--dump), and usage
-- make dump function work for negative values
-- champions name can be ".cor" (when asm recieve a file wihtout .s extension)
+- option parse (-d/-dump/-n), and usage
+- champions name can be anything
