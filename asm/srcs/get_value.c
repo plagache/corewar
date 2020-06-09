@@ -6,14 +6,14 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/03 19:19:45 by alagache          #+#    #+#             */
-/*   Updated: 2020/06/08 16:59:19 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/09 23:06:24 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 #include "libft.h"
 
-void	get_value(t_cor *array, t_cor *cell, int param_nb, int code)
+static void	get_value(t_cor *array, t_cor *cell, int param_nb, int code)
 {
 	int	iterator;
 	int iter_arr;
@@ -37,7 +37,7 @@ void	get_value(t_cor *array, t_cor *cell, int param_nb, int code)
 	}
 }
 
-void	iter_params(t_cor *array, t_cor *cell)
+static void	iter_params(t_cor *array, t_cor *cell)
 {
 	int iterator;
 	int code;
@@ -50,7 +50,7 @@ void	iter_params(t_cor *array, t_cor *cell)
 	}
 }
 
-void	get_values(t_cor *cor)
+void		get_values(t_cor *cor)
 {
 	int iterator;
 

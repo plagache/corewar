@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 18:19:12 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/08 17:01:39 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/09 23:03:17 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ft_printf.h"
 #include "manage_error.h"
 
-int		is_op(char *str)
+static int	is_op(char *str)
 {
 	int		iterator;
 	int		found;
@@ -43,7 +43,7 @@ int		is_op(char *str)
 	return (SUCCESS);
 }
 
-int		is_label(char *str)
+static int	is_label(char *str)
 {
 	char *colon;
 
@@ -58,7 +58,7 @@ int		is_label(char *str)
 	return (NOT_LABEL);
 }
 
-int		valid_line(char *str)
+static int	valid_line(char *str)
 {
 	int		ret_label;
 	int		ret_op;
@@ -74,7 +74,7 @@ int		valid_line(char *str)
 	return (FAILURE);
 }
 
-void	fill_cor(t_file *file, int counter)
+static void	fill_cor(t_file *file, int counter)
 {
 	int		iterator;
 	int		cor_iter;
@@ -92,7 +92,7 @@ void	fill_cor(t_file *file, int counter)
 	}
 }
 
-int		parse_op(t_file *file)
+int			parse_op(t_file *file)
 {
 	int	iterator;
 	int counter;

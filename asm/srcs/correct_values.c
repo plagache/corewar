@@ -6,14 +6,14 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 05:58:32 by alagache          #+#    #+#             */
-/*   Updated: 2020/06/09 14:41:31 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/09 23:07:33 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 #include "libft.h"
 
-int		swap_bytes(int value)
+static int	swap_bytes(int value)
 {
 	long tmp;
 
@@ -27,7 +27,7 @@ int		swap_bytes(int value)
 	return (value);
 }
 
-int		what_size(char direct_size, short ocp, int param_nb)
+int			what_size(char direct_size, short ocp, int param_nb)
 {
 	if ((((ocp << (2 * param_nb)) >> 6) & 0b11) == REG_CODE)
 		return (1);
@@ -38,7 +38,7 @@ int		what_size(char direct_size, short ocp, int param_nb)
 	return (FAILURE);
 }
 
-int		correct_value(int size, int value)
+static int	correct_value(int size, int value)
 {
 	if (size == 2)
 		return ((short)value);
@@ -47,7 +47,7 @@ int		correct_value(int size, int value)
 	return (value);
 }
 
-int		correct_values(t_cor *cor)
+static int	correct_values(t_cor *cor)
 {
 	int size;
 	int param_nb;
@@ -71,7 +71,7 @@ int		correct_values(t_cor *cor)
 	return (SUCCESS);
 }
 
-int		correct_arr(t_cor *cor)
+int			correct_arr(t_cor *cor)
 {
 	int iterator;
 

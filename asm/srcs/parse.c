@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:29 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/08 17:00:42 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/09 23:01:10 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "ft_printf.h"
 #include "manage_error.h"
 
-void	split_header(t_file *file)
+static void	split_header(t_file *file)
 {
 	int	iterator;
 
@@ -36,7 +36,7 @@ void	split_header(t_file *file)
 	}
 }
 
-int		whitespace_header(t_file *file)
+static int	whitespace_header(t_file *file)
 {
 	int		iterator;
 	int		ret;
@@ -60,7 +60,7 @@ int		whitespace_header(t_file *file)
 	return (SUCCESS);
 }
 
-int		parse_header(t_file *file)
+static int	parse_header(t_file *file)
 {
 	int iterator;
 	int ret;
@@ -87,7 +87,7 @@ int		parse_header(t_file *file)
 	return (SUCCESS);
 }
 
-int		handle_parse_error(int ret, t_file *file)
+static int	handle_parse_error(int ret, t_file *file)
 {
 	if (ret == SUCCESS)
 		return (SUCCESS);
@@ -105,11 +105,7 @@ int		handle_parse_error(int ret, t_file *file)
 	return (FAILURE);
 }
 
-/*
-** !!\n in header
-*/
-
-int		parse_file(t_file *file, t_header *header)
+int			parse_file(t_file *file, t_header *header)
 {
 	ft_memset(header, '\0', sizeof(t_header));
 	file->header = header;
