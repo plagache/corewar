@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/09 13:29:21 by alagache          #+#    #+#             */
-/*   Updated: 2020/06/09 16:23:29 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/10 09:49:35 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	print_line(size_t address, char mem[64], size_t size)
 
 	iterator = -1;
 	if (address == 0)
-		printf("0x");
-	printf("%#.4x : ", (unsigned int)address);
+		ft_printf("0x");
+	ft_printf("%#.4x : ", (unsigned int)address);
 	while (++iterator < (int)size)
-			printf("%.2x ", (unsigned char)mem[iterator]);
-	printf("\n");
+			ft_printf("%.2x ", (unsigned char)mem[iterator]);
+	ft_printf("\n");
 }
 
 void	dump_on(size_t size, uint8_t arena[MEM_SIZE])

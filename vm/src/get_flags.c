@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/03 15:33:57 by agardina          #+#    #+#             */
-/*   Updated: 2020/06/09 17:44:03 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/10 17:45:23 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,15 @@ int			set_d_flag(int ac, char **av, t_data *data, uint32_t *i)
 	//	FAILURE USAGE
 	//get cycle to dump and set dump flag
 	//block both arguments
+	char	*arg;
+
+	arg = av[*i + 1];
 	if (*i < (uint32_t)ac - 1
-		&& ft_ischarset(NBR_CHARSET, av[*i + 1], ft_strlen(av[*i + 1])) == TRUE)
+		&& ft_ischarset(NBR_CHARSET, arg, ft_strlen(arg)) == TRUE)
 	{
-		data->vm.cycle_to_dump = ft_atoi(av[*i + 1]);
+		data->vm.cycle_to_dump = ft_atoi(arg);
 		data->vm.dump ^= D_FLAG;
-		av[*i][0] = '\0';
-		av[*i + 1][0] = '\0';
-		(*i)++;
+		(*i) += 2;
 	}
 	//print_error/usage
 	return (FAILURE);
@@ -34,14 +35,15 @@ int			set_d_flag(int ac, char **av, t_data *data, uint32_t *i)
 
 int			set_dump_flag(int ac, char **av, t_data *data, uint32_t *i)
 {
+	char	*arg;
+
+	arg = av[*i + 1];
 	if (*i < (uint32_t)ac - 1
-		&& ft_ischarset(NBR_CHARSET, av[*i + 1], ft_strlen(av[*i + 1])) == TRUE)
+		&& ft_ischarset(NBR_CHARSET, arg, ft_strlen(arg)) == TRUE)
 	{
-		data->vm.cycle_to_dump = ft_atoi(av[*i + 1]);
+		data->vm.cycle_to_dump = ft_atoi(arg);
 		data->vm.dump ^= DUMP_FLAG;
-		av[*i][0] = '\0';
-		av[*i + 1][0] = '\0';
-		(*i)++;
+		(*i) += 2;
 	}
 	//print_error/usage
 	return (FAILURE);
@@ -51,17 +53,17 @@ int			set_dump_flag(int ac, char **av, t_data *data, uint32_t *i)
 //-dump [nbr] should be 32
 //-n [nbr] follows by player number
 //add flags to usage
-//unambiguous player name -n -d -dump are not acepted
+//ambiguous player name -n -d -dump are not accepted
 //flag always followd by number
-int		get_flags(int ac, char **av, t_data *data, uint32_t *i)
+void		get_flags(int ac, char **av, t_data *data, uint32_t *i)
 {
 	while (*i < (uint32_t)ac)
 	{
 		if (ft_strequ(av[*i], "-d") && set_d_flag(ac, av, data, i) == FAILURE)
-			return (FAILURE);
+			deal_error(data, NO_NBR_ARGUMENT, USAGE);
 		else if (ft_strequ(av[*i], "-dump")
 				&& set_dump_flag(ac, av, data, i) == FAILURE)
-			return (FAILURE);
+			deal_error(data, NO_NBR_ARGUMENT, USAGE);
 		else
 			break ;
 		(*i)++;

@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 10:42:03 by agardina          #+#    #+#             */
-/*   Updated: 2020/06/09 13:46:38 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/10 17:03:57 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdint.h>
+# include <limits.h>
 # include "libft.h"
+# include "ft_printf.h"
 # include "op.h"
 # include "structs.h"
 # include "defines.h"
@@ -44,7 +46,7 @@ void		get_players(int ac, char **av, t_data *data, uint32_t *i);
 ** Error management
 */
 
-void		deal_error(t_data *data, char *to_display);
+void		deal_error(t_data *data, char *to_display, int code);
 
 /*
 ** Delete / free

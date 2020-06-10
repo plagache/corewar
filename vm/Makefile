@@ -54,7 +54,7 @@ INC_FILES = defines.h \
 				structs.h
 INC = $(addprefix $(INC_DIR), $(INC_FILES))
 
-LIB_DIR = libft/
+LIB_DIR = ../libft/
 LIB = $(LIB_DIR)libft.a
 LIB_INC = $(LIB_DIR)includes/
 LIB_FLAGS = -L $(LIB_DIR) -lft

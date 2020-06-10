@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/03 15:34:24 by agardina          #+#    #+#             */
-/*   Updated: 2020/06/09 17:44:05 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/10 17:52:33 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ static void	init_vm(t_data *data)
 
 void		init_data(t_data *data)
 {
-	ft_bzero(data, sizeof(*data));
 	init_vm(data);
 }
