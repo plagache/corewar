@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/03 15:34:11 by agardina          #+#    #+#             */
-/*   Updated: 2020/06/10 10:03:49 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/11 12:21:44 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ static int	check_num_arg(t_data *data, char *str)
 
 	arg_num = ft_atol(str);
 	if (arg_num < INT_MIN || INT_MAX < arg_num)
-		deal_error(data, "", NO_USAGE);
+		deal_error(data, INT_BOUND, NO_USAGE);
 	return ((int)arg_num);
-		deal_error(data, "", NO_USAGE);
+	//	deal_error(data, "", NO_USAGE);
 }
 
 static int	check_player_num(t_data *data, uint32_t player_num,

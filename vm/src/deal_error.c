@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/03 15:33:37 by agardina          #+#    #+#             */
-/*   Updated: 2020/06/10 18:33:12 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/11 17:19:50 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	print_usage(void)
 	ft_printf("\t%s%s\n", SEPARATOR, SEPARATOR);
 	ft_printf("\t#        %s         #\n", PARENTHESIS);
 	ft_printf("\t%s%s\n", SEPARATOR, SEPARATOR);
-	ft_printf("\t# %s    #\n", DUMP_USAGE);
+	ft_printf("\t# %s   #\n", DUMP_USAGE);
 	ft_printf("\t# %s       #\n", DUMP_USAGE2);
 	ft_printf("\t# %s #\n", NBR_USAGE);
 	ft_printf("\t%s%s\n", SEPARATOR, SEPARATOR);

@@ -2,7 +2,9 @@ NAME = corewar
 
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
-CFLAGS += -Wpadded -fsanitize=address,undefined -g3
+#CFLAGS += -Wpadded -fsanitize=address,undefined -g3
+#CFLAGS += -Wpadded -fsanitize=thread,undefined -g3
+#CFLAGS += -Wpadded -fsanitize=memory,undefined -g3
 
 SRC_DIR = src/
 SRC_FILES = announce_players.c \

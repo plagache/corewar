@@ -1,0 +1,20 @@
+#! /bin/sh
+
+echo "TEST0 
+./test error_code_big.cor"
+./test error_code_big.cor
+echo "TEST1
+./test error_code_size.cor"
+./test error_code_size.cor
+echo "TEST2
+./test error_code_small.cor"
+./test error_code_small.cor
+echo "TEST3
+./test errour_magic.cor"
+./test errour_magic.cor
+echo "TEST4
+./test error_padding1.cor"
+./test error_padding1.cor
+echo "TEST5
+./test error_padding2.cor"
+./test error_padding2.cor
