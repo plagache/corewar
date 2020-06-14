@@ -15,6 +15,7 @@ SRC_FILES = announce_players.c \
 				ft_read.c \
 				get_flags.c \
 				get_player_info.c \
+				get_player_info_utils.c \
 				get_player_num.c \
 				get_players.c \
 				init_data.c \
@@ -24,21 +25,15 @@ SRC_FILES = announce_players.c \
 				prepare_carriages.c \
 				store_arg.c \
 				utils.c \
-				operations/op_add.c \
+				operations/op_add_sub.c \
 				operations/op_aff.c \
-				operations/op_and.c \
-				operations/op_fork.c \
-				operations/op_ld.c \
-				operations/op_ldi.c \
-				operations/op_lfork.c \
+				operations/op_and_or_xor.c \
+				operations/op_fork_lfork.c \
+				operations/op_ld_lld.c \
+				operations/op_ldi_lldi.c \
 				operations/op_live.c \
-				operations/op_lld.c \
-				operations/op_lldi.c \
-				operations/op_or.c \
 				operations/op_st.c \
 				operations/op_sti.c \
-				operations/op_sub.c \
-				operations/op_xor.c \
 				operations/op_zjmp.c
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 
