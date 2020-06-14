@@ -12,30 +12,31 @@
 
 #include "prototypes.h"
 
-t_bool	check_ocp(t_data *data, t_carriage *current, t_op *op)
+t_bool	check_ocp(t_data *data, t_carriage *current, t_ope *op)
 {
 	int8_t	pair;
 	int8_t	i;
-	int8_t	mask;
+	int32_t	mask;
 	t_bool	ret;
 
 	i = 0;
 	mask = 0xC0;
 	ret = true;
+	op->nb_arg_stored = 0;
 	while (i < op->nb_arg)
 	{
 		pair = (op->ocp & mask) >> ((3 - i) * 2);
-		if (pair != REG_CODE || pair != DIR_CODE || pair != IND_CODE)
+		if (pair != REG_CODE && pair != DIR_CODE && pair != IND_CODE)
 			return (false);
 		ret = (ret == false) ? false : store_arg(data, current, op, pair);
 		op->nb_arg_stored++;
 		i++;
-		mask = mask >> 2;
+		mask >>= 2;
 	}
 	return (ret);
 }
 
-void	get_ocp(t_data *data, t_carriage *current, t_op *op)
+void	get_ocp(t_data *data, t_carriage *current, t_ope *op)
 {
 	current->bytes_to_jump += 1;
 	op->ocp = (int8_t)get_from_ram(data, current->pos + 1, 1);

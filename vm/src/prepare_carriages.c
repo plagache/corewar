@@ -12,7 +12,7 @@
 
 #include "prototypes.h"
 
-static void	add_head_carriage(t_data *data)
+void		add_head_carriage(t_data *data)
 {
 	t_carriage	*new;
 
@@ -25,6 +25,7 @@ static void	add_head_carriage(t_data *data)
 		new->next = data->carriages;
 	}
 	data->carriages = new;
+	data->vm.nb_process += 1;
 }
 
 static void	init_carriage(t_data *data, uint32_t num, uint32_t nb_carriages)

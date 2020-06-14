@@ -17,7 +17,7 @@
 typedef struct s_player		t_player;
 typedef struct s_carriage	t_carriage;
 typedef struct s_data		t_data;
-typedef struct s_op			t_op;
+typedef struct s_op			t_ope;
 typedef struct s_vm			t_vm;
 typedef enum e_bool			t_bool;
 
@@ -55,6 +55,7 @@ struct						s_carriage
 struct						s_vm
 {
 	uint8_t					arena[MEM_SIZE];
+	uint32_t				nb_process;
 	int						nb_cycles;
 	int						cycles_since_last_check;
 	int						last_player_live;
@@ -69,19 +70,18 @@ struct						s_vm
 struct						s_op
 {
 	int32_t					arg[3];
-	uint8_t					code;
 	int8_t					ocp;
 	uint8_t					nb_arg;
 	int8_t					dir_size;
 	int8_t					nb_arg_stored;
-	char					padding[3];
+	t_bool					idx_mod;
+	char					padding[4];
 };
 
 struct						s_data
 {
 	t_vm					vm;
 	t_player				players[MAX_PLAYERS];
-	char					padding[4];
 	t_carriage				*carriages;
 };
 

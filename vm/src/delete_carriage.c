@@ -25,6 +25,7 @@ static t_carriage	*delete_head(t_data *data, t_carriage *head)
 	else
 	{
 		new_head = head->next;
+		new_head->previous = NULL;
 		free(head);
 		data->carriages = new_head;
 	}
@@ -42,6 +43,7 @@ void				delete_all_carriages(t_data *data)
 		tmp = current->next;
 		free(current);
 		current = tmp;
+		data->vm.nb_process -= 1;
 	}
 	data->carriages = NULL;
 }
@@ -52,11 +54,13 @@ t_carriage			*delete_one_carriage(t_data *data, t_carriage *current)
 
 	if (!current)
 		return (NULL);
+	data->vm.nb_process -= 1;
 	if (current == data->carriages)
 		return (delete_head(data, current));
 	new_current = current->next;
+	current->previous->next = new_current;
 	if (current->next)
-		current->next->previous = current->previous;
+		new_current->previous = current->previous;
 	free(current);
 	return (new_current);
 }

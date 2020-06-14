@@ -20,6 +20,8 @@ int32_t	op_zjmp(t_data *data, t_carriage *current)
 	if (current->carry == 0)
 		return (-1);
 	shift = get_from_ram(data, current->pos + 1, 2);
+	shift %= IDX_MOD;
 	current->pos = get_pos(current->pos + shift);
+	current->bytes_to_jump = 0;
 	return (0);
 }

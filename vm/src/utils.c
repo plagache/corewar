@@ -16,6 +16,18 @@
 ** A faire : fonction write_in_ram
 */
 
+void		write_in_ram(t_data *data, int32_t start, int32_t nb)
+{
+	int32_t i;
+
+	i = 0;
+	while (i < 4)
+	{
+		data->vm.arena[get_pos(start + i)] = (nb >> ((3 - i) * 8)) & 0xFF;
+		i++;
+	}
+}
+
 int32_t		get_pos(int32_t res)
 {
 	if (res < 0)

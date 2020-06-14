@@ -34,5 +34,6 @@ int32_t		op_live(t_data *data, t_carriage *current)
 		if (data->players[arg - 1].num != 0)
 			declare_live(data, arg);
 	}
+	current->bytes_to_jump += 4;
 	return (0);
 }

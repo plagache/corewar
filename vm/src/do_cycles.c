@@ -37,7 +37,7 @@ static void	do_check(t_data *data)
 	data->vm.cycles_since_last_check = 0;
 }
 
-static void	set_op_code(t_carriage *current, int32_t opcode)
+static void	set_ope_code(t_carriage *current, int32_t opcode)
 {
 	static const int	waiting_time[16] = {10, 5, 5, 10, 10, 6, 6, 6, 20,
 	25, 25, 800, 10, 50, 1000, 2};
@@ -59,13 +59,14 @@ static void	do_current_cycle(t_data *data, t_carriage *current)
 {
 	int32_t opcode;
 
-	opcode = data->vm.arena[current->pos];
+	opcode = get_from_ram(data, current->pos, 1);
 	if (current->cycles_to_wait < 0)
-		set_op_code(current, opcode);
+		set_ope_code(current, opcode);
 	if (current->cycles_to_wait == 0)
 	{
 		if (0x01 <= opcode && opcode <= 0x0b)
 		{
+			current->bytes_to_jump = 1;
 			do_ope(opcode, data, current);
 			current->pos = get_pos(current->pos + current->bytes_to_jump);
 			current->bytes_to_jump = 0;
@@ -83,14 +84,16 @@ void		do_cycles(t_data *data)
 	{
 		current = data->carriages;
 		data->vm.nb_cycles++;
-		data->vm.cycles_since_last_check++;
 		while (current)
 		{
 			current->cycles_to_wait--;
 			do_current_cycle(data, current);
 			current = current->next;
 		}
-		if (data->vm.cycles_since_last_check == data->vm.cycle_to_die)
+		if (data->vm.cycles_since_last_check == data->vm.cycle_to_die ||
+			data->vm.cycle_to_die <= 0)
 			do_check(data);
+		else
+			data->vm.cycles_since_last_check++;
 	}
 }

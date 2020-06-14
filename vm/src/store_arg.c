@@ -12,46 +12,28 @@
 
 #include "prototypes.h"
 
-static int32_t	store_direct(t_data *data, t_carriage *current, t_op *op)
+static int32_t	store_direct(t_data *data, t_carriage *current, t_ope *op)
 {
-	int8_t		i;
 	uint32_t	to_store;
-	uint8_t		byte;
 
-	i = 0;
-	to_store = 0;
-	while (i < op->dir_size)
-	{
-		to_store = to_store << 8;
-		byte = get_from_ram(data, current->pos + current->bytes_to_jump + i, op->dir_size);
-		to_store += byte;
-		i++;
-	}
+	to_store = get_from_ram(data, current->pos + current->bytes_to_jump,
+			op->dir_size);
 	return ((int32_t)to_store);
 }
 
 static int32_t	store_indirect(t_data *data, t_carriage *current)
 {
-	int8_t		i;
 	uint32_t	to_store;
-	uint8_t		byte;
-	int32_t		address;
+	int16_t		address;
 
-	i = 0;
 	to_store = 0;
 	address = get_from_ram(data, current->pos + current->bytes_to_jump, 2);
 	address = address % IDX_MOD;
-	while (i < 2)
-	{
-		to_store = to_store << 8;
-		byte = get_from_ram(data, current->pos + current->bytes_to_jump + i, 1);
-		to_store += byte;
-		i++;
-	}
+	to_store = get_from_ram(data, current->pos + address, 4);
 	return ((int32_t)to_store);
 }
 
-t_bool			store_arg(t_data *data, t_carriage *current, t_op *op,
+t_bool			store_arg(t_data *data, t_carriage *current, t_ope *op,
 	int8_t arg_type)
 {
 	t_bool	ret;
@@ -60,19 +42,19 @@ t_bool			store_arg(t_data *data, t_carriage *current, t_op *op,
 	ret = true;
 	if (arg_type == REG_CODE)
 	{
-		current->bytes_to_jump += 1;
 		to_store = get_from_ram(data, current->pos + current->bytes_to_jump, 1);
+		current->bytes_to_jump += 1;
 		ret = (1 <= to_store && to_store <= 16);
 	}
 	else if (arg_type == DIR_CODE)
 	{
-		current->bytes_to_jump += op->dir_size;
 		to_store = store_direct(data, current, op);
+		current->bytes_to_jump += op->dir_size;
 	}
 	else
 	{
-		current->bytes_to_jump += 2;
 		to_store = store_indirect(data, current);
+		current->bytes_to_jump += 2;
 	}
 	op->arg[op->nb_arg_stored] = to_store;
 	return (ret);
