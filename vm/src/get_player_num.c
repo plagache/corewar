@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_player_num.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agardina <agardina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/03 15:34:11 by agardina          #+#    #+#             */
-/*   Updated: 2020/06/03 15:34:12 by agardina         ###   ########.fr       */
+/*   Updated: 2020/06/15 12:47:09 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	check_num_arg(t_data *data, char *str)
 
 	arg_num = ft_atol(str);
 	if (arg_num < INT_MIN || INT_MAX < arg_num)
-		deal_error(data, "");
+		deal_error(data, INT_BOUND, NO_USAGE);
 	return ((int)arg_num);
 }
 
@@ -57,7 +57,7 @@ uint32_t	get_player_num(char **av, t_data *data, uint32_t *i)
 		else
 			player_num = check_num_arg(data, av[*i] + 2);
 		if (player_num < 1 || MAX_PLAYERS < player_num)
-			deal_error(data, PLAYER_NUM_ERR);
+			deal_error(data, PLAYER_NUM_ERR, NO_USAGE);
 		(*i)++;
 		num_chosen_by_user = true;
 	}

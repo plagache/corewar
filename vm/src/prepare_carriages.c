@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prepare_carriages.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agardina <agardina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/03 15:34:34 by agardina          #+#    #+#             */
-/*   Updated: 2020/06/03 15:34:35 by agardina         ###   ########.fr       */
+/*   Updated: 2020/06/15 12:50:16 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		add_head_carriage(t_data *data)
 	t_carriage	*new;
 
 	if (!(new = (t_carriage*)malloc(sizeof(t_carriage))))
-		deal_error(data, "");
+		deal_error(data, "", NO_USAGE);
 	ft_bzero(new, sizeof(t_carriage));
 	if (data->carriages)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agardina <agardina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 10:42:03 by agardina          #+#    #+#             */
-/*   Updated: 2020/06/02 10:42:04 by agardina         ###   ########.fr       */
+/*   Updated: 2020/06/15 13:03:28 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdint.h>
+# include <limits.h>
 # include "libft.h"
+# include "ft_printf.h"
 # include "op.h"
 # include "structs.h"
 # include "defines.h"
@@ -46,7 +48,7 @@ void		skip_null_bytes(t_data *data, uint32_t fd);
 ** Error management
 */
 
-void		deal_error(t_data *data, char *to_display);
+void		deal_error(t_data *data, char *to_display, int code);
 
 /*
 ** Carriages
@@ -68,6 +70,12 @@ void		free_data(t_data *data);
 
 void		do_cycles(t_data *data);
 int32_t		do_ope(int32_t opcode, t_data *data, t_carriage *current);
+
+/*
+** Dump
+*/
+
+void		dump_memory(t_data *data);
 
 /*
 ** Preparation

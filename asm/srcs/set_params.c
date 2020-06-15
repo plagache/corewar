@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/07 07:32:07 by alagache          #+#    #+#             */
-/*   Updated: 2020/06/08 17:04:18 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/09 23:05:47 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ft_printf.h"
 #include "manage_error.h"
 
-int		check_content(t_cor *array, t_cor *cell, int param_nb, int code)
+static int	check_content(t_cor *array, t_cor *cell, int param_nb, int code)
 {
 	int	iterator;
 	int iter_arr;
@@ -44,13 +44,13 @@ int		check_content(t_cor *array, t_cor *cell, int param_nb, int code)
 	return (FAILURE);
 }
 
-void	wrong_param_content(t_cor *cell, int iterator)
+static void	wrong_param_content(t_cor *cell, int iterator)
 {
 	ft_dprintf(STDERR_FILENO, WRONG_PARAM, iterator + 1, cell->params[iterator],
 				cell->op->keyword);
 }
 
-int		set_param(t_cor *array, t_cor *cell)
+static int	set_param(t_cor *array, t_cor *cell)
 {
 	int iterator;
 	int code;
@@ -68,7 +68,7 @@ int		set_param(t_cor *array, t_cor *cell)
 	return (SUCCESS);
 }
 
-int		set_sizes(t_cor *cor)
+static int	set_sizes(t_cor *cor)
 {
 	int size;
 	int	iterator;
@@ -91,7 +91,7 @@ int		set_sizes(t_cor *cor)
 	return (SUCCESS);
 }
 
-int		set_params(t_cor *cor, t_header *header)
+int			set_params(t_cor *cor, t_header *header)
 {
 	int iterator;
 

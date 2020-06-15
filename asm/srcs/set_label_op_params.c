@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/01 16:33:31 by alagache          #+#    #+#             */
-/*   Updated: 2020/06/08 17:04:54 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/09 23:04:37 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ft_printf.h"
 #include "manage_error.h"
 
-void	set_label(t_cor *cor)
+static void	set_label(t_cor *cor)
 {
 	char *ptr;
 
@@ -29,7 +29,7 @@ void	set_label(t_cor *cor)
 	}
 }
 
-int		set_op(t_cor *cor)
+static int	set_op(t_cor *cor)
 {
 	int		iterator;
 	int		found;
@@ -57,7 +57,7 @@ int		set_op(t_cor *cor)
 	return (SUCCESS);
 }
 
-int		clean_params(t_cor *cor)
+static int	clean_params(t_cor *cor)
 {
 	int	iterator;
 	int	jterator;
@@ -81,7 +81,7 @@ int		clean_params(t_cor *cor)
 	return (SUCCESS);
 }
 
-int		set_params_str(t_cor *cor)
+static int	set_params_str(t_cor *cor)
 {
 	int	iterator;
 
@@ -104,7 +104,7 @@ int		set_params_str(t_cor *cor)
 	return (SUCCESS);
 }
 
-int		set_label_op(t_cor *cor)
+int			set_label_op(t_cor *cor)
 {
 	int	iterator;
 

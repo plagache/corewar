@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   do_cycles.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agardina <agardina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/04 12:35:30 by agardina          #+#    #+#             */
-/*   Updated: 2020/06/04 12:35:31 by agardina         ###   ########.fr       */
+/*   Updated: 2020/06/15 12:55:17 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,8 @@ void		do_cycles(t_data *data)
 			do_check(data);
 		else
 			data->vm.cycles_since_last_check++;
+		if (data->vm.dump != 0 && data->vm.cycle_to_dump
+			== data->vm.nb_cycles - 1)
+			dump_memory(data);
 	}
 }

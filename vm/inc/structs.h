@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agardina <agardina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 10:26:55 by agardina          #+#    #+#             */
-/*   Updated: 2020/06/02 10:38:32 by agardina         ###   ########.fr       */
+/*   Updated: 2020/06/15 13:01:18 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ struct						s_vm
 	int						cycle_to_die;
 	int						nb_checks;
 	int						dump;
+	int						cycle_to_dump;
 	uint8_t					nb_players;
 	char					padding[7];
 };
@@ -82,6 +83,7 @@ struct						s_data
 {
 	t_vm					vm;
 	t_player				players[MAX_PLAYERS];
+	char					padding[4];
 	t_carriage				*carriages;
 };
 

@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 18:58:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/08 16:53:07 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/09 23:29:18 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@
 # define PARAMS_CHAR "abcdefghijklmnopqrstuvwxyz_0123456789:%-"
 # define SEP_CHARS "% ,"
 # define OUTPUT_STR "Writing output program to %s\n"
-# define AFF_OCP 40
+# define AFF_OCP 64
 
 # define NB_OF_INSTRUCTION 16
 # define ALT_COMMENT_CHAR	';'
