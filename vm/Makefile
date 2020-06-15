@@ -61,34 +61,37 @@ INCLUDES += -I $(LIB_INC)
 all: $(OBJ_DIR) $(NAME)
 
 #LIB_FLAGS on linux are after objects to compile
+#This next line is mac compliation
+#	$(CC) $(CFLAGS) $(INCLUDES) $(OBJ) $(LIB_FLAGS) -o $@
 $(NAME): $(LIB) $(OBJ)
-	@$(CC) $(CFLAGS) $(INCLUDES) $(OBJ) -o $@ $(LIB_FLAGS)
-	@echo "\n\033[1m\033[3m$(NAME)\033[0m [\033[32mOK\033[0m]"
+	$(CC) $(CFLAGS) $(INCLUDES) $(OBJ) -o $@ $(LIB_FLAGS)
+	echo "\n\033[1m\033[3m$(NAME)\033[0m [\033[32mOK\033[0m]"
 
 $(LIB): FORCE
-	@make -C $(LIB_DIR)
+	$(MAKE) -C $(LIB_DIR)
 
 $(OBJ_DIR):
-	@mkdir $@
-	@mkdir $@/operations
+	mkdir $@
+	mkdir $@/operations
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INC)
-	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-	@echo "$@ [\033[32mOK\033[0m]"
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	echo "$@ [\033[32mOK\033[0m]"
 
 clean:
-	@make -C $(LIB_DIR) clean
-	@rm -rf $(OBJ_DIR)
+	$(MAKE) -C $(LIB_DIR) clean
+	rm -rf $(OBJ_DIR)
 
 fclean:
-	@make -C $(LIB_DIR) fclean
-	@$(MAKE) clean
-	@rm -rf $(NAME)
+	make -C $(LIB_DIR) fclean
+	$(MAKE) clean
+	rm -rf $(NAME)
 
 re:
-	@$(MAKE) fclean
-	@$(MAKE) all
+	$(MAKE) fclean
+	$(MAKE) all
 
 FORCE:
 
 .PHONY: all clean fclean re FORCE
+.SILENT:
