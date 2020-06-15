@@ -13,6 +13,7 @@ SRC	=	op.c\
 		get_value.c\
 		correct_values.c\
 		write.c\
+		print_stdout.c\
 		write_file.c\
 
 SRCS = $(addprefix srcs/,$(SRCS))

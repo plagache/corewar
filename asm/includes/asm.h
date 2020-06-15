@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 18:58:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/09 23:29:18 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/15 15:36:34 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,9 +114,11 @@ void			get_values(t_cor *cor);
 /*
 ** WRITE
 */
-int				write_file(t_file *file);
+
+int				write_to(t_file *file);
 int				what_size(char direct_size, short ocp, int param_nb);
 int				correct_arr(t_cor *cor);
 int				write_infile(t_file *file);
+int				print_stdout(t_file *file);
 
 #endif

@@ -10,12 +10,13 @@
 
 
 ASM"
-
-live %42
-ld %42, r1
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaalive:
+live %:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaalive
+ld %255, r1
 ld 41, r2
 st r2, 42
 st r2, r1
+add:
 add r1, r2, r3
 sub r1, r2, r3
 and r1 , r2, r3
@@ -58,5 +59,5 @@ lldi 1, r2, r3
 lldi 1, %2, r3
 lldi %1, r2, r3
 lldi %1, %2, r3
-lfork %42
+lfork %:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaalive
 aff r1
