@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 18:51:51 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/09 14:31:43 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/15 15:15:14 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		main(int ac, char **av)
 		return (EXIT_FAILURE);
 	if (parse_file(&file, &header) == FAILURE)
 		return (EXIT_FAILURE);
-	if (write_file(&file) == FAILURE)
+	if (write_to(&file) == FAILURE)
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
 }
