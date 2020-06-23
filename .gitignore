@@ -1,5 +1,4 @@
 *.[oa]
-asm/out
 asm/asm
-vm/out
 vm/corewar
+disassemble/disassembler

@@ -5,52 +5,67 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 AFF_OCP	asm/includes/asm.h	39;"	d
+AFF_USAGE	vm/inc/defines.h	32;"	d
 ALT_COMMENT_CHAR	asm/includes/asm.h	42;"	d
 ARG_H	libft/includes/arg.h	14;"	d
 ASM	Makefile	/^ASM = asm\/$/;"	m
 ASM_H	asm/includes/asm.h	14;"	d
-BAD_FILE_NAME	vm/inc/defines.h	39;"	d
-BIG_DIR	vm/inc/defines.h	59;"	d
+BAD_FILE_NAME	vm/inc/defines.h	48;"	d
+BIG_DIR	vm/inc/defines.h	69;"	d
 BLUE	asm/Makefile	/^BLUE = "\\\\033[36m"$/;"	m
 BLUE	libft/Makefile	/^BLUE = "\\\\033[36m"$/;"	m
 BUFF_SIZE	asm/includes/asm.h	34;"	d
+BUFF_SIZE	disassemble/libft/includes/get_next_line.h	19;"	d
 BUFF_SIZE	libft/includes/get_next_line.h	16;"	d
-BUFF_SIZE	vm/libft/includes/get_next_line.h	22;"	d
 CC	asm/Makefile	/^CC = clang$/;"	m
+CC	disassemble/Makefile	/^CC			=		gcc$/;"	m
+CC	disassemble/libft/Makefile	/^CC			=		gcc$/;"	m
 CC	libft/Makefile	/^CC= clang$/;"	m
 CC	vm/Makefile	/^CC = clang$/;"	m
-CC	vm/libft/Makefile	/^CC = gcc$/;"	m
 CFLAGS	asm/Makefile	/^CFLAGS = -Wall -Wextra -Werror -g3$/;"	m
+CFLAGS	disassemble/Makefile	/^CFLAGS		=		-Wall -Wextra -Werror$/;"	m
 CFLAGS	libft/Makefile	/^CFLAGS= -Wall -Werror -Wextra$/;"	m
 CFLAGS	vm/Makefile	/^CFLAGS = -Wall -Wextra -Werror$/;"	m
-CFLAGS	vm/libft/Makefile	/^CFLAGS = -Wall -Wextra -Werror$/;"	m
 CHAMP_MAX_SIZE	asm/includes/op.h	35;"	d
+CHAMP_MAX_SIZE	disassemble/include/op.h	33;"	d
 CHAMP_MAX_SIZE	vm/inc/op.h	50;"	d
-CODE_SIZE	vm/inc/defines.h	40;"	d
+CODE_SIZE	vm/inc/defines.h	49;"	d
 COMMENT	asm/includes/asm.h	29;"	d
 COMMENT_CHAR	asm/includes/op.h	37;"	d
+COMMENT_CHAR	disassemble/include/op.h	35;"	d
 COMMENT_CHAR	vm/inc/op.h	52;"	d
 COMMENT_CMD_STRING	asm/includes/op.h	45;"	d
+COMMENT_CMD_STRING	disassemble/include/op.h	43;"	d
 COMMENT_CMD_STRING	vm/inc/op.h	60;"	d
 COMMENT_LENGTH	asm/includes/op.h	70;"	d
+COMMENT_LENGTH	disassemble/include/op.h	60;"	d
 COMMENT_LENGTH	vm/inc/op.h	77;"	d
 COREWAR_EXEC_MAGIC	asm/includes/op.h	71;"	d
+COREWAR_EXEC_MAGIC	disassemble/include/op.h	61;"	d
 COREWAR_EXEC_MAGIC	vm/inc/op.h	78;"	d
 CYCLE_DELTA	asm/includes/op.h	50;"	d
+CYCLE_DELTA	disassemble/include/op.h	48;"	d
 CYCLE_DELTA	vm/inc/op.h	65;"	d
 CYCLE_TO_DIE	asm/includes/op.h	49;"	d
+CYCLE_TO_DIE	disassemble/include/op.h	47;"	d
 CYCLE_TO_DIE	vm/inc/op.h	64;"	d
+DASM	Makefile	/^DASM = disassemble\/$/;"	m
+DECHET	disassemble/Makefile	/^DECHET		=		*.dSYM$/;"	m
 DEFINES_H	vm/inc/defines.h	15;"	d
 DIRECT_CHAR	asm/includes/op.h	39;"	d
+DIRECT_CHAR	disassemble/include/op.h	37;"	d
 DIRECT_CHAR	vm/inc/op.h	54;"	d
 DIR_CODE	asm/includes/op.h	27;"	d
+DIR_CODE	disassemble/include/op.h	26;"	d
 DIR_CODE	vm/inc/op.h	28;"	d
 DIR_SIZE	asm/includes/op.h	23;"	d
+DIR_SIZE	disassemble/include/op.h	23;"	d
 DIR_SIZE	vm/inc/op.h	24;"	d
-DUMP_FLAG	vm/inc/defines.h	33;"	d
+DISASSEMBLE_H	disassemble/include/disassemble.h	14;"	d
+DUMP_FLAG	vm/inc/defines.h	42;"	d
 DUMP_USAGE	vm/inc/defines.h	22;"	d
 DUMP_USAGE2	vm/inc/defines.h	23;"	d
-D_FLAG	vm/inc/defines.h	32;"	d
+D_FLAG	vm/inc/defines.h	41;"	d
 EMPTY_ARG	asm/includes/manage_error.h	32;"	d
 ERROR_OPEN	asm/includes/manage_error.h	23;"	d
 ERR_MALLOC	asm/includes/asm.h	21;"	d
@@ -59,43 +74,49 @@ FAILURE	asm/includes/asm.h	20;"	d
 FAILURE	vm/inc/defines.h	18;"	d
 FALSE	libft/includes/libft.h	20;"	d
 FLAGSMAX	libft/includes/arg.h	16;"	d
+FT_PRINTF_H	disassemble/libft/includes/ft_printf.h	15;"	d
 FT_PRINTF_H	libft/includes/ft_printf.h	14;"	d
 GARBAGE	asm/includes/asm.h	25;"	d
+GET_NEXT_LINE_H	disassemble/libft/includes/get_next_line.h	14;"	d
 GET_NEXT_LINE_H	libft/includes/get_next_line.h	14;"	d
-GET_NEXT_LINE_H	vm/libft/includes/get_next_line.h	15;"	d
-GNLHEADER	libft/Makefile	/^GNLHEADER = $(HEADERPATH)\/get_next_line.h$/;"	m
+GNLHEAD	libft/Makefile	/^GNLHEAD = $(HEADDIR)\/get_next_line.h$/;"	m
 GNLOBJ	libft/Makefile	/^GNLOBJ= $(addprefix $(OBJDIR)\/gnl\/,$(GNLSRCS:.c=.o))$/;"	m
 GREEN	asm/Makefile	/^GREEN = "\\\\033[32m"$/;"	m
 GREEN	libft/Makefile	/^GREEN = "\\\\033[32m"$/;"	m
-HDR	vm/libft/Makefile	/^HDR = $(addprefix $(HDR_FOLDER), $(HDR_FILES))$/;"	m
-HDR_FILES	vm/libft/Makefile	/^HDR_FILES = libft.h get_next_line.h$/;"	m
-HDR_FOLDER	vm/libft/Makefile	/^HDR_FOLDER = .\/includes\/$/;"	m
-HEADERPATH	libft/Makefile	/^HEADERPATH = includes$/;"	m
-HEADERPATH	libft/Makefile	/^HEADERPATH= includes$/;"	m
-HEADERS	libft/Makefile	/^HEADERS= $(LIBHEADER) $(GNLHEADER) $(PRINTFHEADER)$/;"	m
+HEADDIR	libft/Makefile	/^HEADDIR = includes$/;"	m
+HEADER_SIZE	disassemble/include/op.h	62;"	d
 IDX_MOD	asm/includes/op.h	34;"	d
+IDX_MOD	disassemble/include/op.h	32;"	d
 IDX_MOD	vm/inc/op.h	44;"	d
 INC	vm/Makefile	/^INC = $(addprefix $(INC_DIR), $(INC_FILES))$/;"	m
+INCLUDES	disassemble/Makefile	/^INCLUDES	=		-Iinclude$/;"	m
+INCLUDES	disassemble/libft/Makefile	/^INCLUDES	=		includes\/libft.h                           \\$/;"	m
 INCLUDES	vm/Makefile	/^INCLUDES = -I $(INC_DIR)$/;"	m
 INC_DIR	vm/Makefile	/^INC_DIR = inc\/$/;"	m
 INC_FILES	vm/Makefile	/^INC_FILES = defines.h \\$/;"	m
 INC_FLAG	asm/Makefile	/^INC_FLAG = -I includes$/;"	m
 IND_CODE	asm/includes/op.h	28;"	d
+IND_CODE	disassemble/include/op.h	27;"	d
 IND_CODE	vm/inc/op.h	29;"	d
 IND_SIZE	asm/includes/op.h	21;"	d
+IND_SIZE	disassemble/include/op.h	21;"	d
 IND_SIZE	vm/inc/op.h	22;"	d
-INT_BOUND	vm/inc/defines.h	44;"	d
+INT_BOUND	vm/inc/defines.h	53;"	d
 INVALID_TYPE	asm/includes/manage_error.h	33;"	d
 LABEL_CHAR	asm/includes/op.h	38;"	d
+LABEL_CHAR	disassemble/include/op.h	36;"	d
 LABEL_CHAR	vm/inc/op.h	53;"	d
 LABEL_CHARS	asm/includes/op.h	42;"	d
+LABEL_CHARS	disassemble/include/op.h	40;"	d
 LABEL_CHARS	vm/inc/op.h	57;"	d
+LIB	disassemble/libft/Makefile	/^LIB			=		ar rcs $(NAME) $(OBJ)$/;"	m
 LIB	vm/Makefile	/^LIB = $(LIB_DIR)libft.a$/;"	m
 LIBA	asm/Makefile	/^LIBA = $(LIBDIR)\/libft.a$/;"	m
 LIBDIR	asm/Makefile	/^LIBDIR = ..\/libft$/;"	m
+LIBFT_A	disassemble/Makefile	/^LIBFT_A		=		libft.a$/;"	m
+LIBFT_H	disassemble/libft/includes/libft.h	14;"	d
 LIBFT_H	libft/includes/libft.h	14;"	d
-LIBFT_H	vm/libft/includes/libft.h	14;"	d
-LIBHEADER	libft/Makefile	/^LIBHEADER = $(HEADERPATH)\/libft.h$/;"	m
+LIBHEAD	libft/Makefile	/^LIBHEAD = $(HEADDIR)\/libft.h$/;"	m
 LIBOBJ	libft/Makefile	/^LIBOBJ= $(addprefix $(OBJDIR)\/lib\/,$(LIBSRCS:.c=.o))$/;"	m
 LIBSRCS	libft/Makefile	/^LIBSRCS = ft_memset.c\\$/;"	m
 LIB_DIR	vm/Makefile	/^LIB_DIR = ..\/libft\/$/;"	m
@@ -107,30 +128,39 @@ LNECLR	libft/Makefile	/^LNECLR = "\\\\33[2K\\\\r"$/;"	m
 LONG_COMMENT	asm/includes/manage_error.h	28;"	d
 LONG_NAME	asm/includes/manage_error.h	27;"	d
 MANAGE_ERROR_H	asm/includes/manage_error.h	14;"	d
+MATH_H	disassemble/libft/includes/math.h	14;"	d
 MAX_ARGS_NUMBER	asm/includes/op.h	31;"	d
+MAX_ARGS_NUMBER	disassemble/include/op.h	29;"	d
 MAX_ARGS_NUMBER	vm/inc/op.h	31;"	d
 MAX_CHECKS	asm/includes/op.h	52;"	d
+MAX_CHECKS	disassemble/include/op.h	50;"	d
 MAX_CHECKS	vm/inc/op.h	67;"	d
 MAX_PLAYERS	asm/includes/op.h	32;"	d
+MAX_PLAYERS	disassemble/include/op.h	30;"	d
 MAX_PLAYERS	vm/inc/op.h	32;"	d
 MEM_SIZE	asm/includes/op.h	33;"	d
+MEM_SIZE	disassemble/include/op.h	31;"	d
 MEM_SIZE	vm/inc/op.h	38;"	d
-MISSING_CODE_S	vm/inc/defines.h	47;"	d
-MISSING_MAGIC	vm/inc/defines.h	49;"	d
-MISSING_PADDING	vm/inc/defines.h	46;"	d
-MISSING_PROG_S	vm/inc/defines.h	48;"	d
+MISSING_CODE_S	vm/inc/defines.h	57;"	d
+MISSING_MAGIC	vm/inc/defines.h	59;"	d
+MISSING_PADDING	vm/inc/defines.h	56;"	d
+MISSING_PROG_S	vm/inc/defines.h	58;"	d
 NAME	asm/Makefile	/^NAME = asm$/;"	m
 NAME	asm/includes/asm.h	30;"	d
+NAME	disassemble/Makefile	/^NAME		=		disassembler$/;"	m
+NAME	disassemble/libft/Makefile	/^NAME		=		libft.a$/;"	m
 NAME	libft/Makefile	/^NAME= libft.a$/;"	m
 NAME	vm/Makefile	/^NAME = corewar$/;"	m
-NAME	vm/libft/Makefile	/^NAME = libft.a$/;"	m
 NAME_CMD_STRING	asm/includes/op.h	44;"	d
+NAME_CMD_STRING	disassemble/include/op.h	42;"	d
 NAME_CMD_STRING	vm/inc/op.h	59;"	d
-NBR_CHARSET	vm/inc/defines.h	34;"	d
+NBR_CHARSET	vm/inc/defines.h	43;"	d
 NBR_LIVE	asm/includes/op.h	51;"	d
+NBR_LIVE	disassemble/include/op.h	49;"	d
 NBR_LIVE	vm/inc/op.h	66;"	d
-NBR_USAGE	vm/inc/defines.h	24;"	d
+NBR_USAGE	vm/inc/defines.h	33;"	d
 NB_OF_INSTRUCTION	asm/includes/asm.h	41;"	d
+NB_OF_INSTRUCTION	disassemble/include/disassemble.h	20;"	d
 NON_EMPTY_LNE	asm/includes/manage_error.h	30;"	d
 NOT_LABEL	asm/includes/asm.h	31;"	d
 NOT_OP	asm/includes/asm.h	32;"	d
@@ -138,52 +168,59 @@ NOT_PARAM	asm/includes/manage_error.h	34;"	d
 NO_DOT	asm/includes/asm.h	22;"	d
 NO_FILE	asm/includes/manage_error.h	22;"	d
 NO_NAME	asm/includes/asm.h	23;"	d
-NO_NBR_ARGUMENT	vm/inc/defines.h	35;"	d
-NO_USAGE	vm/inc/defines.h	28;"	d
+NO_NBR_ARGUMENT	vm/inc/defines.h	44;"	d
+NO_USAGE	vm/inc/defines.h	37;"	d
+OBJ	disassemble/Makefile	/^OBJ			=		$(SRCS:.c=.o)$/;"	m
+OBJ	disassemble/libft/Makefile	/^OBJ			=		$(SRC:.c=.o)$/;"	m
 OBJ	vm/Makefile	/^OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))$/;"	m
-OBJ	vm/libft/Makefile	/^OBJ = $(addprefix $(OBJ_FOLDER), $(OBJ_FILES))$/;"	m
 OBJDIR	libft/Makefile	/^OBJDIR= obj$/;"	m
 OBJECT	asm/Makefile	/^OBJECT = $(addprefix out\/,$(SRC:.c=.o))$/;"	m
 OBJ_DIR	vm/Makefile	/^OBJ_DIR = obj\/$/;"	m
 OBJ_FILES	vm/Makefile	/^OBJ_FILES = $(SRC_FILES:.c=.o)$/;"	m
-OBJ_FILES	vm/libft/Makefile	/^OBJ_FILES = $(SRC:.c=.o)$/;"	m
-OBJ_FOLDER	vm/libft/Makefile	/^OBJ_FOLDER = .\/obj\/$/;"	m
-OPEN_FAILURE	vm/inc/defines.h	42;"	d
+OPEN_FAILURE	vm/inc/defines.h	51;"	d
 OPTION_A	asm/includes/asm.h	28;"	d
 OP_H	asm/includes/op.h	19;"	d
+OP_H	disassemble/include/op.h	19;"	d
 OP_H	vm/inc/op.h	15;"	d
 OUTPUT_STR	asm/includes/asm.h	38;"	d
 PARAMS_CHAR	asm/includes/asm.h	36;"	d
-PARENTHESIS	vm/inc/defines.h	25;"	d
-PLAYER_NUM_ERR	vm/inc/defines.h	38;"	d
-PRINTFHEADER	libft/Makefile	/^PRINTFHEADER = $(HEADERPATH)\/arg.h $(HEADERPATH)\/ft_printf.h$/;"	m
+PARENTHESIS	vm/inc/defines.h	34;"	d
+PLAYER_NUM_ERR	vm/inc/defines.h	47;"	d
+PRINTFHEAD	libft/Makefile	/^PRINTFHEAD = $(HEADDIR)\/arg.h $(HEADDIR)\/ft_printf.h$/;"	m
 PRINTFOBJ	libft/Makefile	/^PRINTFOBJ= $(addprefix $(OBJDIR)\/printf\/,$(PRINTFSRCS:.c=.o))$/;"	m
 PROG_NAME_LENGTH	asm/includes/op.h	69;"	d
+PROG_NAME_LENGTH	disassemble/include/op.h	59;"	d
 PROG_NAME_LENGTH	vm/inc/op.h	76;"	d
 PROTOTYPES_H	vm/inc/prototypes.h	15;"	d
 PURPLE	asm/Makefile	/^PURPLE = "\\\\033[35m"$/;"	m
 PURPLE	libft/Makefile	/^PURPLE = "\\\\033[35m"$/;"	m
 QUOTES	asm/includes/asm.h	24;"	d
+RANLIB	disassemble/libft/Makefile	/^RANLIB		=		ranlib$/;"	m
 READ_MALLOC	asm/includes/manage_error.h	25;"	d
 RED	asm/Makefile	/^RED = "\\\\033[31m"$/;"	m
 RED	libft/Makefile	/^RED = "\\\\033[31m"$/;"	m
 REG_CODE	asm/includes/op.h	26;"	d
+REG_CODE	disassemble/include/op.h	25;"	d
 REG_CODE	vm/inc/op.h	27;"	d
 REG_NUMBER	asm/includes/op.h	47;"	d
+REG_NUMBER	disassemble/include/op.h	45;"	d
 REG_NUMBER	vm/inc/op.h	62;"	d
 REG_SIZE	asm/includes/op.h	22;"	d
+REG_SIZE	disassemble/include/op.h	22;"	d
 REG_SIZE	vm/inc/op.h	23;"	d
-SEPARATOR	vm/inc/defines.h	26;"	d
+SEPARATOR	vm/inc/defines.h	35;"	d
 SEPARATOR_CHAR	asm/includes/op.h	40;"	d
+SEPARATOR_CHAR	disassemble/include/op.h	38;"	d
 SEPARATOR_CHAR	vm/inc/op.h	55;"	d
 SEP_CHARS	asm/includes/asm.h	37;"	d
-SMALL_DIR	vm/inc/defines.h	58;"	d
+SMALL_DIR	vm/inc/defines.h	68;"	d
 SPLIT_MALLOC	asm/includes/manage_error.h	24;"	d
 SRC	asm/Makefile	/^SRC	=	op.c\\$/;"	m
+SRC	disassemble/libft/Makefile	/^SRC			=		math\/n_matrix.c                            \\$/;"	m
 SRC	vm/Makefile	/^SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))$/;"	m
-SRC	vm/libft/Makefile	/^SRC = ft_abs.c \\$/;"	m
 SRCDIR	libft/Makefile	/^SRCDIR = srcs$/;"	m
 SRCS	asm/Makefile	/^SRCS = $(addprefix srcs\/,$(SRCS))$/;"	m
+SRCS	disassemble/Makefile	/^SRCS		=		src\/main.c				\\$/;"	m
 SRC_DIR	vm/Makefile	/^SRC_DIR = src\/$/;"	m
 SRC_FILES	vm/Makefile	/^SRC_FILES = announce_players.c \\$/;"	m
 STRUCTS_H	vm/inc/structs.h	15;"	d
@@ -191,44 +228,59 @@ SUCCESS	asm/includes/asm.h	19;"	d
 SUCCESS	vm/inc/defines.h	17;"	d
 SYNTAX	asm/includes/manage_error.h	26;"	d
 S_DIR_SIZE	vm/inc/op.h	25;"	d
-TOO_FEW_ARG	vm/inc/defines.h	30;"	d
+TOO_FEW_ARG	vm/inc/defines.h	39;"	d
 TOO_LONG_COMMENT	asm/includes/asm.h	27;"	d
 TOO_LONG_NAME	asm/includes/asm.h	26;"	d
-TOO_MANY_CHAMP	vm/inc/defines.h	37;"	d
+TOO_MANY_CHAMP	vm/inc/defines.h	46;"	d
 TRUE	libft/includes/libft.h	19;"	d
 T_DIR	asm/includes/op.h	61;"	d
+T_DIR	disassemble/include/op.h	55;"	d
 T_DIR	vm/inc/op.h	72;"	d
 T_IND	asm/includes/op.h	62;"	d
+T_IND	disassemble/include/op.h	56;"	d
 T_IND	vm/inc/op.h	73;"	d
 T_LAB	asm/includes/op.h	63;"	d
+T_LAB	disassemble/include/op.h	57;"	d
 T_LAB	vm/inc/op.h	74;"	d
-T_L_FILE	vm/inc/defines.h	56;"	d
-T_L_PROG_CMNT	vm/inc/defines.h	55;"	d
-T_L_PROG_NAME	vm/inc/defines.h	54;"	d
+T_L_FILE	vm/inc/defines.h	66;"	d
+T_L_PROG_CMNT	vm/inc/defines.h	65;"	d
+T_L_PROG_NAME	vm/inc/defines.h	64;"	d
 T_REG	asm/includes/op.h	60;"	d
+T_REG	disassemble/include/op.h	54;"	d
 T_REG	vm/inc/op.h	71;"	d
-USAGE	vm/inc/defines.h	27;"	d
+USAGE	vm/inc/defines.h	36;"	d
 USAGE1	asm/includes/manage_error.h	19;"	d
 USAGE2	asm/includes/manage_error.h	20;"	d
 USAGE3	asm/includes/manage_error.h	21;"	d
 USAGE_STR1	vm/inc/defines.h	20;"	d
 USAGE_STR2	vm/inc/defines.h	21;"	d
+VERBOSE_USAGE	vm/inc/defines.h	24;"	d
+VERBOSE_USAGE2	vm/inc/defines.h	25;"	d
+VERBOSE_USAGE3	vm/inc/defines.h	26;"	d
+VERBOSE_USAGE4	vm/inc/defines.h	27;"	d
+VERBOSE_USAGE5	vm/inc/defines.h	28;"	d
+VERBOSE_USAGE6	vm/inc/defines.h	29;"	d
+VERBOSE_USAGE7	vm/inc/defines.h	30;"	d
+VERBOSE_USAGE8	vm/inc/defines.h	31;"	d
+VERB_BOUND	vm/inc/defines.h	54;"	d
 VM	Makefile	/^VM = vm\/$/;"	m
-VPATH	libft/Makefile	/^VPATH = $(SRCDIR):$(SRCDIR)\/lib:$(SRCDIR)\/gnl:$(SRCDIR)\/printf$/;"	m
+WASTE	disassemble/libft/Makefile	/^WASTE		=		*\/*.h.gch$/;"	m
 WHITE	asm/Makefile	/^WHITE = "\\\\033[0m"$/;"	m
 WHITE	libft/Makefile	/^WHITE = "\\\\033[0m"$/;"	m
 WHITESPACE	asm/includes/asm.h	35;"	d
 WRONG_LABEL	asm/includes/manage_error.h	31;"	d
-WRONG_MAGIC	vm/inc/defines.h	52;"	d
-WRONG_PADDING	vm/inc/defines.h	51;"	d
+WRONG_MAGIC	vm/inc/defines.h	62;"	d
+WRONG_PADDING	vm/inc/defines.h	61;"	d
 WRONG_PARAM	asm/includes/manage_error.h	35;"	d
 WS_HEADER	asm/includes/manage_error.h	36;"	d
+YELLOW	libft/Makefile	/^YELLOW = "\\\\033[33m"$/;"	m
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaalive	asm/toto.s	/^aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaalive:$/;"	l
 add	asm/toto.s	/^add r1, r2, r3$/;"	l
 add	asm/toto.s	/^add:$/;"	l
 add_head_carriage	vm/src/prepare_carriages.c	/^void		add_head_carriage(t_data *data)$/;"	f
 add_strings	libft/srcs/printf/float_tools.c	/^void	add_strings(char *dst, char *src, int len)$/;"	f
 aff	asm/toto.s	/^aff r1$/;"	l
+aff	vm/inc/structs.h	/^	t_bool					aff;$/;"	m	struct:s_vm
 and	asm/toto.s	/^and %1 , r2, r3$/;"	l
 and	asm/toto.s	/^and 1 , 2, r3$/;"	l
 and	asm/toto.s	/^and 1 , r2, r3$/;"	l
@@ -240,7 +292,8 @@ announce_winner	vm/src/announce_winner.c	/^void	announce_winner(t_data *data)$/;
 apply_d_rounding	libft/srcs/printf/float_tools.c	/^void	apply_d_rounding(t_d_arrs *a_ptr, int prec)$/;"	f
 apply_ld_rounding	libft/srcs/printf/float_tools.c	/^void	apply_ld_rounding(t_ld_arrs *a_ptr, int prec)$/;"	f
 arena	vm/inc/structs.h	/^	uint8_t					arena[MEM_SIZE];$/;"	m	struct:s_vm
-arg	vm/inc/structs.h	/^	int32_t					arg[3];$/;"	m	struct:s_op
+arg	vm/inc/structs.h	/^	int32_t					arg[3];$/;"	m	struct:s_op_s
+avantdebut	disassemble/Gagnant.s	/^avantdebut:	sti   r1,%:code,%1  # 		#7	$/;"	l
 buffer	libft/includes/get_next_line.h	/^	char		*buffer;$/;"	m	struct:s_data
 bytes_to_jump	vm/inc/structs.h	/^	int32_t					bytes_to_jump;$/;"	m	struct:s_carriage
 calc_len_address	libft/srcs/printf/address_tools.c	/^int		calc_len_address(t_conv_id *s_ptr, unsigned long value)$/;"	f
@@ -252,58 +305,71 @@ calc_len_octal	libft/srcs/printf/octal_tools.c	/^int	calc_len_octal(t_conv_id *s
 calc_len_percent	libft/srcs/printf/percent.c	/^int		calc_len_percent(t_conv_id *s_ptr)$/;"	f
 calc_len_string	libft/srcs/printf/string.c	/^int			calc_len_string(t_conv_id *s_ptr, char *str)$/;"	f
 calc_len_unsigned	libft/srcs/printf/unsigned_tools.c	/^int		calc_len_unsigned(t_conv_id *s_ptr, unsigned long long value)$/;"	f
+capacity	disassemble/include/disassemble.h	/^	unsigned		capacity;$/;"	m	struct:s_uint8file
 carriages	vm/inc/structs.h	/^	t_carriage				*carriages;$/;"	m	struct:s_data
 carry	asm/includes/asm.h	/^	char		carry;$/;"	m	struct:s_op
+carry	disassemble/include/disassemble.h	/^	char			carry;$/;"	m	struct:s_op
 carry	vm/inc/structs.h	/^	t_bool					carry;$/;"	m	struct:s_carriage
+champ	disassemble/include/disassemble.h	/^	uint8_t			champ[CHAMP_MAX_SIZE];$/;"	m	struct:s_corefile
 check_content	asm/srcs/set_params.c	/^static int	check_content(t_cor *array, t_cor *cell, int param_nb, int code)$/;"	f	file:
 check_conversion	libft/srcs/printf/ft_dprintf.c	/^int			check_conversion(const char *str)$/;"	f
 check_int_struct	libft/srcs/printf/int_tools.c	/^int		check_int_struct(t_conv_id *ptr)$/;"	f
 check_magic_header	vm/src/get_player_info_utils.c	/^void	check_magic_header(uint32_t fd, t_data *data)$/;"	f
-check_num_arg	vm/src/get_player_num.c	/^static int	check_num_arg(t_data *data, char *str)$/;"	f	file:
+check_num_arg	vm/src/get_flags.c	/^static int32_t	check_num_arg(t_data *data, char *str)$/;"	f	file:
+check_num_arg	vm/src/get_player_num.c	/^static int32_t	check_num_arg(t_data *data, char *str)$/;"	f	file:
 check_ocp	asm/srcs/param_tools.c	/^int			check_ocp(t_cor *cor)$/;"	f
-check_ocp	vm/src/ocp.c	/^t_bool	check_ocp(t_data *data, t_carriage *current, t_ope *op)$/;"	f
+check_ocp	vm/src/ocp.c	/^t_bool	check_ocp(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
 check_octal_struct	libft/srcs/printf/octal_tools.c	/^int	check_octal_struct(t_conv_id *s_ptr)$/;"	f
-check_player_num	vm/src/get_player_num.c	/^static int	check_player_num(t_data *data, uint32_t player_num,$/;"	f	file:
+check_player_num	vm/src/get_player_num.c	/^static int32_t	check_player_num(t_data *data, uint32_t player_num,$/;"	f	file:
 check_special_value	libft/srcs/printf/special.c	/^int		check_special_value(t_s_e_m *dble_ptr)$/;"	f
+check_type	disassemble/src/utils.c	/^int				check_type(uint8_t *champ, unsigned int pc)$/;"	f
 check_unsigned_struct	libft/srcs/printf/unsigned_tools.c	/^int		check_unsigned_struct(t_conv_id *ptr)$/;"	f
 clean_params	asm/srcs/set_label_op_params.c	/^static int	clean_params(t_cor *cor)$/;"	f	file:
 cntent	libft/includes/libft.h	/^	void						*cntent;$/;"	m	struct:s_double_linked_list
+code	disassemble/Gagnant.s	/^code:		live %42			# 5$/;"	l
 code	vm/inc/structs.h	/^	int8_t					code[CHAMP_MAX_SIZE];$/;"	m	struct:s_player
 code_size	vm/inc/structs.h	/^	uint32_t				code_size;$/;"	m	struct:s_player
+columns	disassemble/libft/includes/math.h	/^	unsigned int	columns;$/;"	m	struct:s_matrix
 comment	asm/includes/op.h	/^  char				comment[COMMENT_LENGTH + 1];$/;"	m	struct:s_header
+comment	disassemble/include/op.h	/^	char				comment[COMMENT_LENGTH + 1];$/;"	m	struct:s_header
 comment	vm/inc/structs.h	/^	unsigned char			comment[COMMENT_LENGTH + 1];$/;"	m	struct:s_player
-config_fork_carriage	vm/src/operations/op_fork_lfork.c	/^void	config_fork_carriage(t_carriage *new, t_carriage *current,$/;"	f
+config_fork_carriage	vm/src/operations/op_fork_lfork.c	/^void		config_fork_carriage(t_data *data, t_carriage *current,$/;"	f
 content	asm/includes/asm.h	/^	char		*content;$/;"	m	struct:s_file
+content	disassemble/include/disassemble.h	/^	uint8_t			*content;$/;"	m	struct:s_uint8file
+content	disassemble/libft/includes/libft.h	/^	void			*content;$/;"	m	struct:s_list
 content	libft/includes/libft.h	/^	void			*content;$/;"	m	struct:s_list
-content	vm/libft/includes/libft.h	/^	void			*content;$/;"	m	struct:s_list
+content_size	disassemble/libft/includes/libft.h	/^	size_t			content_size;$/;"	m	struct:s_list
 content_size	libft/includes/libft.h	/^	size_t			content_size;$/;"	m	struct:s_list
-content_size	vm/libft/includes/libft.h	/^	size_t			content_size;$/;"	m	struct:s_list
 conv	libft/includes/arg.h	/^	char	conv;$/;"	m	struct:s_conv_info
 conv_path	libft/srcs/printf/ft_dprintf.c	/^t_point		conv_path(int fd, const char *fmt, va_list *arg_ptr)$/;"	f
-convert_nbr	vm/libft/ft_itoa_base_str.c	/^static void	convert_nbr(int nbr, char *base, char *str, int index)$/;"	f	file:
+copy_file	disassemble/src/main.c	/^static int		copy_file(t_uint8file file, t_corefile *core_file)$/;"	f	file:
 cor	asm/includes/asm.h	/^	t_cor		*cor;$/;"	m	struct:s_file
 correct_arr	asm/srcs/correct_values.c	/^int			correct_arr(t_cor *cor)$/;"	f
 correct_value	asm/srcs/correct_values.c	/^static int	correct_value(int size, int value)$/;"	f	file:
 correct_values	asm/srcs/correct_values.c	/^static int	correct_values(t_cor *cor)$/;"	f	file:
 create_fd	asm/srcs/write.c	/^static int	create_fd(t_file *file)$/;"	f	file:
 cycle_time	asm/includes/asm.h	/^	short		cycle_time;$/;"	m	struct:s_op
+cycle_time	disassemble/include/disassemble.h	/^	short			cycle_time;$/;"	m	struct:s_op
 cycle_to_die	vm/inc/structs.h	/^	int						cycle_to_die;$/;"	m	struct:s_vm
 cycle_to_dump	vm/inc/structs.h	/^	int						cycle_to_dump;$/;"	m	struct:s_vm
 cycles_since_last_check	vm/inc/structs.h	/^	int						cycles_since_last_check;$/;"	m	struct:s_vm
 cycles_to_wait	vm/inc/structs.h	/^	int32_t					cycles_to_wait;$/;"	m	struct:s_carriage
-deal_error	vm/src/deal_error.c	/^void		deal_error(t_data *data, char *to_display, int code)$/;"	f
-declare_live	vm/src/operations/op_live.c	/^static void	declare_live(t_data *data, int32_t num)$/;"	f	file:
+data	disassemble/libft/includes/libft.h	/^	void			*data;$/;"	m	struct:s_list_p
+deal_error	vm/src/deal_error.c	/^void			deal_error(t_data *data, char *to_display, int code)$/;"	f
+debut	disassemble/Gagnant.s	/^debut:		live %42			#5$/;"	l
+declare_player_live	vm/src/operations/op_live.c	/^static void	declare_player_live(t_data *data, int32_t num)$/;"	f	file:
 del_comment	asm/srcs/read.c	/^static	void	del_comment(char *str)$/;"	f	file:
 delete_all_carriages	vm/src/delete_carriage.c	/^void				delete_all_carriages(t_data *data)$/;"	f
 delete_head	vm/src/delete_carriage.c	/^static t_carriage	*delete_head(t_data *data, t_carriage *head)$/;"	f	file:
 delete_one_carriage	vm/src/delete_carriage.c	/^t_carriage			*delete_one_carriage(t_data *data, t_carriage *current)$/;"	f
-dir_size	vm/inc/structs.h	/^	int8_t					dir_size;$/;"	m	struct:s_op
+dir_size	vm/inc/structs.h	/^	int8_t					dir_size;$/;"	m	struct:s_op_s
 direct_size	asm/includes/asm.h	/^	char		direct_size;$/;"	m	struct:s_op
+direct_size	disassemble/include/disassemble.h	/^	char			direct_size;$/;"	m	struct:s_op
 divide_str_by_two	libft/srcs/printf/float_tools.c	/^void	divide_str_by_two(char *str, int len)$/;"	f
 do_check	vm/src/do_cycles.c	/^static void	do_check(t_data *data)$/;"	f	file:
 do_current_cycle	vm/src/do_cycles.c	/^static void	do_current_cycle(t_data *data, t_carriage *current)$/;"	f	file:
 do_cycles	vm/src/do_cycles.c	/^void		do_cycles(t_data *data)$/;"	f
-do_ope	vm/src/do_ope.c	/^int32_t	do_ope(int32_t opcode, t_data *data, t_carriage *current)$/;"	f
+do_ope	vm/src/do_ope.c	/^int32_t	do_ope(int32_t opcode, t_data *data, t_carriage *current, t_op_s *op)$/;"	f
 double_exponant	libft/srcs/printf/double_tools.c	/^void	double_exponant(t_s_e_m *dble_ptr, t_d_arrs *a_ptr)$/;"	f
 double_mantissa	libft/srcs/printf/double_tools.c	/^void	double_mantissa(t_s_e_m *dble_ptr, t_d_arrs *a_ptr)$/;"	f
 double_rounding	libft/srcs/printf/double_tools.c	/^void	double_rounding(t_d_arrs *a_ptr, t_conv_id *s_ptr)$/;"	f
@@ -312,12 +378,10 @@ dump_memory	vm/src/dump.c	/^void	dump_memory(t_data *data)$/;"	f
 dump_on	vm/src/dump.c	/^void	dump_on(size_t size, uint8_t arena[MEM_SIZE])$/;"	f
 e	libft/includes/arg.h	/^	unsigned short		e;$/;"	m	struct:s_double
 e_bool	vm/inc/structs.h	/^enum						e_bool$/;"	g
-err	vm/libft/ft_atoi_base.c	/^static int	err(char *str, char *base)$/;"	f	file:
-err	vm/libft/ft_convert_base.c	/^static int	err(char *str, char *base)$/;"	f	file:
-err_base	vm/libft/ft_convert_base.c	/^static int	err_base(char *base)$/;"	f	file:
-err_base	vm/libft/ft_itoa_base_str.c	/^static int	err_base(char *base)$/;"	f	file:
+error_management	disassemble/src/main.c	/^static int		error_management(int truth, char *filename, uint8_t *content)$/;"	f	file:
 false	vm/inc/structs.h	/^	false,$/;"	e	enum:e_bool
 fd	asm/includes/asm.h	/^	int			fd;$/;"	m	struct:s_file
+fd	disassemble/include/disassemble.h	/^	int				fd;$/;"	m	struct:s_corefile
 fd	libft/includes/arg.h	/^	int		fd;$/;"	m	struct:s_conv_info
 fd	libft/includes/get_next_line.h	/^	int			fd;$/;"	m	struct:s_data
 file_name	asm/includes/asm.h	/^	char		*file_name;$/;"	m	struct:s_file
@@ -327,32 +391,49 @@ fill_content	asm/srcs/read.c	/^static	int		fill_content(t_file *file)$/;"	f	file
 fill_cor	asm/srcs/parse_op_tool.c	/^static void	fill_cor(t_file *file, int counter)$/;"	f	file:
 fill_d_tabs	libft/srcs/printf/double_tools.c	/^void	fill_d_tabs(t_d_arrs *a_ptr, t_s_e_m *dble_ptr, t_conv_id *s_ptr)$/;"	f
 fill_header	asm/srcs/parse_tools.c	/^void		fill_header(char *str, t_file *file, int code)$/;"	f
+fill_it	disassemble/libft/strings/ft_strsplit.c	/^static char		**fill_it(int i, const char *str, const char c, char **tab)$/;"	f	file:
 fill_ld_tabs	libft/srcs/printf/ldouble_tools.c	/^void	fill_ld_tabs(t_ld_arrs *a_ptr, t_s_e_m *dble_ptr, t_conv_id *s_ptr)$/;"	f
 fill_line	libft/srcs/gnl/get_next_line.c	/^char	*fill_line(t_data *current, char **line, int old_chars)$/;"	f
-fill_str	vm/libft/ft_itoa.c	/^static void	fill_str(int n, char *str, int index)$/;"	f	file:
-fill_tab	vm/libft/ft_split.c	/^static void	fill_tab(char const *str, char *substr, t_word word_info)$/;"	f	file:
+first_elem	disassemble/libft/includes/libft.h	/^	t_list_p		*first_elem;$/;"	m	struct:s_begin
 flag	libft/srcs/printf/pflags.c	/^int		flag(char *ptr, int end, t_conv_id *struct_ptr)$/;"	f
 flags	libft/includes/arg.h	/^	char	flags;$/;"	m	struct:s_conv_info
 flags_in_struct	libft/srcs/printf/pflags.c	/^void	flags_in_struct(char c, t_conv_id *struct_ptr)$/;"	f
 fork	asm/toto.s	/^fork %42$/;"	l
-free_and_return	vm/libft/get_next_line.c	/^static int	free_and_return(char *str, int ret)$/;"	f	file:
 free_arr	libft/srcs/lib/ft_free_arr.c	/^void		free_arr(void **arr)$/;"	f
 free_data	vm/src/free_data.c	/^void	free_data(t_data *data)$/;"	f
 free_exit	libft/srcs/gnl/get_next_line.c	/^void	free_exit(t_list **head, t_data *current)$/;"	f
+ft_2byteswap	disassemble/libft/strings/ft_byteswap.c	/^uint16_t	ft_2byteswap(const uint16_t byte)$/;"	f
 ft_2lstadd_first	libft/srcs/lib/ft_2lstadd_first.c	/^void	ft_2lstadd_first(t_2list **alst, t_2list *new)$/;"	f
 ft_2lstadd_last	libft/srcs/lib/ft_2lstadd_last.c	/^void	ft_2lstadd_last(t_2list **alst, t_2list *new)$/;"	f
 ft_2lstdel	libft/srcs/lib/ft_2lstdel.c	/^void	ft_2lstdel(t_2list **alst, void (*del)(void *))$/;"	f
 ft_2lstdelnext	libft/srcs/lib/ft_2lstdelnext.c	/^void	ft_2lstdelnext(t_2list **alst, void (*del)(void *))$/;"	f
 ft_2lstdelone	libft/srcs/lib/ft_2lstdelone.c	/^void	ft_2lstdelone(t_2list **alst, void (*del)(void *))$/;"	f
 ft_2lstnew	libft/srcs/lib/ft_2lstnew.c	/^t_2list	*ft_2lstnew(void const *cntent, size_t cntent_size)$/;"	f
-ft_abs	vm/libft/ft_abs.c	/^int	ft_abs(int a)$/;"	f
+ft_4byteswap	disassemble/libft/strings/ft_byteswap.c	/^uint32_t	ft_4byteswap(const uint32_t byte)$/;"	f
+ft_aff_char	disassemble/libft/ft_printf/ft_utilities.c	/^void	ft_aff_char(char occur, int nb)$/;"	f
+ft_allocate	disassemble/libft/strings/ft_strsplit.c	/^static char		**ft_allocate(int j, const char *str, const char c, char **tab)$/;"	f	file:
+ft_args_parse	disassemble/libft/ft_printf/ft_printf.c	/^int		ft_args_parse(char *string, va_list ap, int *a)$/;"	f
+ft_arrondie	disassemble/libft/ft_printf/ft_tool_float.c	/^char		*ft_arrondie(char *nombre)$/;"	f
+ft_assign_type	disassemble/libft/ft_printf/ft_flag_conversion.c	/^char		*ft_assign_type(char *n, char *f, va_list a, char c)$/;"	f
+ft_atoi	disassemble/libft/strings/ft_atoi.c	/^int		ft_atoi(const char *str)$/;"	f
 ft_atoi	libft/srcs/lib/ft_atoi.c	/^int	ft_atoi(const char *str)$/;"	f
-ft_atoi	vm/libft/ft_atoi.c	/^int	ft_atoi(const char *str)$/;"	f
-ft_atoi_base	vm/libft/ft_atoi_base.c	/^int			ft_atoi_base(char *str, char *base)$/;"	f
+ft_atoi_unsigned	disassemble/libft/ft_printf/ft_itoa_2.c	/^int			ft_atoi_unsigned(const char *str)$/;"	f
 ft_atol	libft/srcs/lib/ft_atol.c	/^long long	ft_atol(const char *str)$/;"	f
-ft_atol	vm/libft/ft_atol.c	/^long	ft_atol(char *str)$/;"	f
+ft_bzero	disassemble/libft/strings/ft_bzero.c	/^void	*ft_bzero(void *s, size_t n)$/;"	f
 ft_bzero	libft/srcs/lib/ft_bzero.c	/^void	ft_bzero(void *s, size_t n)$/;"	f
-ft_bzero	vm/libft/ft_bzero.c	/^void	ft_bzero(void *s, size_t n)$/;"	f
+ft_check_flag	disassemble/libft/ft_printf/ft_conversion_char.c	/^static int		ft_check_flag(char *args, int a, char *nombre)$/;"	f	file:
+ft_check_flag	disassemble/libft/ft_printf/ft_conversion_float.c	/^static int		ft_check_flag(char *args, int a, char *nombre)$/;"	f	file:
+ft_check_flag	disassemble/libft/ft_printf/ft_conversion_hexa.c	/^static int		ft_check_flag(char *args, int a, char *nombre, char conversion)$/;"	f	file:
+ft_check_flag	disassemble/libft/ft_printf/ft_conversion_int.c	/^static int		ft_check_flag(char *a, int b, char *n)$/;"	f	file:
+ft_check_flag	disassemble/libft/ft_printf/ft_conversion_octale.c	/^static int		ft_check_flag(char *args, int a, char *nombre, char conversion)$/;"	f	file:
+ft_check_flag	disassemble/libft/ft_printf/ft_conversion_pourcentage.c	/^static int		ft_check_flag(char *args, int a, char *nombre, char conversion)$/;"	f	file:
+ft_check_flag	disassemble/libft/ft_printf/ft_printf.c	/^int		ft_check_flag(char *args, va_list ap, char conversion)$/;"	f
+ft_check_largeur	disassemble/libft/ft_printf/ft_tool_conversion.c	/^int		ft_check_largeur(char *args, char *numero)$/;"	f
+ft_check_largeur_char	disassemble/libft/ft_printf/ft_tool_char.c	/^int		ft_check_largeur_char(char *args)$/;"	f
+ft_check_precision	disassemble/libft/ft_printf/ft_tool_conversion.c	/^int		ft_check_precision(char *args, char *numero)$/;"	f
+ft_check_precision_char	disassemble/libft/ft_printf/ft_tool_char.c	/^int		ft_check_precision_char(char *args)$/;"	f
+ft_check_signe	disassemble/libft/ft_printf/ft_tool_conversion.c	/^char	*ft_check_signe(char *args, char *nb_hexa)$/;"	f
+ft_chrlen	disassemble/libft/strings/ft_chrlen.c	/^int		ft_chrlen(const char *s, char occurency)$/;"	f
 ft_conv_address	libft/srcs/printf/address.c	/^int		ft_conv_address(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
 ft_conv_char	libft/srcs/printf/char.c	/^int	ft_conv_char(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
 ft_conv_double	libft/srcs/printf/float.c	/^int		ft_conv_double(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
@@ -365,155 +446,224 @@ ft_conv_octal	libft/srcs/printf/octal.c	/^int		ft_conv_octal(t_conv_id *s_ptr, v
 ft_conv_percent	libft/srcs/printf/percent.c	/^int		ft_conv_percent(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
 ft_conv_string	libft/srcs/printf/string.c	/^int			ft_conv_string(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
 ft_conv_unsigned	libft/srcs/printf/unsigned.c	/^int		ft_conv_unsigned(t_conv_id *s_ptr, va_list *arg_ptr)$/;"	f
-ft_convert_base	vm/libft/ft_convert_base.c	/^char		*ft_convert_base(char *nbr, char *base_from, char *base_to)$/;"	f
+ft_conversion	disassemble/libft/ft_printf/ft_conversion_hexa.c	/^static char		ft_conversion(unsigned int num)$/;"	f	file:
+ft_conversion_char	disassemble/libft/ft_printf/ft_conversion_char.c	/^int				ft_conversion_char(char *args, va_list ap, char conversion)$/;"	f
+ft_conversion_float	disassemble/libft/ft_printf/ft_conversion_float.c	/^int				ft_conversion_float(char *args, va_list ap, char conversion)$/;"	f
+ft_conversion_hexa	disassemble/libft/ft_printf/ft_conversion_hexa.c	/^int				ft_conversion_hexa(char *args, va_list ap, char conversion)$/;"	f
+ft_conversion_int	disassemble/libft/ft_printf/ft_conversion_int.c	/^int				ft_conversion_int(char *args, va_list ap, char conversion)$/;"	f
+ft_conversion_null	disassemble/libft/ft_printf/ft_conversion_null.c	/^int		ft_conversion_null(char *args)$/;"	f
+ft_conversion_octale	disassemble/libft/ft_printf/ft_conversion_octale.c	/^int				ft_conversion_octale(char *args, va_list ap, char conversion)$/;"	f
+ft_conversion_pourcentage	disassemble/libft/ft_printf/ft_conversion_pourcentage.c	/^int				ft_conversion_pourcentage(char *args, char conversion)$/;"	f
+ft_count_moins	disassemble/libft/ft_printf/ft_tool_float.c	/^int			ft_count_moins(char *nombre)$/;"	f
+ft_count_num	disassemble/libft/ft_printf/ft_count_num.c	/^int		ft_count_num(char *numero)$/;"	f
+ft_count_num	disassemble/libft/strings/ft_count_num.c	/^int		ft_count_num(char *numero)$/;"	f
 ft_count_words	libft/srcs/lib/ft_strsplit.c	/^static int	ft_count_words(char const *s, char c)$/;"	f	file:
+ft_create_elems_c	disassemble/libft/strings/ft_create_elems_c.c	/^void	ft_create_elems_c(struct s_begin **begin, void *data)$/;"	f
+ft_decimal	disassemble/libft/ft_printf/ft_conversion_float.c	/^void			ft_decimal(char *nombre, int precision)$/;"	f
 ft_double_special	libft/srcs/printf/special.c	/^int		ft_double_special(t_conv_id *s_ptr, t_s_e_m *dble)$/;"	f
+ft_downcase	disassemble/libft/ft_printf/ft_utilities.c	/^void	ft_downcase(char *c)$/;"	f
 ft_dprintf	libft/srcs/printf/ft_dprintf.c	/^int			ft_dprintf(int fd, const char *format, ...)$/;"	f
+ft_fill	disassemble/libft/strings/ft_strtrim.c	/^static char		*ft_fill(const char *s, char *tab)$/;"	f	file:
+ft_find	disassemble/libft/ft_printf/ft_printf.c	/^int		ft_find(char *string, int index)$/;"	f
+ft_first_elem	disassemble/libft/strings/ft_first_elem.c	/^struct s_begin		*ft_first_elem(void)$/;"	f
+ft_float	disassemble/libft/ft_printf/ft_tool_float.c	/^char		*ft_float(double f, int decimale)$/;"	f
+ft_hexa	disassemble/libft/ft_printf/ft_conversion_hexa.c	/^char			*ft_hexa(unsigned long long int entier, char flag)$/;"	f
+ft_hh	disassemble/libft/ft_printf/ft_flag_conversion.c	/^char		*ft_hh(char *n, char *f, va_list a, char c)$/;"	f
+ft_int	disassemble/libft/ft_printf/ft_tool_int.c	/^char	*ft_int(char *nombre, va_list ap)$/;"	f
+ft_isalnum	disassemble/libft/strings/ft_isalnum.c	/^int		ft_isalnum(int c)$/;"	f
 ft_isalnum	libft/srcs/lib/ft_isalnum.c	/^uint8_t	ft_isalnum(const int c)$/;"	f
-ft_isalnum	vm/libft/ft_isalnum.c	/^int	ft_isalnum(int c)$/;"	f
+ft_isalpha	disassemble/libft/strings/ft_isalpha.c	/^int		ft_isalpha(int c)$/;"	f
 ft_isalpha	libft/srcs/lib/ft_isalpha.c	/^uint8_t	ft_isalpha(const int c)$/;"	f
-ft_isalpha	vm/libft/ft_isalpha.c	/^int	ft_isalpha(int c)$/;"	f
+ft_isascii	disassemble/libft/strings/ft_isascii.c	/^int		ft_isascii(int c)$/;"	f
 ft_isascii	libft/srcs/lib/ft_isascii.c	/^uint8_t	ft_isascii(const int c)$/;"	f
-ft_isascii	vm/libft/ft_isascii.c	/^int	ft_isascii(int c)$/;"	f
 ft_ischarset	libft/srcs/lib/ft_ischarset.c	/^int	ft_ischarset(char *charset, char *str, int len)$/;"	f
+ft_isdigit	disassemble/libft/strings/ft_isdigit.c	/^int		ft_isdigit(int c)$/;"	f
 ft_isdigit	libft/srcs/lib/ft_isdigit.c	/^uint8_t	ft_isdigit(const int c)$/;"	f
-ft_isdigit	vm/libft/ft_isdigit.c	/^int	ft_isdigit(int c)$/;"	f
+ft_ishere	disassemble/libft/strings/ft_ishere.c	/^int		ft_ishere(const char *haystack, const char *needle)$/;"	f
+ft_isprint	disassemble/libft/strings/ft_isprint.c	/^int		ft_isprint(int c)$/;"	f
 ft_isprint	libft/srcs/lib/ft_isprint.c	/^uint8_t	ft_isprint(const int c)$/;"	f
-ft_isprint	vm/libft/ft_isprint.c	/^int	ft_isprint(int c)$/;"	f
+ft_itoa	disassemble/libft/strings/ft_itoa.c	/^char		*ft_itoa(int n)$/;"	f
 ft_itoa	libft/srcs/lib/ft_itoa.c	/^char		*ft_itoa(int n)$/;"	f
-ft_itoa	vm/libft/ft_itoa.c	/^char		*ft_itoa(int n)$/;"	f
 ft_itoa_base	libft/srcs/lib/ft_itoa_base.c	/^char	*ft_itoa_base(int value, int base)$/;"	f
-ft_itoa_base_str	vm/libft/ft_itoa_base_str.c	/^char		*ft_itoa_base_str(int nbr, char *base)$/;"	f
+ft_itoa_long	disassemble/libft/ft_printf/ft_itoa_1.c	/^char		*ft_itoa_long(long int n)$/;"	f
+ft_itoa_long_long	disassemble/libft/ft_printf/ft_itoa_1.c	/^char		*ft_itoa_long_long(long long int n)$/;"	f
+ft_itoa_unsigned	disassemble/libft/ft_printf/ft_itoa_2.c	/^char		*ft_itoa_unsigned(unsigned int n)$/;"	f
+ft_itoa_unsigned_long	disassemble/libft/ft_printf/ft_itoa_2.c	/^char		*ft_itoa_unsigned_long(unsigned long n)$/;"	f
+ft_itoa_unsigned_long_long	disassemble/libft/ft_printf/ft_itoa_1.c	/^char		*ft_itoa_unsigned_long_long(unsigned long long n)$/;"	f
+ft_join_char	disassemble/libft/ft_printf/ft_tool_char.c	/^char	*ft_join_char(int largeur, char zero, char *string)$/;"	f
+ft_join_int	disassemble/libft/ft_printf/ft_tool_int.c	/^char	*ft_join_int(int largeur, char zero, char *numero, int precision)$/;"	f
+ft_join_r_int	disassemble/libft/ft_printf/ft_tool_conversion.c	/^char	*ft_join_r_int(int largeur, char zero, char *numero, int precision)$/;"	f
+ft_join_reverse_char	disassemble/libft/ft_printf/ft_tool_char.c	/^char	*ft_join_reverse_char(int largeur, char zero, char *string)$/;"	f
+ft_ll	disassemble/libft/ft_printf/ft_flag_conversion.c	/^char		*ft_ll(char *n, char *f, va_list a, char c)$/;"	f
+ft_long	disassemble/libft/ft_printf/ft_tool_int.c	/^char	*ft_long(char *nombre, va_list ap)$/;"	f
+ft_long_long	disassemble/libft/ft_printf/ft_tool_int.c	/^char	*ft_long_long(char *nombre, va_list ap)$/;"	f
 ft_longd_special	libft/srcs/printf/special.c	/^int		ft_longd_special(t_conv_id *s_ptr, t_s_e_m *dble)$/;"	f
+ft_lstadd	disassemble/libft/strings/ft_lstadd.c	/^void	ft_lstadd(t_list **alst, t_list *new)$/;"	f
 ft_lstadd	libft/srcs/lib/ft_lstadd.c	/^void	ft_lstadd(t_list **alst, t_list *new)$/;"	f
-ft_lstadd	vm/libft/ft_lstadd.c	/^void	ft_lstadd(t_list **alst, t_list *new)$/;"	f
+ft_lstdel	disassemble/libft/strings/ft_lstdel.c	/^void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))$/;"	f
 ft_lstdel	libft/srcs/lib/ft_lstdel.c	/^void	ft_lstdel(t_list **alst, void (*del)(void*, size_t))$/;"	f
-ft_lstdel	vm/libft/ft_lstdel.c	/^void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))$/;"	f
+ft_lstdelone	disassemble/libft/strings/ft_lstdelone.c	/^void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))$/;"	f
 ft_lstdelone	libft/srcs/lib/ft_lstdelone.c	/^void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))$/;"	f
-ft_lstdelone	vm/libft/ft_lstdelone.c	/^void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t content_size))$/;"	f
+ft_lstiter	disassemble/libft/strings/ft_lstiter.c	/^void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))$/;"	f
 ft_lstiter	libft/srcs/lib/ft_lstiter.c	/^void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))$/;"	f
-ft_lstiter	vm/libft/ft_lstiter.c	/^void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))$/;"	f
+ft_lstmap	disassemble/libft/strings/ft_lstmap.c	/^t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))$/;"	f
 ft_lstmap	libft/srcs/lib/ft_lstmap.c	/^t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))$/;"	f
-ft_lstmap	vm/libft/ft_lstmap.c	/^t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))$/;"	f
+ft_lstnew	disassemble/libft/strings/ft_lstnew.c	/^t_list		*ft_lstnew(void const *content, size_t content_size)$/;"	f
 ft_lstnew	libft/srcs/lib/ft_lstnew.c	/^t_list	*ft_lstnew(void const *content, size_t content_size)$/;"	f
-ft_lstnew	vm/libft/ft_lstnew.c	/^t_list	*ft_lstnew(void const *content, size_t content_size)$/;"	f
-ft_max	vm/libft/ft_max.c	/^int	ft_max(int a, int b)$/;"	f
+ft_main_push	disassemble/libft/ft_printf/ft_conversion_char.c	/^static int		ft_main_push(char *args, char *nombre, char sens, char zero)$/;"	f	file:
+ft_main_push	disassemble/libft/ft_printf/ft_conversion_float.c	/^static int		ft_main_push(char *args, char *nombre, char sens, char zero)$/;"	f	file:
+ft_main_push	disassemble/libft/ft_printf/ft_conversion_hexa.c	/^static int		ft_main_push(char *args, char *nombre, char sens, char zero)$/;"	f	file:
+ft_main_push	disassemble/libft/ft_printf/ft_conversion_int.c	/^static int		ft_main_push(char *args, char *nombre, char sens, char zero)$/;"	f	file:
+ft_main_push	disassemble/libft/ft_printf/ft_conversion_octale.c	/^static int		ft_main_push(char *args, char *nombre, char sens, char zero)$/;"	f	file:
+ft_main_push	disassemble/libft/ft_printf/ft_conversion_pourcentage.c	/^static int		ft_main_push(char *args, char *nombre, char sens, char zero)$/;"	f	file:
+ft_memalloc	disassemble/libft/strings/ft_memalloc.c	/^void	*ft_memalloc(size_t size)$/;"	f
 ft_memalloc	libft/srcs/lib/ft_memalloc.c	/^void	*ft_memalloc(const size_t size)$/;"	f
-ft_memalloc	vm/libft/ft_memalloc.c	/^void	*ft_memalloc(size_t size)$/;"	f
+ft_memccpy	disassemble/libft/strings/ft_memccpy.c	/^void	*ft_memccpy(void *dst, const void *src, int c, size_t n)$/;"	f
 ft_memccpy	libft/srcs/lib/ft_memccpy.c	/^void	*ft_memccpy(void *dst, const void *src, int c, size_t n)$/;"	f
-ft_memccpy	vm/libft/ft_memccpy.c	/^void	*ft_memccpy(void *dst, const void *src, int c, size_t n)$/;"	f
+ft_memchr	disassemble/libft/strings/ft_memchr.c	/^void	*ft_memchr(const void *s, int c, size_t n)$/;"	f
 ft_memchr	libft/srcs/lib/ft_memchr.c	/^void	*ft_memchr(const void *s, int c, size_t n)$/;"	f
-ft_memchr	vm/libft/ft_memchr.c	/^void	*ft_memchr(const void *s, int c, size_t n)$/;"	f
+ft_memcmp	disassemble/libft/strings/ft_memcmp.c	/^int		ft_memcmp(const void *s1, const void *s2, size_t n)$/;"	f
 ft_memcmp	libft/srcs/lib/ft_memcmp.c	/^int	ft_memcmp(const void *s1, const void *s2, size_t n)$/;"	f
-ft_memcmp	vm/libft/ft_memcmp.c	/^int	ft_memcmp(const void *s1, const void *s2, size_t n)$/;"	f
+ft_memcpy	disassemble/libft/strings/ft_memcpy.c	/^void	*ft_memcpy(void *dst, const void *src, size_t n)$/;"	f
 ft_memcpy	libft/srcs/lib/ft_memcpy.c	/^void	*ft_memcpy(void *dst, const void *src, size_t n)$/;"	f
-ft_memcpy	vm/libft/ft_memcpy.c	/^void	*ft_memcpy(void *dst, const void *src, size_t n)$/;"	f
+ft_memdel	disassemble/libft/strings/ft_memdel.c	/^void	ft_memdel(void **ap)$/;"	f
 ft_memdel	libft/srcs/lib/ft_memdel.c	/^void	ft_memdel(void **ap)$/;"	f
-ft_memdel	vm/libft/ft_memdel.c	/^void	ft_memdel(void **ap)$/;"	f
 ft_memjoin	libft/srcs/lib/ft_memjoin.c	/^void	*ft_memjoin(void *s1, size_t n1, void *s2, size_t n2)$/;"	f
+ft_memmove	disassemble/libft/strings/ft_memmove.c	/^void	*ft_memmove(void *dst, const void *src, size_t len)$/;"	f
 ft_memmove	libft/srcs/lib/ft_memmove.c	/^void	*ft_memmove(void *dst, const void *src, size_t len)$/;"	f
-ft_memmove	vm/libft/ft_memmove.c	/^void	*ft_memmove(void *dst, const void *src, size_t len)$/;"	f
+ft_memset	disassemble/libft/strings/ft_memset.c	/^void	*ft_memset(void *b, int c, size_t len)$/;"	f
 ft_memset	libft/srcs/lib/ft_memset.c	/^void	*ft_memset(void *b, int c, size_t len)$/;"	f
-ft_memset	vm/libft/ft_memset.c	/^void	*ft_memset(void *b, int c, size_t len)$/;"	f
-ft_min	vm/libft/ft_min.c	/^int	ft_min(int a, int b)$/;"	f
+ft_moins	disassemble/libft/ft_printf/ft_conversion_int.c	/^char			*ft_moins(char *tab)$/;"	f
 ft_need_trim	libft/srcs/lib/ft_strtrim.c	/^static	int		ft_need_trim(char const *s, int len)$/;"	f	file:
+ft_nstrdup	disassemble/libft/strings/ft_nstrdup.c	/^char	*ft_nstrdup(char *str, int len, int truth)$/;"	f
+ft_octale	disassemble/libft/ft_printf/ft_conversion_octale.c	/^char			*ft_octale(unsigned long long entier)$/;"	f
+ft_parse	disassemble/libft/ft_printf/ft_printf.c	/^int		ft_parse(const char *format, va_list ap, int ret)$/;"	f
+ft_plus	disassemble/libft/ft_printf/ft_conversion_int.c	/^char			*ft_plus(char *tab)$/;"	f
+ft_print	disassemble/libft/ft_printf/ft_conversion_char.c	/^int				ft_print(char *nombre)$/;"	f
+ft_printf	disassemble/libft/ft_printf/ft_printf.c	/^int		ft_printf(const char *format, ...)$/;"	f
 ft_printf	libft/srcs/printf/ft_printf.c	/^int			ft_printf(const char *format, ...)$/;"	f
+ft_put_arrondie	disassemble/libft/ft_printf/ft_tool_float.c	/^char		*ft_put_arrondie(int count, int a, char *nombre)$/;"	f
+ft_putchar	disassemble/libft/strings/ft_putchar.c	/^void	ft_putchar(char c)$/;"	f
 ft_putchar	libft/srcs/lib/ft_putchar.c	/^void	ft_putchar(char c)$/;"	f
-ft_putchar	vm/libft/ft_putchar.c	/^void	ft_putchar(char c)$/;"	f
+ft_putchar_fd	disassemble/libft/strings/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f
 ft_putchar_fd	libft/srcs/lib/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f
-ft_putchar_fd	vm/libft/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f
+ft_putendl	disassemble/libft/strings/ft_putendl.c	/^void	ft_putendl(char const *s)$/;"	f
 ft_putendl	libft/srcs/lib/ft_putendl.c	/^void	ft_putendl(char const *s)$/;"	f
-ft_putendl	vm/libft/ft_putendl.c	/^void	ft_putendl(char const *s)$/;"	f
+ft_putendl_fd	disassemble/libft/strings/ft_putendl_fd.c	/^void	ft_putendl_fd(char const *s, int fd)$/;"	f
 ft_putendl_fd	libft/srcs/lib/ft_putendl_fd.c	/^void	ft_putendl_fd(char const *s, int fd)$/;"	f
-ft_putendl_fd	vm/libft/ft_putendl_fd.c	/^void	ft_putendl_fd(char const *s, int fd)$/;"	f
+ft_putmoins	disassemble/libft/ft_printf/ft_tool_float.c	/^char		*ft_putmoins(char *nombre)$/;"	f
+ft_putnbr	disassemble/libft/strings/ft_putnbr.c	/^void	ft_putnbr(int n)$/;"	f
 ft_putnbr	libft/srcs/lib/ft_putnbr.c	/^void	ft_putnbr(int n)$/;"	f
-ft_putnbr	vm/libft/ft_putnbr.c	/^void	ft_putnbr(int n)$/;"	f
+ft_putnbr_fd	disassemble/libft/strings/ft_putnbr_fd.c	/^void	ft_putnbr_fd(int n, int fd)$/;"	f
 ft_putnbr_fd	libft/srcs/lib/ft_putnbr_fd.c	/^void	ft_putnbr_fd(int n, int fd)$/;"	f
-ft_putnbr_fd	vm/libft/ft_putnbr_fd.c	/^void	ft_putnbr_fd(int n, int fd)$/;"	f
+ft_putstr	disassemble/libft/strings/ft_putstr.c	/^void	ft_putstr(char const *s)$/;"	f
 ft_putstr	libft/srcs/lib/ft_putstr.c	/^void	ft_putstr(char const *s)$/;"	f
-ft_putstr	vm/libft/ft_putstr.c	/^void	ft_putstr(char const *s)$/;"	f
+ft_putstr_fd	disassemble/libft/strings/ft_putstr_fd.c	/^void	ft_putstr_fd(char const *s, int fd)$/;"	f
 ft_putstr_fd	libft/srcs/lib/ft_putstr_fd.c	/^void	ft_putstr_fd(char const *s, int fd)$/;"	f
-ft_putstr_fd	vm/libft/ft_putstr_fd.c	/^void	ft_putstr_fd(char const *s, int fd)$/;"	f
+ft_putstr_list	disassemble/libft/strings/ft_putstr_list.c	/^void	ft_putstr_list(t_list_p *current_e)$/;"	f
 ft_read	vm/src/ft_read.c	/^void			ft_read(int ac, char **av, t_data *data)$/;"	f
-ft_split	vm/libft/ft_split.c	/^char		**ft_split(char const *s, char *charset)$/;"	f
-ft_sqrt	vm/libft/ft_sqrt.c	/^unsigned int	ft_sqrt(unsigned int n)$/;"	f
+ft_repartition	disassemble/libft/ft_printf/ft_flag_conversion.c	/^char		*ft_repartition(char conversion, va_list ap, char *nombre)$/;"	f
+ft_s_swap	disassemble/libft/strings/ft_s_swap.c	/^char	*ft_s_swap(char *s, char c, unsigned int n)$/;"	f
+ft_short	disassemble/libft/ft_printf/ft_short.c	/^char	*ft_short(char *nombre, va_list ap)$/;"	f
+ft_short	disassemble/libft/strings/ft_short.c	/^char	*ft_short(char *nombre, va_list ap)$/;"	f
+ft_signed_char	disassemble/libft/ft_printf/ft_flag_conversion.c	/^char		*ft_signed_char(char *nombre, va_list ap)$/;"	f
+ft_size	disassemble/libft/strings/ft_size.c	/^int		ft_size(char *f)$/;"	f
+ft_strcat	disassemble/libft/strings/ft_strcat.c	/^char	*ft_strcat(char *s1, const char *s2)$/;"	f
 ft_strcat	libft/srcs/lib/ft_strcat.c	/^char	*ft_strcat(char *s1, const char *s2)$/;"	f
-ft_strcat	vm/libft/ft_strcat.c	/^char	*ft_strcat(char *s1, const char *s2)$/;"	f
-ft_strcdup	vm/libft/ft_strcdup.c	/^char	*ft_strcdup(const char *str, char c, int incl_c, int copy_all)$/;"	f
+ft_strchar	disassemble/libft/strings/ft_strchar.c	/^int		ft_strchar(char *str, char occurency)$/;"	f
+ft_strchr	disassemble/libft/strings/ft_strchr.c	/^char	*ft_strchr(const char *s, int c)$/;"	f
 ft_strchr	libft/srcs/lib/ft_strchr.c	/^char	*ft_strchr(const char *s, int c)$/;"	f
-ft_strchr	vm/libft/ft_strchr.c	/^char	*ft_strchr(const char *s, int c)$/;"	f
+ft_strclr	disassemble/libft/strings/ft_strclr.c	/^void	ft_strclr(char *s)$/;"	f
 ft_strclr	libft/srcs/lib/ft_strclr.c	/^void	ft_strclr(char *s)$/;"	f
-ft_strclr	vm/libft/ft_strclr.c	/^void	ft_strclr(char *s)$/;"	f
+ft_strcmp	disassemble/libft/strings/ft_strcmp.c	/^int		ft_strcmp(const char *s1, const char *s2)$/;"	f
 ft_strcmp	libft/srcs/lib/ft_strcmp.c	/^int	ft_strcmp(const char *s1, const char *s2)$/;"	f
-ft_strcmp	vm/libft/ft_strcmp.c	/^int	ft_strcmp(const char *s1, const char *s2)$/;"	f
+ft_strcpy	disassemble/libft/strings/ft_strcpy.c	/^char	*ft_strcpy(char *dst, const char *src)$/;"	f
 ft_strcpy	libft/srcs/lib/ft_strcpy.c	/^char	*ft_strcpy(char *dst, const char *src)$/;"	f
-ft_strcpy	vm/libft/ft_strcpy.c	/^char	*ft_strcpy(char *dst, const char *src)$/;"	f
+ft_strdel	disassemble/libft/strings/ft_strdel.c	/^void	ft_strdel(char **as)$/;"	f
 ft_strdel	libft/srcs/lib/ft_strdel.c	/^void	ft_strdel(char **as)$/;"	f
-ft_strdel	vm/libft/ft_strdel.c	/^void	ft_strdel(char **as)$/;"	f
+ft_strdup	disassemble/libft/strings/ft_strdup.c	/^char	*ft_strdup(char *s1, int truth)$/;"	f
 ft_strdup	libft/srcs/lib/ft_strdup.c	/^char	*ft_strdup(const char *s1)$/;"	f
-ft_strdup	vm/libft/ft_strdup.c	/^char	*ft_strdup(const char *s1)$/;"	f
+ft_strequ	disassemble/libft/strings/ft_strequ.c	/^int		ft_strequ(char const *s1, char const *s2)$/;"	f
 ft_strequ	libft/srcs/lib/ft_strequ.c	/^int	ft_strequ(char const *s1, char const *s2)$/;"	f
-ft_strequ	vm/libft/ft_strequ.c	/^int	ft_strequ(char const *s1, char const *s2)$/;"	f
+ft_striter	disassemble/libft/strings/ft_striter.c	/^void	ft_striter(char *s, void (*f)(char *))$/;"	f
 ft_striter	libft/srcs/lib/ft_striter.c	/^void	ft_striter(char *s, void (*f)(char *))$/;"	f
-ft_striter	vm/libft/ft_striter.c	/^void	ft_striter(char *s, void (*f)(char *))$/;"	f
+ft_striteri	disassemble/libft/strings/ft_striteri.c	/^void	ft_striteri(char *s, void (*f)(unsigned int, char *))$/;"	f
 ft_striteri	libft/srcs/lib/ft_striteri.c	/^void	ft_striteri(char *s, void (*f)(unsigned int, char *))$/;"	f
-ft_striteri	vm/libft/ft_striteri.c	/^void	ft_striteri(char *s, void (*f)(unsigned int, char *))$/;"	f
+ft_strjoin	disassemble/libft/strings/ft_strjoin.c	/^char	*ft_strjoin(char *s1, char *s2, unsigned int truth)$/;"	f
 ft_strjoin	libft/srcs/lib/ft_strjoin.c	/^char	*ft_strjoin(char const *s1, char const *s2)$/;"	f
-ft_strjoin	vm/libft/ft_strjoin.c	/^char	*ft_strjoin(char const *s1, char const *s2)$/;"	f
+ft_strjoin_free_c	disassemble/libft/ft_printf/ft_utilities.c	/^char	*ft_strjoin_free_c(char *s1, char s2)$/;"	f
 ft_strjoinfree	libft/srcs/lib/ft_strjoinfree.c	/^char	*ft_strjoinfree(char *s1, char *s2, char code)$/;"	f
+ft_strlcat	disassemble/libft/strings/ft_strlcat.c	/^size_t		ft_strlcat(char *dst, const char *src, size_t size)$/;"	f
 ft_strlcat	libft/srcs/lib/ft_strlcat.c	/^size_t	ft_strlcat(char *dst, const char *src, size_t size)$/;"	f
-ft_strlcat	vm/libft/ft_strlcat.c	/^size_t	ft_strlcat(char *dst, const char *src, size_t size)$/;"	f
+ft_strlen	disassemble/libft/strings/ft_strlen.c	/^size_t		ft_strlen(const char *s)$/;"	f
 ft_strlen	libft/srcs/lib/ft_strlen.c	/^size_t	ft_strlen(const char *s)$/;"	f
-ft_strlen	vm/libft/ft_strlen.c	/^size_t	ft_strlen(const char *s)$/;"	f
+ft_strmap	disassemble/libft/strings/ft_strmap.c	/^char	*ft_strmap(char const *s, char (*f)(char))$/;"	f
 ft_strmap	libft/srcs/lib/ft_strmap.c	/^char	*ft_strmap(char const *s, char (*f)(char))$/;"	f
-ft_strmap	vm/libft/ft_strmap.c	/^char	*ft_strmap(char const *s, char (*f)(char))$/;"	f
+ft_strmapi	disassemble/libft/strings/ft_strmapi.c	/^char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))$/;"	f
 ft_strmapi	libft/srcs/lib/ft_strmapi.c	/^char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))$/;"	f
-ft_strmapi	vm/libft/ft_strmapi.c	/^char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))$/;"	f
+ft_strncat	disassemble/libft/strings/ft_strncat.c	/^char	*ft_strncat(char *s1, const char *s2, size_t n)$/;"	f
 ft_strncat	libft/srcs/lib/ft_strncat.c	/^char	*ft_strncat(char *s1, const char *s2, size_t n)$/;"	f
-ft_strncat	vm/libft/ft_strncat.c	/^char	*ft_strncat(char *s1, const char *s2, size_t n)$/;"	f
+ft_strncmp	disassemble/libft/strings/ft_strncmp.c	/^int		ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f
 ft_strncmp	libft/srcs/lib/ft_strncmp.c	/^int	ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f
-ft_strncmp	vm/libft/ft_strncmp.c	/^int	ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f
+ft_strncpy	disassemble/libft/strings/ft_strncpy.c	/^char	*ft_strncpy(char *dst, const char *src, size_t len)$/;"	f
 ft_strncpy	libft/srcs/lib/ft_strncpy.c	/^char	*ft_strncpy(char *dst, const char *src, size_t len)$/;"	f
-ft_strncpy	vm/libft/ft_strncpy.c	/^char	*ft_strncpy(char *dst, const char *src, size_t len)$/;"	f
+ft_strndup	disassemble/libft/ft_printf/ft_utilities.c	/^char	*ft_strndup(char *string, int len, int truth)$/;"	f
+ft_strnequ	disassemble/libft/strings/ft_strnequ.c	/^int		ft_strnequ(char const *s1, char const *s2, size_t n)$/;"	f
 ft_strnequ	libft/srcs/lib/ft_strnequ.c	/^int	ft_strnequ(char const *s1, char const *s2, size_t n)$/;"	f
-ft_strnequ	vm/libft/ft_strnequ.c	/^int	ft_strnequ(char const *s1, char const *s2, size_t n)$/;"	f
+ft_strnew	disassemble/libft/strings/ft_strnew.c	/^char	*ft_strnew(size_t size)$/;"	f
 ft_strnew	libft/srcs/lib/ft_strnew.c	/^char	*ft_strnew(size_t size)$/;"	f
-ft_strnew	vm/libft/ft_strnew.c	/^char	*ft_strnew(size_t size)$/;"	f
+ft_strnstr	disassemble/libft/strings/ft_strnstr.c	/^char	*ft_strnstr(const char *str, const char *to_find, size_t n)$/;"	f
 ft_strnstr	libft/srcs/lib/ft_strnstr.c	/^char	*ft_strnstr(const char *haystack, const char *needle, size_t len)$/;"	f
-ft_strnstr	vm/libft/ft_strnstr.c	/^char	*ft_strnstr(const char *big, const char *little, size_t len)$/;"	f
+ft_strrchr	disassemble/libft/strings/ft_strrchr.c	/^char	*ft_strrchr(const char *s, int c)$/;"	f
 ft_strrchr	libft/srcs/lib/ft_strrchr.c	/^char	*ft_strrchr(const char *s, int c)$/;"	f
-ft_strrchr	vm/libft/ft_strrchr.c	/^char	*ft_strrchr(const char *s, int c)$/;"	f
+ft_strrev	disassemble/libft/ft_printf/ft_utilities.c	/^char	*ft_strrev(char *nombre)$/;"	f
+ft_strrev	disassemble/libft/strings/ft_strrev.c	/^char	*ft_strrev(char *str)$/;"	f
+ft_strsplit	disassemble/libft/strings/ft_strsplit.c	/^char			**ft_strsplit(const char *s, const char c)$/;"	f
 ft_strsplit	libft/srcs/lib/ft_strsplit.c	/^char		**ft_strsplit(char const *s, char c)$/;"	f
-ft_strsplit	vm/libft/ft_strsplit.c	/^char		**ft_strsplit(char const *s, char c)$/;"	f
+ft_strstr	disassemble/libft/strings/ft_strstr.c	/^char	*ft_strstr(const char *str, const char *to_find)$/;"	f
 ft_strstr	libft/srcs/lib/ft_strstr.c	/^char	*ft_strstr(const char *haystack, const char *needle)$/;"	f
-ft_strstr	vm/libft/ft_strstr.c	/^char	*ft_strstr(const char *big, const char *little)$/;"	f
+ft_strsub	disassemble/libft/strings/ft_strsub.c	/^char	*ft_strsub(char const *s, unsigned int start, size_t len)$/;"	f
 ft_strsub	libft/srcs/lib/ft_strsub.c	/^char	*ft_strsub(char const *s, unsigned int start, size_t len)$/;"	f
-ft_strsub	vm/libft/ft_strsub.c	/^char	*ft_strsub(char const *s, unsigned int start, size_t len)$/;"	f
+ft_strtrim	disassemble/libft/strings/ft_strtrim.c	/^char			*ft_strtrim(char const *s)$/;"	f
 ft_strtrim	libft/srcs/lib/ft_strtrim.c	/^char			*ft_strtrim(char const *s)$/;"	f
-ft_strtrim	vm/libft/ft_strtrim.c	/^char		*ft_strtrim(char const *s)$/;"	f
+ft_taille	disassemble/libft/ft_printf/ft_itoa_2.c	/^static int	ft_taille(unsigned int n)$/;"	f	file:
+ft_taille	disassemble/libft/ft_printf/ft_tool_char.c	/^int		ft_taille(char *string)$/;"	f
+ft_taille	disassemble/libft/strings/ft_itoa.c	/^static int	ft_taille(int n)$/;"	f	file:
+ft_taille_l_l	disassemble/libft/ft_printf/ft_itoa_1.c	/^static int	ft_taille_l_l(long long int n)$/;"	f	file:
+ft_taille_long	disassemble/libft/ft_printf/ft_itoa_2.c	/^static int	ft_taille_long(unsigned long n)$/;"	f	file:
+ft_taille_long_long	disassemble/libft/ft_printf/ft_itoa_1.c	/^static int	ft_taille_long_long(unsigned long long n)$/;"	f	file:
+ft_tolower	disassemble/libft/strings/ft_tolower.c	/^int		ft_tolower(int c)$/;"	f
 ft_tolower	libft/srcs/lib/ft_tolower.c	/^int	ft_tolower(int c)$/;"	f
-ft_tolower	vm/libft/ft_tolower.c	/^int	ft_tolower(int c)$/;"	f
+ft_toupper	disassemble/libft/strings/ft_toupper.c	/^int		ft_toupper(int c)$/;"	f
 ft_toupper	libft/srcs/lib/ft_toupper.c	/^int	ft_toupper(int c)$/;"	f
-ft_toupper	vm/libft/ft_toupper.c	/^int	ft_toupper(int c)$/;"	f
+ft_unsigned	disassemble/libft/ft_printf/ft_tool_int.c	/^char	*ft_unsigned(char *nombre, va_list ap, char conversion)$/;"	f
+ft_unsigned_h	disassemble/libft/ft_printf/ft_tool_cast.c	/^char	*ft_unsigned_h(char *nombre, va_list ap, char conversion)$/;"	f
+ft_unsigned_h_h	disassemble/libft/ft_printf/ft_tool_cast.c	/^char	*ft_unsigned_h_h(char *nombre, va_list ap, char conversion)$/;"	f
+ft_unsigned_long	disassemble/libft/ft_printf/ft_tool_cast.c	/^char	*ft_unsigned_long(char *nombre, va_list ap, char conversion)$/;"	f
+ft_unsigned_long_long	disassemble/libft/ft_printf/ft_tool_cast.c	/^char	*ft_unsigned_long_long(char *nombre, va_list ap, char conversion)$/;"	f
+ft_whereis	disassemble/libft/strings/ft_whereis.c	/^int		ft_whereis(const char *str, char c, int len)$/;"	f
 ft_wordlen	libft/srcs/lib/ft_strsplit.c	/^static int	ft_wordlen(char const *s, char c)$/;"	f	file:
+ft_wstrlen	disassemble/libft/strings/ft_strsplit.c	/^static int		ft_wstrlen(const char *str, const char c)$/;"	f	file:
+ft_wstrlen	disassemble/libft/strings/ft_strtrim.c	/^static int		ft_wstrlen(const char *s)$/;"	f	file:
+ft_wstrrev	disassemble/libft/strings/ft_wstrrev.c	/^char	*ft_wstrrev(char *str, int i)$/;"	f
 ftoa_double	libft/srcs/printf/double.c	/^int		ftoa_double(t_s_e_m *dble, t_conv_id *s_ptr)$/;"	f
 ftoa_ldouble	libft/srcs/printf/ldouble.c	/^int		ftoa_ldouble(t_s_e_m *dble, t_conv_id *s_ptr)$/;"	f
 g_op_tab	asm/srcs/op.c	/^t_op	g_op_tab[NB_OF_INSTRUCTION + 1] =$/;"	v
+g_op_tab	disassemble/src/op.c	/^t_op	g_op_tab[NB_OF_INSTRUCTION + 1] =$/;"	v
+g_type	disassemble/src/utils.c	/^static			uint8_t g_type[4] = {$/;"	v	file:
 gen_ocp	asm/srcs/param_tools.c	/^char		gen_ocp(t_cor *cor)$/;"	f
 get_address_value	libft/srcs/printf/address_tools.c	/^void	get_address_value(unsigned long *val_ptr, va_list *arg_ptr)$/;"	f
 get_double_value	libft/srcs/printf/double_tools.c	/^void	get_double_value(va_list *arg_ptr, t_s_e_m *dble_ptr)$/;"	f
 get_fd	asm/srcs/get_params.c	/^static	int		get_fd(t_file *file)$/;"	f	file:
-get_flags	vm/src/get_flags.c	/^void		get_flags(int ac, char **av, t_data *data, uint32_t *i)$/;"	f
+get_flags	vm/src/get_flags.c	/^void			get_flags(int ac, char **av, t_data *data, uint32_t *i)$/;"	f
 get_from_ram	vm/src/utils.c	/^uint32_t	get_from_ram(t_data *data, int32_t pos, int8_t len)$/;"	f
 get_func	libft/srcs/printf/func_selector.c	/^t_conv_func		get_func(char c)$/;"	f
-get_index	vm/libft/ft_atoi_base.c	/^static int	get_index(char *base, char c)$/;"	f	file:
 get_int_value	libft/srcs/printf/int_tools.c	/^void	get_int_value(long long int *val_ptr, va_list *arg_ptr,$/;"	f
 get_ldouble_value	libft/srcs/printf/ldouble_tools.c	/^void	get_ldouble_value(va_list *arg_ptr, t_s_e_m *dble_ptr)$/;"	f
-get_len	vm/libft/ft_itoa.c	/^static int	get_len(int n)$/;"	f	file:
 get_name	asm/srcs/get_params.c	/^static	int		get_name(int ac, char **av, t_file *file)$/;"	f	file:
+get_next_line	disassemble/libft/strings/get_next_line.c	/^int				get_next_line(const int fd, char **line)$/;"	f
 get_next_line	libft/srcs/gnl/get_next_line.c	/^int		get_next_line(int fd, char **line)$/;"	f
-get_next_line	vm/libft/get_next_line.c	/^int			get_next_line(const int fd, char **line)$/;"	f
-get_ocp	vm/src/ocp.c	/^void	get_ocp(t_data *data, t_carriage *current, t_ope *op)$/;"	f
+get_ocp	vm/src/ocp.c	/^void	get_ocp(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
 get_option	asm/srcs/get_params.c	/^static	void	get_option(int ac, char **av, t_file *file)$/;"	f	file:
 get_params	asm/srcs/get_params.c	/^int				get_params(int ac, char **av, t_file *file)$/;"	f
 get_player_code	vm/src/get_player_info.c	/^static void	get_player_code(uint32_t fd, t_data *data, uint32_t player_num)$/;"	f	file:
@@ -521,35 +671,34 @@ get_player_code_size	vm/src/get_player_info.c	/^static void	get_player_code_size
 get_player_comment	vm/src/get_player_info.c	/^static void	get_player_comment(uint32_t fd, t_data *data, uint32_t player_num)$/;"	f	file:
 get_player_info	vm/src/get_player_info.c	/^void		get_player_info(char *path, t_data *data, uint32_t player_num)$/;"	f
 get_player_name	vm/src/get_player_info.c	/^static void	get_player_name(uint32_t fd, t_data *data, uint32_t player_num)$/;"	f	file:
-get_player_num	vm/src/get_player_num.c	/^uint32_t	get_player_num(char **av, t_data *data, uint32_t *i)$/;"	f
+get_player_num	vm/src/get_player_num.c	/^uint32_t		get_player_num(char **av, t_data *data, uint32_t *i)$/;"	f
 get_players	vm/src/get_players.c	/^void			get_players(int ac, char **av, t_data *data, uint32_t *i)$/;"	f
 get_pos	vm/src/utils.c	/^int32_t		get_pos(int32_t res)$/;"	f
-get_str_len	vm/libft/ft_itoa_base_str.c	/^static int	get_str_len(int nbr, char *base)$/;"	f	file:
 get_unsigned_value	libft/srcs/printf/unsigned_tools.c	/^void	get_unsigned_value(unsigned long long *val_ptr, va_list *arg_ptr,$/;"	f
 get_value	asm/srcs/get_value.c	/^static void	get_value(t_cor *array, t_cor *cell, int param_nb, int code)$/;"	f	file:
 get_values	asm/srcs/get_value.c	/^void		get_values(t_cor *cor)$/;"	f
-get_words_info	vm/libft/ft_split.c	/^static void	get_words_info(char const *s, char *charset, t_word *tab)$/;"	f	file:
-get_words_nb	vm/libft/ft_split.c	/^static int	get_words_nb(char const *s, char *charset)$/;"	f	file:
 handle_parse_error	asm/srcs/parse.c	/^static int	handle_parse_error(int ret, t_file *file)$/;"	f	file:
 header	asm/includes/asm.h	/^	t_header	*header;$/;"	m	struct:s_file
+header	disassemble/include/disassemble.h	/^	t_header		header;$/;"	m	struct:s_corefile
 header_str	asm/includes/asm.h	/^	char		*header_str;$/;"	m	struct:s_file
-idx_mod	vm/inc/structs.h	/^	t_bool					idx_mod;$/;"	m	struct:s_op
+idx_mod	vm/inc/structs.h	/^	t_bool					idx_mod;$/;"	m	struct:s_op_s
 inc_size	asm/includes/asm.h	/^	size_t	inc_size;$/;"	m	struct:s_cor
+index	disassemble/include/disassemble.h	/^	unsigned int	index;$/;"	m	struct:s_corefile
+init	disassemble/Gagnant.s	/^init:		ld   %393216,r4		 	#7	$/;"	l
 init	libft/srcs/gnl/get_next_line.c	/^t_data	*init(int fd, t_list **alst)$/;"	f
-init_carriage	vm/src/prepare_carriages.c	/^static void	init_carriage(t_data *data, uint32_t num, uint32_t nb_carriages)$/;"	f	file:
+init_carriage	vm/src/prepare_carriages.c	/^static void	init_carriage(t_data *data, uint32_t nb_carriages)$/;"	f	file:
 init_data	vm/src/init_data.c	/^void		init_data(t_data *data)$/;"	f
 init_player	vm/src/init_data.c	/^static void	init_player(t_data *data)$/;"	f	file:
 init_vm	vm/src/init_data.c	/^static void	init_vm(t_data *data)$/;"	f	file:
 int_len	libft/srcs/printf/int_tools.c	/^int		int_len(long long int val)$/;"	f
-is_base	vm/libft/ft_atoi_base.c	/^static int	is_base(char *base, char c)$/;"	f	file:
-is_base	vm/libft/ft_convert_base.c	/^static int	is_base(char *base, char c)$/;"	f	file:
+is_cor	disassemble/src/main.c	/^static char		*is_cor(char *filename)$/;"	f	file:
 is_header_comment	asm/srcs/parse_tools.c	/^int			is_header_comment(char *str)$/;"	f
 is_header_name	asm/srcs/parse_tools.c	/^int			is_header_name(char *str)$/;"	f
 is_label	asm/srcs/parse_op_tool.c	/^static int	is_label(char *str)$/;"	f	file:
 is_op	asm/srcs/parse_op_tool.c	/^static int	is_op(char *str)$/;"	f	file:
-is_sep	vm/libft/ft_split.c	/^static int	is_sep(char *charset, char c)$/;"	f	file:
 iter_params	asm/srcs/get_value.c	/^static void	iter_params(t_cor *array, t_cor *cell)$/;"	f	file:
 keyword	asm/includes/asm.h	/^	char		*keyword;$/;"	m	struct:s_op
+keyword	disassemble/include/disassemble.h	/^	char			*keyword;$/;"	m	struct:s_op
 label	asm/includes/asm.h	/^	char	*label;$/;"	m	struct:s_cor
 last_live	vm/inc/structs.h	/^	int32_t					last_live;$/;"	m	struct:s_carriage
 last_player_live	vm/inc/structs.h	/^	int						last_player_live;$/;"	m	struct:s_vm
@@ -564,7 +713,6 @@ ldi	asm/toto.s	/^ldi r1, r2, r3$/;"	l
 ldouble_exponant	libft/srcs/printf/ldouble_tools.c	/^void	ldouble_exponant(t_s_e_m *dble_ptr, t_ld_arrs *a_ptr)$/;"	f
 ldouble_mantissa	libft/srcs/printf/ldouble_tools.c	/^void	ldouble_mantissa(unsigned long long mant, t_ld_arrs *a_ptr)$/;"	f
 ldouble_rounding	libft/srcs/printf/ldouble_tools.c	/^void	ldouble_rounding(t_ld_arrs *a_ptr, t_conv_id *s_ptr)$/;"	f
-len	vm/libft/includes/libft.h	/^	int				len;$/;"	m	struct:s_word
 len_f	libft/includes/arg.h	/^	int		len_f;$/;"	m	struct:s_double_arrs
 len_f	libft/includes/arg.h	/^	int		len_f;$/;"	m	struct:s_long_double_arrs
 len_header	asm/includes/asm.h	/^	size_t		len_header;$/;"	m	struct:s_file
@@ -574,9 +722,19 @@ len_modif1	libft/includes/arg.h	/^	char	len_modif1;$/;"	m	struct:s_conv_info
 len_modif2	libft/includes/arg.h	/^	char	len_modif2;$/;"	m	struct:s_conv_info
 len_modifier	libft/srcs/printf/plenmodifier.c	/^int	len_modifier(char *ptr, int end, t_conv_id *struct_ptr)$/;"	f
 len_modifier_in_struct	libft/srcs/printf/plenmodifier.c	/^int	len_modifier_in_struct(char *ptr, int len, t_conv_id *struct_ptr)$/;"	f
+length	disassemble/include/disassemble.h	/^	unsigned		length;$/;"	m	struct:s_uint8file
+level0	disassemble/Gagnant.s	/^level0:		fork %:level10$/;"	l
+level10	disassemble/Gagnant.s	/^level10:	live %42$/;"	l
+level100	disassemble/Gagnant.s	/^level100:	live %42$/;"	l
+level101	disassemble/Gagnant.s	/^level101:	live %42$/;"	l
+level11	disassemble/Gagnant.s	/^level11:	live %4$/;"	l
+level110	disassemble/Gagnant.s	/^level110:	live %42$/;"	l
+level111	disassemble/Gagnant.s	/^level111:	live %42	$/;"	l
 lfork	asm/toto.s	/^lfork %:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaalive$/;"	l
 line	asm/includes/asm.h	/^	char	*line;$/;"	m	struct:s_cor
 lines	asm/includes/asm.h	/^	char		**lines;$/;"	m	struct:s_file
+lines	disassemble/libft/includes/math.h	/^	unsigned int	lines;$/;"	m	struct:s_matrix
+list	disassemble/libft/includes/libft.h	/^	t_list_p		*list;$/;"	m	struct:s_begin
 live	asm/toto.s	/^live %:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaalive$/;"	l
 lld	asm/toto.s	/^lld %1, r1$/;"	l
 lld	asm/toto.s	/^lld 1, r1$/;"	l
@@ -586,12 +744,19 @@ lldi	asm/toto.s	/^lldi 1, %2, r3$/;"	l
 lldi	asm/toto.s	/^lldi 1, r2, r3$/;"	l
 lldi	asm/toto.s	/^lldi r1, %2, r3$/;"	l
 lldi	asm/toto.s	/^lldi r1, r2, r3$/;"	l
+load_file	disassemble/src/main.c	/^static int		load_file(char *fp, t_corefile *core_file)$/;"	f	file:
 longd_special_value	libft/srcs/printf/special.c	/^int		longd_special_value(t_s_e_m *dble_ptr)$/;"	f
 loop	libft/srcs/printf/ft_dprintf.c	/^int			loop(int fd, const char *fmt, va_list *arg_ptr, int written)$/;"	f
 m	libft/includes/arg.h	/^	unsigned long long	m;$/;"	m	struct:s_double
 magic	asm/includes/op.h	/^  unsigned int		magic;$/;"	m	struct:s_header
+magic	disassemble/include/op.h	/^	unsigned int		magic;$/;"	m	struct:s_header
 main	asm/srcs/asm.c	/^int		main(int ac, char **av)$/;"	f
+main	disassemble/src/main.c	/^int				main(int argc, char **argv)$/;"	f
 main	vm/src/main.c	/^int			main(int ac, char **av)$/;"	f
+matrix	disassemble/libft/includes/math.h	/^	int				***matrix;$/;"	m	struct:s_matrix
+minit_to_one	disassemble/libft/math/nminit_to_one.c	/^t_matrix		*minit_to_one(t_matrix *o_matrix, const unsigned int z)$/;"	f
+minit_to_one_zero	disassemble/libft/math/nminit_to_one_zero.c	/^t_matrix		*minit_to_one_zero(t_matrix *zo_matrix, const unsigned int z)$/;"	f
+minit_to_zero	disassemble/libft/math/nminit_to_zero.c	/^t_matrix		*minit_to_zero(t_matrix *z_matrix, const unsigned int z)$/;"	f
 minus_flag_address	libft/srcs/printf/address.c	/^void	minus_flag_address(t_conv_id *s_ptr, int len, unsigned long nb)$/;"	f
 minus_flag_double	libft/srcs/printf/double.c	/^void	minus_flag_double(t_d_arrs *a_ptr, t_conv_id *s_ptr, t_s_e_m *dble_ptr,$/;"	f
 minus_flag_hexa	libft/srcs/printf/hexa.c	/^void	minus_flag_hexa(t_conv_id *s_ptr, int len, unsigned long long nb)$/;"	f
@@ -604,21 +769,30 @@ minus_octal	libft/srcs/printf/octal.c	/^void	minus_octal(t_conv_id *s_ptr, int l
 minus_special_value	libft/srcs/printf/special_tools.c	/^void	minus_special_value(t_s_e_m *dble_ptr, t_conv_id *s_ptr)$/;"	f
 minus_string	libft/srcs/printf/string.c	/^void		minus_string(t_conv_id *s_ptr, int len, char *str)$/;"	f
 multiply_str_by_two	libft/srcs/printf/float_tools.c	/^void	multiply_str_by_two(char *str, int len)$/;"	f
+n_matrix	disassemble/libft/math/n_matrix.c	/^t_matrix		*n_matrix(unsigned int x, unsigned int y, unsigned int z)$/;"	f
 name	asm/includes/asm.h	/^	char		*name;$/;"	m	struct:s_file
 name	vm/inc/structs.h	/^	unsigned char			name[PROG_NAME_LENGTH + 1];$/;"	m	struct:s_player
 name_description	asm/includes/asm.h	/^	char		*name_description;$/;"	m	struct:s_op
-nb_arg	vm/inc/structs.h	/^	uint8_t					nb_arg;$/;"	m	struct:s_op
-nb_arg_stored	vm/inc/structs.h	/^	int8_t					nb_arg_stored;$/;"	m	struct:s_op
+name_description	disassemble/include/disassemble.h	/^	char			*name_description;$/;"	m	struct:s_op
+nb_arg	vm/inc/structs.h	/^	uint8_t					nb_arg;$/;"	m	struct:s_op_s
+nb_arg_stored	vm/inc/structs.h	/^	int8_t					nb_arg_stored;$/;"	m	struct:s_op_s
 nb_checks	vm/inc/structs.h	/^	int						nb_checks;$/;"	m	struct:s_vm
 nb_cycles	vm/inc/structs.h	/^	int						nb_cycles;$/;"	m	struct:s_vm
 nb_live	vm/inc/structs.h	/^	int						nb_live;$/;"	m	struct:s_vm
+nb_matrix	disassemble/libft/includes/math.h	/^	unsigned int	nb_matrix;$/;"	m	struct:s_matrix
 nb_players	vm/inc/structs.h	/^	uint8_t					nb_players;$/;"	m	struct:s_vm
 nb_process	vm/inc/structs.h	/^	uint32_t				nb_process;$/;"	m	struct:s_vm
+nb_process_since_beginning	vm/inc/structs.h	/^	uint32_t				nb_process_since_beginning;$/;"	m	struct:s_vm
 nbr_arg	asm/includes/asm.h	/^	char		nbr_arg;$/;"	m	struct:s_op
+nbr_arg	disassemble/include/disassemble.h	/^	char			nbr_arg;$/;"	m	struct:s_op
+next	disassemble/libft/includes/libft.h	/^	struct s_list	*next;$/;"	m	struct:s_list	typeref:struct:s_list::s_list
+next	disassemble/libft/includes/libft.h	/^	struct s_list_p	*next;$/;"	m	struct:s_list_p	typeref:struct:s_list_p::s_list_p
 next	libft/includes/libft.h	/^	struct s_double_linked_list	*next;$/;"	m	struct:s_double_linked_list	typeref:struct:s_double_linked_list::s_double_linked_list
 next	libft/includes/libft.h	/^	struct s_list	*next;$/;"	m	struct:s_list	typeref:struct:s_list::s_list
 next	vm/inc/structs.h	/^	t_carriage				*next;$/;"	m	struct:s_carriage
-next	vm/libft/includes/libft.h	/^	struct s_list	*next;$/;"	m	struct:s_list	typeref:struct:s_list::s_list
+nminit_to_one	disassemble/libft/math/nminit_to_one.c	/^t_matrix		*nminit_to_one(t_matrix *n_matrix)$/;"	f
+nminit_to_one_zero	disassemble/libft/math/nminit_to_one_zero.c	/^t_matrix		*nminit_to_one_zero(t_matrix *n_matrix)$/;"	f
+nminit_to_zero	disassemble/libft/math/nminit_to_zero.c	/^t_matrix		*nminit_to_zero(t_matrix *n_matrix)$/;"	f
 no_flag_address	libft/srcs/printf/address.c	/^void	no_flag_address(t_conv_id *s_ptr, int len, unsigned long nb)$/;"	f
 no_flag_double	libft/srcs/printf/double.c	/^void	no_flag_double(t_d_arrs *a_ptr, t_conv_id *s_ptr, t_s_e_m *dble_ptr,$/;"	f
 no_flag_hexa	libft/srcs/printf/hexa.c	/^void	no_flag_hexa(t_conv_id *s_ptr, int len, unsigned long long nb)$/;"	f
@@ -632,32 +806,33 @@ no_flag_unsigned	libft/srcs/printf/unsigned.c	/^void	no_flag_unsigned(t_conv_id 
 null_ptr	libft/srcs/printf/address.c	/^int		null_ptr(t_conv_id *s_ptr, int len)$/;"	f
 null_ptr_zero	libft/srcs/printf/address.c	/^int		null_ptr_zero(t_conv_id *s_ptr, int len)$/;"	f
 null_string	libft/srcs/printf/string.c	/^int			null_string(t_conv_id *s_ptr)$/;"	f
-num	vm/inc/structs.h	/^	uint8_t					num;$/;"	m	struct:s_carriage
+num	vm/inc/structs.h	/^	uint32_t				num;$/;"	m	struct:s_carriage
 num	vm/inc/structs.h	/^	uint8_t					num;$/;"	m	struct:s_player
 occurrence_of	libft/srcs/lib/ft_occurence_of.c	/^int		occurrence_of(char *str, char c)$/;"	f
 ocp	asm/includes/asm.h	/^	short	ocp;$/;"	m	struct:s_cor
-ocp	vm/inc/structs.h	/^	int8_t					ocp;$/;"	m	struct:s_op
+ocp	vm/inc/structs.h	/^	int8_t					ocp;$/;"	m	struct:s_op_s
+ocp_validity	vm/inc/structs.h	/^	t_bool					ocp_validity;$/;"	m	struct:s_op_s
 octet_line	asm/srcs/print_stdout.c	/^static void octet_line(t_cor *cor)$/;"	f	file:
 op	asm/includes/asm.h	/^	t_op	*op;$/;"	m	struct:s_cor
-op_add	vm/src/operations/op_add_sub.c	/^int32_t	op_add(t_data *data, t_carriage *current)$/;"	f
-op_aff	vm/src/operations/op_aff.c	/^int32_t	op_aff(t_data *data, t_carriage *current)$/;"	f
-op_and	vm/src/operations/op_and_or_xor.c	/^int32_t	op_and(t_data *data, t_carriage *current)$/;"	f
+op_add	vm/src/operations/op_add_sub.c	/^int32_t		op_add(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
+op_aff	vm/src/operations/op_aff.c	/^int32_t	op_aff(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
+op_and	vm/src/operations/op_and_or_xor.c	/^int32_t		op_and(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
 op_code	asm/includes/asm.h	/^	char		op_code;$/;"	m	struct:s_op
-op_fork	vm/src/operations/op_fork_lfork.c	/^int32_t	op_fork(t_data *data, t_carriage *current)$/;"	f
-op_ld	vm/src/operations/op_ld_lld.c	/^int32_t	op_ld(t_data *data, t_carriage *current)$/;"	f
-op_ldi	vm/src/operations/op_ldi_lldi.c	/^int32_t	op_ldi(t_data *data, t_carriage *current)$/;"	f
-op_lfork	vm/src/operations/op_fork_lfork.c	/^int32_t	op_lfork(t_data *data, t_carriage *current)$/;"	f
-op_live	vm/src/operations/op_live.c	/^int32_t		op_live(t_data *data, t_carriage *current)$/;"	f
-op_lld	vm/src/operations/op_ld_lld.c	/^int32_t	op_lld(t_data *data, t_carriage *current)$/;"	f
-op_lldi	vm/src/operations/op_ldi_lldi.c	/^int32_t	op_lldi(t_data *data, t_carriage *current)$/;"	f
-op_or	vm/src/operations/op_and_or_xor.c	/^int32_t	op_or(t_data *data, t_carriage *current)$/;"	f
-op_st	vm/src/operations/op_st.c	/^int32_t	op_st(t_data *data, t_carriage *current)$/;"	f
-op_sti	vm/src/operations/op_sti.c	/^int32_t	op_sti(t_data *data, t_carriage *current)$/;"	f
+op_code	disassemble/include/disassemble.h	/^	char			op_code;$/;"	m	struct:s_op
+op_fork	vm/src/operations/op_fork_lfork.c	/^int32_t		op_fork(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
+op_ld	vm/src/operations/op_ld_lld.c	/^int32_t		op_ld(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
+op_ldi	vm/src/operations/op_ldi_lldi.c	/^int32_t		op_ldi(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
+op_lfork	vm/src/operations/op_fork_lfork.c	/^int32_t		op_lfork(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
+op_live	vm/src/operations/op_live.c	/^int32_t		op_live(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
+op_lld	vm/src/operations/op_ld_lld.c	/^int32_t		op_lld(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
+op_lldi	vm/src/operations/op_ldi_lldi.c	/^int32_t		op_lldi(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
+op_or	vm/src/operations/op_and_or_xor.c	/^int32_t		op_or(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
+op_st	vm/src/operations/op_st.c	/^int32_t		op_st(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
+op_sti	vm/src/operations/op_sti.c	/^int32_t		op_sti(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
 op_str	asm/includes/asm.h	/^	char	*op_str;$/;"	m	struct:s_cor
-op_sub	vm/src/operations/op_add_sub.c	/^int32_t	op_sub(t_data *data, t_carriage *current)$/;"	f
-op_tab	vm/src/op.c	/^t_op    op_tab[17] =$/;"	v
-op_xor	vm/src/operations/op_and_or_xor.c	/^int32_t	op_xor(t_data *data, t_carriage *current)$/;"	f
-op_zjmp	vm/src/operations/op_zjmp.c	/^int32_t	op_zjmp(t_data *data, t_carriage *current)$/;"	f
+op_sub	vm/src/operations/op_add_sub.c	/^int32_t		op_sub(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
+op_xor	vm/src/operations/op_and_or_xor.c	/^int32_t		op_xor(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
+op_zjmp	vm/src/operations/op_zjmp.c	/^int32_t	op_zjmp(t_data *data, t_carriage *current, t_op_s *op)$/;"	f
 opcode	vm/inc/structs.h	/^	int8_t					opcode;$/;"	m	struct:s_carriage
 option	asm/includes/asm.h	/^	char		option;$/;"	m	struct:s_file
 or	asm/toto.s	/^or %1 , r2, r3$/;"	l
@@ -667,11 +842,11 @@ or	asm/toto.s	/^or r1 , %2, r3$/;"	l
 or	asm/toto.s	/^or r1 , 2, r3$/;"	l
 or	asm/toto.s	/^or r1 , r2, r3$/;"	l
 output	libft/includes/arg.h	/^	char	*output;$/;"	m	struct:s_conv_info
-padding	vm/inc/structs.h	/^	char					padding[2];$/;"	m	struct:s_carriage
+padding	vm/inc/structs.h	/^	char					padding[3];$/;"	m	struct:s_vm
 padding	vm/inc/structs.h	/^	char					padding[4];$/;"	m	struct:s_data
-padding	vm/inc/structs.h	/^	char					padding[4];$/;"	m	struct:s_op
+padding	vm/inc/structs.h	/^	char					padding[4];$/;"	m	struct:s_op_s
+padding	vm/inc/structs.h	/^	char					padding[7];$/;"	m	struct:s_carriage
 padding	vm/inc/structs.h	/^	char					padding[7];$/;"	m	struct:s_player
-padding	vm/inc/structs.h	/^	char					padding[7];$/;"	m	struct:s_vm
 params	asm/includes/asm.h	/^	char	*params[3];$/;"	m	struct:s_cor
 parse_file	asm/srcs/parse.c	/^int			parse_file(t_file *file, t_header *header)$/;"	f
 parse_header	asm/srcs/parse.c	/^static int	parse_header(t_file *file)$/;"	f	file:
@@ -686,21 +861,33 @@ prepare_arena	vm/src/prepare_arena.c	/^void	prepare_arena(t_data *data)$/;"	f
 prepare_carriages	vm/src/prepare_carriages.c	/^void		prepare_carriages(t_data *data)$/;"	f
 previous	libft/includes/libft.h	/^	struct s_double_linked_list *previous;$/;"	m	struct:s_double_linked_list	typeref:struct:s_double_linked_list::s_double_linked_list
 previous	vm/inc/structs.h	/^	t_carriage				*previous;$/;"	m	struct:s_carriage
+print_cycle	vm/src/verbose.c	/^void		print_cycle(t_data *data)$/;"	f
 print_line	vm/src/dump.c	/^void	print_line(size_t address, char mem[64], size_t size)$/;"	f
+print_matrix	disassemble/libft/math/print_nmatrix.c	/^void	print_matrix(t_matrix *p_matrix, const unsigned int z)$/;"	f
+print_nmatrix	disassemble/libft/math/print_nmatrix.c	/^void	print_nmatrix(t_matrix *n_matrix)$/;"	f
+print_pc_movements	vm/src/verbose.c	/^void		print_pc_movements(t_data *data, t_carriage *current)$/;"	f
+print_proc_and_ft	vm/src/verbose.c	/^void		print_proc_and_ft(t_carriage *current)$/;"	f
 print_stdout	asm/srcs/print_stdout.c	/^int		print_stdout(t_file *file)$/;"	f
-print_usage	vm/src/deal_error.c	/^static int	print_usage(void)$/;"	f	file:
+print_usage	vm/src/deal_error.c	/^static int32_t	print_usage(void)$/;"	f	file:
+print_zeros	vm/src/verbose.c	/^static void	print_zeros(uint32_t nb)$/;"	f	file:
 prog_name	asm/includes/op.h	/^  char				prog_name[PROG_NAME_LENGTH + 1];$/;"	m	struct:s_header
+prog_name	disassemble/include/op.h	/^	char				prog_name[PROG_NAME_LENGTH + 1];$/;"	m	struct:s_header
 prog_size	asm/includes/op.h	/^  unsigned int		prog_size;$/;"	m	struct:s_header
+prog_size	disassemble/include/op.h	/^	unsigned int		prog_size;$/;"	m	struct:s_header
 read	libft/includes/arg.h	/^	int	read;$/;"	m	struct:s_point
-read_and_stock	vm/libft/get_next_line.c	/^static int	read_and_stock(const int fd, char **stock)$/;"	f	file:
 read_file	asm/srcs/read.c	/^int				read_file(t_file *file)$/;"	f
+read_file	disassemble/src/utils.c	/^int				read_file(const char *filepath, t_uint8file *file)$/;"	f
+read_it	disassemble/libft/strings/get_next_line.c	/^static char		*read_it(char **tab, char *buff, const int fd)$/;"	f	file:
 read_until	libft/srcs/gnl/get_next_line.c	/^int		read_until(t_data *current)$/;"	f
 reg	vm/inc/structs.h	/^	int32_t					reg[REG_NUMBER];$/;"	m	struct:s_carriage
+return_line	disassemble/libft/strings/get_next_line.c	/^static char		*return_line(char **tab)$/;"	f	file:
 reverse_write	asm/srcs/write.c	/^static void	reverse_write(void *to_write, int fd)$/;"	f	file:
 s	libft/includes/arg.h	/^	char				s;$/;"	m	struct:s_double
+s_begin	disassemble/libft/includes/libft.h	/^typedef struct		s_begin$/;"	s
 s_carriage	vm/inc/structs.h	/^struct						s_carriage$/;"	s
 s_conv_info	libft/includes/arg.h	/^typedef struct	s_conv_info$/;"	s
 s_cor	asm/includes/asm.h	/^typedef struct	s_cor$/;"	s
+s_corefile	disassemble/include/disassemble.h	/^typedef struct		s_corefile$/;"	s
 s_data	libft/includes/get_next_line.h	/^typedef struct	s_data$/;"	s
 s_data	vm/inc/structs.h	/^struct						s_data$/;"	s
 s_double	libft/includes/arg.h	/^typedef struct	s_double$/;"	s
@@ -708,25 +895,30 @@ s_double_arrs	libft/includes/arg.h	/^typedef struct	s_double_arrs$/;"	s
 s_double_linked_list	libft/includes/libft.h	/^typedef struct	s_double_linked_list$/;"	s
 s_file	asm/includes/asm.h	/^typedef struct	s_file$/;"	s
 s_header	asm/includes/op.h	/^typedef struct		s_header$/;"	s
+s_header	disassemble/include/op.h	/^typedef struct			s_header$/;"	s
+s_list	disassemble/libft/includes/libft.h	/^typedef struct		s_list$/;"	s
 s_list	libft/includes/libft.h	/^typedef struct	s_list$/;"	s
-s_list	vm/libft/includes/libft.h	/^typedef struct		s_list$/;"	s
+s_list_p	disassemble/libft/includes/libft.h	/^typedef struct		s_list_p$/;"	s
 s_long_double_arrs	libft/includes/arg.h	/^typedef struct	s_long_double_arrs$/;"	s
+s_matrix	disassemble/libft/includes/math.h	/^typedef struct		s_matrix$/;"	s
 s_op	asm/includes/asm.h	/^typedef struct	s_op$/;"	s
-s_op	vm/inc/structs.h	/^struct						s_op$/;"	s
+s_op	disassemble/include/disassemble.h	/^typedef struct		s_op$/;"	s
+s_op_s	vm/inc/structs.h	/^struct						s_op_s$/;"	s
 s_player	vm/inc/structs.h	/^struct						s_player$/;"	s
 s_point	libft/includes/arg.h	/^typedef struct	s_point$/;"	s
+s_uint8file	disassemble/include/disassemble.h	/^typedef struct		s_uint8file$/;"	s
 s_vm	vm/inc/structs.h	/^struct						s_vm$/;"	s
-s_word	vm/libft/includes/libft.h	/^typedef struct		s_word$/;"	s
-set_d_flag	vm/src/get_flags.c	/^int			set_d_flag(int ac, char **av, t_data *data, uint32_t *i)$/;"	f
-set_dump_flag	vm/src/get_flags.c	/^int			set_dump_flag(int ac, char **av, t_data *data, uint32_t *i)$/;"	f
+set_d_flag	vm/src/get_flags.c	/^static int32_t	set_d_flag(int ac, char **av, t_data *data, uint32_t *i)$/;"	f	file:
+set_dump_flag	vm/src/get_flags.c	/^static int32_t	set_dump_flag(int ac, char **av, t_data *data, uint32_t *i)$/;"	f	file:
 set_label	asm/srcs/set_label_op_params.c	/^static void	set_label(t_cor *cor)$/;"	f	file:
 set_label_op	asm/srcs/set_label_op_params.c	/^int			set_label_op(t_cor *cor)$/;"	f
 set_op	asm/srcs/set_label_op_params.c	/^static int	set_op(t_cor *cor)$/;"	f	file:
-set_ope_code	vm/src/do_cycles.c	/^static void	set_ope_code(t_carriage *current, int32_t opcode)$/;"	f	file:
+set_ope_code	vm/src/do_cycles.c	/^static void	set_ope_code(t_data *data, t_carriage *current)$/;"	f	file:
 set_param	asm/srcs/set_params.c	/^static int	set_param(t_cor *array, t_cor *cell)$/;"	f	file:
 set_params	asm/srcs/set_params.c	/^int			set_params(t_cor *cor, t_header *header)$/;"	f
 set_params_str	asm/srcs/set_label_op_params.c	/^static int	set_params_str(t_cor *cor)$/;"	f	file:
 set_sizes	asm/srcs/set_params.c	/^static int	set_sizes(t_cor *cor)$/;"	f	file:
+set_verbose_flag	vm/src/get_flags.c	/^static int32_t	set_verbose_flag(int ac, char **av, t_data *data, uint32_t *i)$/;"	f	file:
 size	asm/includes/asm.h	/^	size_t	size;$/;"	m	struct:s_cor
 skip_null_bytes	vm/src/get_player_info_utils.c	/^void	skip_null_bytes(t_data *data, uint32_t fd)$/;"	f
 special_value	libft/srcs/printf/special_tools.c	/^void	special_value(t_s_e_m *dble_ptr, t_conv_id *s_ptr, int len)$/;"	f
@@ -734,15 +926,14 @@ split_content	asm/srcs/read.c	/^static	int		split_content(t_file *file)$/;"	f	fi
 split_header	asm/srcs/parse.c	/^static void	split_header(t_file *file)$/;"	f	file:
 st	asm/toto.s	/^st r2, 42$/;"	l
 st	asm/toto.s	/^st r2, r1$/;"	l
-start	vm/libft/includes/libft.h	/^	int				start;$/;"	m	struct:s_word
 sti	asm/toto.s	/^sti r1, %2, %3$/;"	l
 sti	asm/toto.s	/^sti r1, %2, r3$/;"	l
 sti	asm/toto.s	/^sti r1, 2, %3$/;"	l
 sti	asm/toto.s	/^sti r1, 2, r3$/;"	l
 sti	asm/toto.s	/^sti r1, r2, %3$/;"	l
 sti	asm/toto.s	/^sti r1, r2, r3$/;"	l
-store_arg	vm/src/store_arg.c	/^t_bool			store_arg(t_data *data, t_carriage *current, t_ope *op,$/;"	f
-store_direct	vm/src/store_arg.c	/^static int32_t	store_direct(t_data *data, t_carriage *current, t_ope *op)$/;"	f	file:
+store_arg	vm/src/store_arg.c	/^t_bool			store_arg(t_data *data, t_carriage *current, t_op_s *op,$/;"	f
+store_direct	vm/src/store_arg.c	/^static int32_t	store_direct(t_data *data, t_carriage *current, t_op_s *op)$/;"	f	file:
 store_indirect	vm/src/store_arg.c	/^static int32_t	store_indirect(t_data *data, t_carriage *current)$/;"	f	file:
 str	libft/includes/arg.h	/^	char				*str;$/;"	m	struct:s_double
 str_fill_char	libft/srcs/printf/global_tools.c	/^int	str_fill_char(char *str, char c, int len)$/;"	f
@@ -750,28 +941,35 @@ sub	asm/toto.s	/^sub r1, r2, r3$/;"	l
 swap_bytes	asm/srcs/correct_values.c	/^static int	swap_bytes(int value)$/;"	f	file:
 t_2list	libft/includes/libft.h	/^}				t_2list;$/;"	t	typeref:struct:s_double_linked_list
 t_arg_type	asm/includes/op.h	/^typedef char	t_arg_type;$/;"	t
+t_arg_type	disassemble/include/op.h	/^typedef char					t_arg_type;$/;"	t
 t_arg_type	vm/inc/op.h	/^typedef char	t_arg_type;$/;"	t
+t_begin	disassemble/libft/includes/libft.h	/^}					t_begin;$/;"	t	typeref:struct:s_begin
 t_bool	vm/inc/structs.h	/^typedef enum e_bool			t_bool;$/;"	t	typeref:enum:e_bool
 t_carriage	vm/inc/structs.h	/^typedef struct s_carriage	t_carriage;$/;"	t	typeref:struct:s_carriage
 t_conv_func	libft/includes/arg.h	/^typedef int		(*t_conv_func)(t_conv_id *struct_ptr, va_list *arg_ptr);$/;"	t
 t_conv_id	libft/includes/arg.h	/^}				t_conv_id;$/;"	t	typeref:struct:s_conv_info
 t_cor	asm/includes/asm.h	/^}				t_cor;$/;"	t	typeref:struct:s_cor
+t_corefile	disassemble/include/disassemble.h	/^}					t_corefile;$/;"	t	typeref:struct:s_corefile
 t_d_arrs	libft/includes/arg.h	/^}				t_d_arrs;$/;"	t	typeref:struct:s_double_arrs
 t_data	libft/includes/get_next_line.h	/^}				t_data;$/;"	t	typeref:struct:s_data
 t_data	vm/inc/structs.h	/^typedef struct s_data		t_data;$/;"	t	typeref:struct:s_data
 t_file	asm/includes/asm.h	/^}				t_file;$/;"	t	typeref:struct:s_file
 t_header	asm/includes/op.h	/^}					t_header;$/;"	t	typeref:struct:s_header
+t_header	disassemble/include/op.h	/^}						t_header;$/;"	t	typeref:struct:s_header
 t_ld_arrs	libft/includes/arg.h	/^}				t_ld_arrs;$/;"	t	typeref:struct:s_long_double_arrs
+t_list	disassemble/libft/includes/libft.h	/^}					t_list;$/;"	t	typeref:struct:s_list
 t_list	libft/includes/libft.h	/^}				t_list;$/;"	t	typeref:struct:s_list
-t_list	vm/libft/includes/libft.h	/^}					t_list;$/;"	t	typeref:struct:s_list
+t_list_p	disassemble/libft/includes/libft.h	/^}					t_list_p;$/;"	t	typeref:struct:s_list_p
+t_matrix	disassemble/libft/includes/math.h	/^}					t_matrix;$/;"	t	typeref:struct:s_matrix
 t_op	asm/includes/asm.h	/^}				t_op;$/;"	t	typeref:struct:s_op
-t_ope	vm/inc/structs.h	/^typedef struct s_op			t_ope;$/;"	t	typeref:struct:s_op
-t_opee	vm/inc/prototypes.h	/^typedef int32_t	(*t_opee) (t_data *, t_carriage *);$/;"	t
+t_op	disassemble/include/disassemble.h	/^}					t_op;$/;"	t	typeref:struct:s_op
+t_op_f	vm/inc/prototypes.h	/^typedef int32_t	(*t_op_f) (t_data *, t_carriage *, t_op_s *op);$/;"	t
+t_op_s	vm/inc/structs.h	/^typedef struct s_op_s		t_op_s;$/;"	t	typeref:struct:s_op_s
 t_player	vm/inc/structs.h	/^typedef struct s_player		t_player;$/;"	t	typeref:struct:s_player
 t_point	libft/includes/arg.h	/^}				t_point;$/;"	t	typeref:struct:s_point
 t_s_e_m	libft/includes/arg.h	/^}				t_s_e_m;$/;"	t	typeref:struct:s_double
+t_uint8file	disassemble/include/disassemble.h	/^}					t_uint8file;$/;"	t	typeref:struct:s_uint8file
 t_vm	vm/inc/structs.h	/^typedef struct s_vm			t_vm;$/;"	t	typeref:struct:s_vm
-t_word	vm/libft/includes/libft.h	/^}					t_word;$/;"	t	typeref:struct:s_word
 tab	libft/includes/arg.h	/^	char	tab[1500];$/;"	m	struct:s_double_arrs
 tab	libft/includes/arg.h	/^	char	tab[21500];$/;"	m	struct:s_long_double_arrs
 tmp	libft/includes/arg.h	/^	char	tmp[1500];$/;"	m	struct:s_double_arrs
@@ -780,15 +978,32 @@ total	libft/includes/arg.h	/^	char	*total;$/;"	m	struct:s_double_arrs
 total	libft/includes/arg.h	/^	char	*total;$/;"	m	struct:s_long_double_arrs
 true	vm/inc/structs.h	/^	true$/;"	e	enum:e_bool
 type_arr	asm/includes/asm.h	/^	t_arg_type	type_arr[3];$/;"	m	struct:s_op
+type_arr	disassemble/include/disassemble.h	/^	t_arg_type		type_arr[3];$/;"	m	struct:s_op
+uint8file_init	disassemble/src/uint8file.c	/^void	uint8file_init(t_uint8file *file, unsigned int size)$/;"	f
+uint8file_resize	disassemble/src/uint8file.c	/^void	uint8file_resize(t_uint8file *file, unsigned int size)$/;"	f
 unsigned_len_base	libft/srcs/printf/global_tools.c	/^int	unsigned_len_base(unsigned long long val, unsigned base)$/;"	f
 val	asm/includes/asm.h	/^	char	val[3][4];$/;"	m	struct:s_cor
 valid_line	asm/srcs/parse_op_tool.c	/^static int	valid_line(char *str)$/;"	f	file:
 value	asm/includes/asm.h	/^	int		value[3];$/;"	m	struct:s_cor
+verbose	vm/inc/structs.h	/^	int						verbose;$/;"	m	struct:s_vm
+verbose_add_sub	vm/src/operations/op_add_sub.c	/^static void	verbose_add_sub(t_data *data, t_carriage *current, t_op_s *op)$/;"	f	file:
+verbose_and_or_xor	vm/src/operations/op_and_or_xor.c	/^static void	verbose_and_or_xor(t_data *data, t_carriage *current, t_op_s *op)$/;"	f	file:
+verbose_fork_lfork	vm/src/operations/op_fork_lfork.c	/^static void	verbose_fork_lfork(t_data *data, t_carriage *current,$/;"	f	file:
+verbose_ld_lld	vm/src/operations/op_ld_lld.c	/^static void	verbose_ld_lld(t_data *data, t_carriage *current, t_op_s *op)$/;"	f	file:
+verbose_ldi_lldi	vm/src/operations/op_ldi_lldi.c	/^static void	verbose_ldi_lldi(t_data *data, t_carriage *current, int32_t reg_nb,$/;"	f	file:
+verbose_st	vm/src/operations/op_st.c	/^static void	verbose_st(t_data *data, t_carriage *current, t_op_s *op)$/;"	f	file:
+verbose_sti	vm/src/operations/op_sti.c	/^static void	verbose_sti(t_data *data, t_carriage *current, int32_t reg_nb,$/;"	f	file:
 vm	vm/inc/structs.h	/^	t_vm					vm;$/;"	m	struct:s_data
+w_dir	disassemble/src/w_params.c	/^static unsigned int		w_dir(unsigned int type, uint8_t op_code,$/;"	f	file:
+w_header	disassemble/src/w_functions.c	/^void					w_header(t_corefile *file)$/;"	f
+w_param	disassemble/src/w_params.c	/^unsigned int			w_param(unsigned int type, uint8_t op_code,$/;"	f
+w_program	disassemble/src/w_functions.c	/^unsigned int			w_program(t_corefile *file)$/;"	f
+w_program_op	disassemble/src/w_functions.c	/^static unsigned	int		w_program_op(uint8_t op_code, t_corefile *file)$/;"	f	file:
 what_size	asm/srcs/correct_values.c	/^int			what_size(char direct_size, short ocp, int param_nb)$/;"	f
 what_type	asm/srcs/param_tools.c	/^static int	what_type(char *str)$/;"	f	file:
 whitespace	asm/srcs/parse_tools.c	/^int			whitespace(char *str, int len)$/;"	f
 whitespace_header	asm/srcs/parse.c	/^static int	whitespace_header(t_file *file)$/;"	f	file:
+width	disassemble/include/disassemble.h	/^	unsigned		width;$/;"	m	struct:s_uint8file
 width	libft/includes/arg.h	/^	int		width;$/;"	m	struct:s_conv_info
 width	libft/srcs/printf/pwidth.c	/^int		width(char *ptr, int end, t_conv_id *struct_ptr)$/;"	f
 width_in_struct	libft/srcs/printf/pwidth.c	/^void	width_in_struct(char c, t_conv_id *struct_ptr)$/;"	f
@@ -800,9 +1015,11 @@ write_infile	asm/srcs/write.c	/^int			write_infile(t_file *file)$/;"	f
 write_instruction	asm/srcs/print_stdout.c	/^static void write_instruction(t_cor *cor)$/;"	f	file:
 write_instruction	asm/srcs/write.c	/^static void	write_instruction(t_cor *cor, int fd)$/;"	f	file:
 write_label	asm/srcs/print_stdout.c	/^static void write_label(t_cor *cor)$/;"	f	file:
+write_lzf	disassemble/src/w_functions.c	/^static unsigned	int		write_lzf(uint8_t op_code, t_corefile *file)$/;"	f	file:
 write_stdout	asm/srcs/write_file.c	/^void	write_stdout(t_file *file)$/;"	f
 write_to	asm/srcs/write_file.c	/^int		write_to(t_file *file)$/;"	f
 written	libft/includes/arg.h	/^	int	written;$/;"	m	struct:s_point
+wrong_cor	disassemble/src/w_functions.c	/^static void				wrong_cor(t_corefile *file)$/;"	f	file:
 wrong_param_content	asm/srcs/set_params.c	/^static void	wrong_param_content(t_cor *cell, int iterator)$/;"	f	file:
 wrong_parameter	asm/srcs/param_tools.c	/^static void	wrong_parameter(int nb, char param_code, char *str)$/;"	f	file:
 xor	asm/toto.s	/^xor %1 , r2, r3$/;"	l

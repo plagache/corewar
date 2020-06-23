@@ -6,7 +6,7 @@
 /*   By: nabboufe <nabboufe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 11:17:05 by danglass          #+#    #+#             */
-/*   Updated: 2019/04/09 19:34:52 by nabboufe         ###   ########.fr       */
+/*   Updated: 2020/06/23 14:45:20 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,9 @@ static int		ft_check_flag(char *args, int a, char *nombre, char conversion)
 
 int				ft_conversion_pourcentage(char *args, char conversion)
 {
-	char	moins;
 	int		retention;
 	int		a;
 
-	moins = '0';
 	a = 1;
 	if (conversion == '%')
 		retention = ft_check_flag(args, a, ft_strdup("%", 0), conversion);

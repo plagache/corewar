@@ -17,18 +17,21 @@ OBJ			=		$(SRCS:.c=.o)
 CC			=		gcc
 
 CFLAGS		=		-Wall -Wextra -Werror
+CFLAGS		+=		-g3 -fsanitize=address,undefined
 
 DECHET		=		*.dSYM
 
 all			:		$(LIBFT_A) $(NAME)
 
 $(LIBFT_A)	:		
-	@make -C libft/ all clean >/dev/null
+	@make -C libft/ >/dev/null
 	@echo "libft compilation is done !\n"
 	@mv libft/libft.a .
 
+#	Original compilation line
+#	$(CC) $(CFLAGS) $(LIBFT_A) $(OBJ) $(INCLUDES) -o $(NAME)
 $(NAME)		:		$(OBJ) $(LIBFT_A)
-	$(CC) $(CFLAGS) $(LIBFT_A) $(OBJ) $(INCLUDES) -o $(NAME)
+	$(CC) $(CFLAGS) $(INCLUDES) $(OBJ) $(LIBFT_A) -o $(NAME)
 	@rm -rf $(DECHET)
 
 clean		:

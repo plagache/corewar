@@ -6,7 +6,7 @@
 /*   By: damboule <damboule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 13:10:23 by damboule          #+#    #+#             */
-/*   Updated: 2019/04/09 21:17:32 by nabboufe         ###   ########.fr       */
+/*   Updated: 2020/06/23 14:45:42 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,13 +90,9 @@ int		ft_parse(const char *format, va_list ap, int ret)
 int		ft_printf(const char *format, ...)
 {
 	int		retention;
-	char	*buffer;
 	va_list	ap;
-	int		i;
 
-	i = 0;
 	retention = 0;
-	buffer = NULL;
 	va_start(ap, format);
 	retention = ft_parse(format, ap, retention);
 	va_end(ap);

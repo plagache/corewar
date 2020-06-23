@@ -6,7 +6,7 @@
 /*   By: nabboufe <nabboufe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 23:10:08 by nabboufe          #+#    #+#             */
-/*   Updated: 2020/06/19 19:26:45 by nabboufe         ###   ########.fr       */
+/*   Updated: 2020/06/23 14:44:30 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <string.h>
+# include <stdint.h>
 # include "math.h"
 # include "get_next_line.h"
 # include "ft_printf.h"

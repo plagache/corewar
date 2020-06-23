@@ -6,7 +6,7 @@
 /*   By: nabboufe <nabboufe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/18 17:49:26 by nabboufe          #+#    #+#             */
-/*   Updated: 2020/06/19 23:51:08 by nabboufe         ###   ########.fr       */
+/*   Updated: 2020/06/23 15:10:44 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static unsigned	int		write_lzf(uint8_t op_code, t_corefile *file)
 		write(file->fd, " ", 1);
 		return (4);
 	}
-	else if (op_code == 9 | op_code == 12 | op_code == 15)
+	else if (op_code == 9 || op_code == 12 || op_code == 15)
 	{
 		ft_memcpy(&param, file->champ + file->index, 2);
 		param = ft_2byteswap(param);
