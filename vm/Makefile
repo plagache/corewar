@@ -26,6 +26,7 @@ SRC_FILES = announce_players.c \
 				prepare_carriages.c \
 				store_arg.c \
 				utils.c \
+				verbose.c \
 				operations/op_add_sub.c \
 				operations/op_aff.c \
 				operations/op_and_or_xor.c \
@@ -64,8 +65,9 @@ all: $(OBJ_DIR) $(NAME)
 #This next line is mac compliation
 #	$(CC) $(CFLAGS) $(INCLUDES) $(OBJ) $(LIB_FLAGS) -o $@
 $(NAME): $(LIB) $(OBJ)
-	$(CC) $(CFLAGS) $(INCLUDES) $(OBJ) -o $@ $(LIB_FLAGS)
-	echo "\n\033[1m\033[3m$(NAME)\033[0m [\033[32mOK\033[0m]"
+	$(CC) $(CFLAGS) $(INCLUDES) $(OBJ) $(LIB_FLAGS) -o $@
+	# $(CC) $(CFLAGS) $(INCLUDES) $(OBJ) -o $@ $(LIB_FLAGS)
+	echo "\033[32mmake vm done\033[0m"
 
 $(LIB): FORCE
 	$(MAKE) -C $(LIB_DIR)
@@ -81,11 +83,13 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INC)
 clean:
 	$(MAKE) -C $(LIB_DIR) clean
 	rm -rf $(OBJ_DIR)
+	echo "\033[35mclean vm done\033[0m"
 
 fclean:
 	make -C $(LIB_DIR) fclean
 	$(MAKE) clean
 	rm -rf $(NAME)
+	echo "\033[35mfclean vm done\033[0m"
 
 re:
 	$(MAKE) fclean

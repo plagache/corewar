@@ -14,9 +14,14 @@
 
 static void	init_vm(t_data *data)
 {
+	data->vm.nb_cycles = 0;
 	data->vm.cycle_to_die = CYCLE_TO_DIE;
 	data->vm.cycle_to_dump = 0;
+	data->vm.cycles_since_last_check = 0;
 	data->vm.dump = 0;
+	data->vm.nb_process_since_beginning = 0;
+	data->vm.verbose = 0;
+	data->vm.aff = false;
 }
 
 static void	init_player(t_data *data)

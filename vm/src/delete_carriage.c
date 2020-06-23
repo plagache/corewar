@@ -54,6 +54,10 @@ t_carriage			*delete_one_carriage(t_data *data, t_carriage *current)
 
 	if (!current)
 		return (NULL);
+	if (((data->vm.verbose & 0b01000) >> 3))
+		ft_printf("Process %d hasn't lived for %d cycles (CTD %d)\n",
+			current->num, data->vm.nb_cycles - current->last_live,
+			data->vm.cycle_to_die);
 	data->vm.nb_process -= 1;
 	if (current == data->carriages)
 		return (delete_head(data, current));

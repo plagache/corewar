@@ -14,14 +14,14 @@
 
 void	print_line(size_t address, char mem[64], size_t size)
 {
-	int	iterator;
+	int32_t	iterator;
 
 	iterator = -1;
 	if (address == 0)
 		ft_printf("0x");
-	ft_printf("%#.4x : ", (unsigned int)address);
-	while (++iterator < (int)size)
-			ft_printf("%.2x ", (unsigned char)mem[iterator]);
+	ft_printf("%#.4x : ", (uint32_t)address);
+	while (++iterator < (int32_t)size)
+		ft_printf("%.2x ", (unsigned char)mem[iterator]);
 	ft_printf("\n");
 }
 

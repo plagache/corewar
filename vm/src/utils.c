@@ -12,10 +12,6 @@
 
 #include "prototypes.h"
 
-/*
-** A faire : fonction write_in_ram
-*/
-
 void		write_in_ram(t_data *data, int32_t start, int32_t nb)
 {
 	int32_t i;

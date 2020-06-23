@@ -29,6 +29,8 @@ static void	do_check(t_data *data)
 	if (NBR_LIVE <= data->vm.nb_live || MAX_CHECKS <= data->vm.nb_checks)
 	{
 		data->vm.cycle_to_die -= CYCLE_DELTA;
+		if (data->vm.verbose & 0b010)
+			ft_printf("Cycle to die is now %d\n", data->vm.cycle_to_die);
 		data->vm.nb_checks = 0;
 	}
 	else
@@ -37,11 +39,13 @@ static void	do_check(t_data *data)
 	data->vm.cycles_since_last_check = 0;
 }
 
-static void	set_ope_code(t_carriage *current, int32_t opcode)
+static void	set_ope_code(t_data *data, t_carriage *current)
 {
 	static const int	waiting_time[16] = {10, 5, 5, 10, 10, 6, 6, 6, 20,
 	25, 25, 800, 10, 50, 1000, 2};
+	int32_t				opcode;
 
+	opcode = get_from_ram(data, current->pos, 1);
 	if (0x01 <= opcode && opcode <= 0x10)
 	{
 		current->opcode = opcode;
@@ -57,22 +61,18 @@ static void	set_ope_code(t_carriage *current, int32_t opcode)
 
 static void	do_current_cycle(t_data *data, t_carriage *current)
 {
-	int32_t opcode;
+	t_op_s op;
 
-	opcode = get_from_ram(data, current->pos, 1);
 	if (current->cycles_to_wait < 0)
-		set_ope_code(current, opcode);
+		set_ope_code(data, current);
 	if (current->cycles_to_wait == 0)
 	{
-		if (0x01 <= opcode && opcode <= 0x0b)
-		{
-			current->bytes_to_jump = 1;
-			do_ope(opcode, data, current);
-			current->pos = get_pos(current->pos + current->bytes_to_jump);
-			current->bytes_to_jump = 0;
-		}
-		else
-			current->pos = get_pos(current->pos + 1);
+		current->bytes_to_jump = 1;
+		do_ope(current->opcode, data, current, &op);
+		if (data->vm.verbose & 0b010000)
+			print_pc_movements(data, current);
+		current->pos = get_pos(current->pos + current->bytes_to_jump);
+		current->bytes_to_jump = 0;
 	}
 }
 
@@ -82,8 +82,14 @@ void		do_cycles(t_data *data)
 
 	while (data->carriages)
 	{
+		if (data->vm.dump != 0 && data->vm.cycle_to_dump
+			== data->vm.nb_cycles)
+			dump_memory(data);
 		current = data->carriages;
 		data->vm.nb_cycles++;
+		data->vm.cycles_since_last_check++;
+		if (data->vm.verbose & 0b010)
+			print_cycle(data);
 		while (current)
 		{
 			current->cycles_to_wait--;
@@ -93,10 +99,5 @@ void		do_cycles(t_data *data)
 		if (data->vm.cycles_since_last_check == data->vm.cycle_to_die ||
 			data->vm.cycle_to_die <= 0)
 			do_check(data);
-		else
-			data->vm.cycles_since_last_check++;
-		if (data->vm.dump != 0 && data->vm.cycle_to_dump
-			== data->vm.nb_cycles - 1)
-			dump_memory(data);
 	}
 }

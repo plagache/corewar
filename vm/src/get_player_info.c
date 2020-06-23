@@ -47,7 +47,7 @@ static void	get_player_code(uint32_t fd, t_data *data, uint32_t player_num)
 
 	ret = read(fd, data->players[player_num - 1].code,
 		data->players[player_num - 1].code_size);
-	if (ret < (int)data->players[player_num - 1].code_size)
+	if (ret < (int32_t)data->players[player_num - 1].code_size)
 		deal_error(data, MISSING_PROG_S, NO_USAGE);
 }
 

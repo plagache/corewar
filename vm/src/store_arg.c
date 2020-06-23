@@ -12,7 +12,7 @@
 
 #include "prototypes.h"
 
-static int32_t	store_direct(t_data *data, t_carriage *current, t_ope *op)
+static int32_t	store_direct(t_data *data, t_carriage *current, t_op_s *op)
 {
 	uint32_t	to_store;
 
@@ -26,14 +26,16 @@ static int32_t	store_indirect(t_data *data, t_carriage *current)
 	uint32_t	to_store;
 	int16_t		address;
 
-	to_store = 0;
 	address = get_from_ram(data, current->pos + current->bytes_to_jump, 2);
 	address = address % IDX_MOD;
-	to_store = get_from_ram(data, current->pos + address, 4);
+	if (current->opcode != 3)
+		to_store = get_from_ram(data, current->pos + address, 4);
+	else
+		to_store = address;
 	return ((int32_t)to_store);
 }
 
-t_bool			store_arg(t_data *data, t_carriage *current, t_ope *op,
+t_bool			store_arg(t_data *data, t_carriage *current, t_op_s *op,
 	int8_t arg_type)
 {
 	t_bool	ret;
@@ -51,11 +53,13 @@ t_bool			store_arg(t_data *data, t_carriage *current, t_ope *op,
 		to_store = store_direct(data, current, op);
 		current->bytes_to_jump += op->dir_size;
 	}
-	else
+	else if (arg_type == IND_CODE)
 	{
 		to_store = store_indirect(data, current);
 		current->bytes_to_jump += 2;
 	}
+	else
+		return (false);
 	op->arg[op->nb_arg_stored] = to_store;
 	return (ret);
 }

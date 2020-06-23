@@ -17,7 +17,7 @@
 typedef struct s_player		t_player;
 typedef struct s_carriage	t_carriage;
 typedef struct s_data		t_data;
-typedef struct s_op			t_ope;
+typedef struct s_op_s		t_op_s;
 typedef struct s_vm			t_vm;
 typedef enum e_bool			t_bool;
 
@@ -46,16 +46,17 @@ struct						s_carriage
 	int32_t					pos;
 	int32_t					bytes_to_jump;
 	int32_t					reg[REG_NUMBER];
+	uint32_t				num;
 	t_bool					carry;
 	int8_t					opcode;
-	uint8_t					num;
-	char					padding[2];
+	char					padding[7];
 };
 
 struct						s_vm
 {
 	uint8_t					arena[MEM_SIZE];
 	uint32_t				nb_process;
+	uint32_t				nb_process_since_beginning;
 	int						nb_cycles;
 	int						cycles_since_last_check;
 	int						last_player_live;
@@ -64,11 +65,13 @@ struct						s_vm
 	int						nb_checks;
 	int						dump;
 	int						cycle_to_dump;
+	int						verbose;
 	uint8_t					nb_players;
-	char					padding[7];
+	char					padding[3];
+	t_bool					aff;
 };
 
-struct						s_op
+struct						s_op_s
 {
 	int32_t					arg[3];
 	int8_t					ocp;
@@ -76,6 +79,7 @@ struct						s_op
 	int8_t					dir_size;
 	int8_t					nb_arg_stored;
 	t_bool					idx_mod;
+	t_bool					ocp_validity;
 	char					padding[4];
 };
 

@@ -12,17 +12,17 @@
 
 #include "prototypes.h"
 
-static int	check_num_arg(t_data *data, char *str)
+static int32_t	check_num_arg(t_data *data, char *str)
 {
 	long arg_num;
 
 	arg_num = ft_atol(str);
 	if (arg_num < INT_MIN || INT_MAX < arg_num)
 		deal_error(data, INT_BOUND, NO_USAGE);
-	return ((int)arg_num);
+	return ((int32_t)arg_num);
 }
 
-static int	check_player_num(t_data *data, uint32_t player_num,
+static int32_t	check_player_num(t_data *data, uint32_t player_num,
 t_bool num_chosen_by_user)
 {
 	uint32_t i;
@@ -43,7 +43,7 @@ t_bool num_chosen_by_user)
 	return (player_num);
 }
 
-uint32_t	get_player_num(char **av, t_data *data, uint32_t *i)
+uint32_t		get_player_num(char **av, t_data *data, uint32_t *i)
 {
 	int		player_num;
 	t_bool	num_chosen_by_user;

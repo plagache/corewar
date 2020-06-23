@@ -12,11 +12,11 @@
 
 #include "prototypes.h"
 
-int32_t	do_ope(int32_t opcode, t_data *data, t_carriage *current)
+int32_t	do_ope(int32_t opcode, t_data *data, t_carriage *current, t_op_s *op)
 {
-	static const t_opee ope_tab[16] = {&op_live, &op_ld, &op_st, &op_add,
+	static const t_op_f ope_tab[16] = {&op_live, &op_ld, &op_st, &op_add,
 	&op_sub, &op_and, &op_or, &op_xor, &op_zjmp, &op_ldi, &op_sti, &op_fork,
 	&op_lld, &op_lldi, &op_lfork, &op_aff};
 
-	return (ope_tab[opcode - 1](data, current));
+	return (ope_tab[opcode - 1](data, current, op));
 }

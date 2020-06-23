@@ -26,13 +26,13 @@ void		add_head_carriage(t_data *data)
 	}
 	data->carriages = new;
 	data->vm.nb_process += 1;
+	data->vm.nb_process_since_beginning += 1;
 }
 
-static void	init_carriage(t_data *data, uint32_t num, uint32_t nb_carriages)
+static void	init_carriage(t_data *data, uint32_t nb_carriages)
 {
-	data->carriages->num = num + 1;
-	data->carriages->pos = (MEM_SIZE / data->vm.nb_players)
-	* (data->vm.nb_players - nb_carriages);
+	data->carriages->num = data->vm.nb_process_since_beginning;
+	data->carriages->pos = (MEM_SIZE / data->vm.nb_players) * nb_carriages;
 	data->carriages->reg[0] = -(data->carriages->num);
 }
 
@@ -48,8 +48,8 @@ void		prepare_carriages(t_data *data)
 		if (data->players[i].num > 0)
 		{
 			add_head_carriage(data);
+			init_carriage(data, nb_carriages);
 			nb_carriages++;
-			init_carriage(data, i, nb_carriages);
 		}
 		i++;
 	}

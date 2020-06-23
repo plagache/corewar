@@ -12,16 +12,30 @@
 
 #include "prototypes.h"
 
-int32_t	op_zjmp(t_data *data, t_carriage *current)
+int32_t	op_zjmp(t_data *data, t_carriage *current, t_op_s *op)
 {
 	int16_t shift;
 
-	shift = 0;
-	if (current->carry == 0)
-		return (-1);
+	op->nb_arg = 0;
+	op->dir_size = SMALL_DIR;
+	op->idx_mod = true;
 	shift = get_from_ram(data, current->pos + 1, 2);
 	shift %= IDX_MOD;
+	if (data->vm.verbose & 0b0100)
+	{
+		print_proc_and_ft(current);
+		ft_printf("%d ", shift);
+	}
+	if (current->carry == 0)
+	{
+		current->bytes_to_jump += 2;
+		if (data->vm.verbose & 0b0100)
+			ft_printf("FAILED\n");
+		return (-1);
+	}
 	current->pos = get_pos(current->pos + shift);
 	current->bytes_to_jump = 0;
+	if (data->vm.verbose & 0b0100)
+		ft_printf("OK\n");
 	return (0);
 }

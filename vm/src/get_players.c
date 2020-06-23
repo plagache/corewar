@@ -26,7 +26,8 @@ void			get_players(int ac, char **av, t_data *data, uint32_t *i)
 {
 	uint32_t		player_num;
 
-	player_num = 0;
+	if (*i == (uint32_t)ac)
+		deal_error(data, TOO_FEW_ARG, USAGE);
 	while (*i < (uint32_t)ac)
 	{
 		if (4 < (++data->vm.nb_players))

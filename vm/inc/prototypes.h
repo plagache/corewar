@@ -27,12 +27,6 @@
 # include "defines.h"
 
 /*
-** A supprimer
-*/
-
-# include <stdio.h>
-
-/*
 ** Parsing
 */
 
@@ -69,7 +63,8 @@ void		free_data(t_data *data);
 */
 
 void		do_cycles(t_data *data);
-int32_t		do_ope(int32_t opcode, t_data *data, t_carriage *current);
+int32_t		do_ope(int32_t opcode, t_data *data, t_carriage *current,
+	t_op_s *op);
 
 /*
 ** Dump
@@ -104,32 +99,40 @@ void		announce_winner(t_data *data);
 ** Ocp
 */
 
-t_bool		check_ocp(t_data *data, t_carriage *current, t_ope *op);
-void		get_ocp(t_data *data, t_carriage *current, t_ope *op);
-t_bool		store_arg(t_data *data, t_carriage *current, t_ope *op,
+t_bool		check_ocp(t_data *data, t_carriage *current, t_op_s *op);
+void		get_ocp(t_data *data, t_carriage *current, t_op_s *op);
+t_bool		store_arg(t_data *data, t_carriage *current, t_op_s *op,
 	int8_t arg_type);
+
+/*
+** Verbose
+*/
+
+void		print_cycle(t_data *data);
+void		print_pc_movements(t_data *data, t_carriage *current);
+void		print_proc_and_ft(t_carriage *current);
 
 /*
 **	Operations
 */
 
-typedef int32_t	(*t_opee) (t_data *, t_carriage *);
+typedef int32_t	(*t_op_f) (t_data *, t_carriage *, t_op_s *op);
 
-int32_t		op_live(t_data *data, t_carriage *current);
-int32_t		op_ld(t_data *data, t_carriage *current);
-int32_t		op_st(t_data *data, t_carriage *current);
-int32_t		op_add(t_data *data, t_carriage *current);
-int32_t		op_sub(t_data *data, t_carriage *current);
-int32_t		op_and(t_data *data, t_carriage *current);
-int32_t		op_or(t_data *data, t_carriage *current);
-int32_t		op_xor(t_data *data, t_carriage *current);
-int32_t		op_zjmp(t_data *data, t_carriage *current);
-int32_t		op_ldi(t_data *data, t_carriage *current);
-int32_t		op_sti(t_data *data, t_carriage *current);
-int32_t		op_fork(t_data *data, t_carriage *current);
-int32_t		op_lld(t_data *data, t_carriage *current);
-int32_t		op_lldi(t_data *data, t_carriage *current);
-int32_t		op_lfork(t_data *data, t_carriage *current);
-int32_t		op_aff(t_data *data, t_carriage *current);
+int32_t		op_live(t_data *data, t_carriage *current, t_op_s *op);
+int32_t		op_ld(t_data *data, t_carriage *current, t_op_s *op);
+int32_t		op_st(t_data *data, t_carriage *current, t_op_s *op);
+int32_t		op_add(t_data *data, t_carriage *current, t_op_s *op);
+int32_t		op_sub(t_data *data, t_carriage *current, t_op_s *op);
+int32_t		op_and(t_data *data, t_carriage *current, t_op_s *op);
+int32_t		op_or(t_data *data, t_carriage *current, t_op_s *op);
+int32_t		op_xor(t_data *data, t_carriage *current, t_op_s *op);
+int32_t		op_zjmp(t_data *data, t_carriage *current, t_op_s *op);
+int32_t		op_ldi(t_data *data, t_carriage *current, t_op_s *op);
+int32_t		op_sti(t_data *data, t_carriage *current, t_op_s *op);
+int32_t		op_fork(t_data *data, t_carriage *current, t_op_s *op);
+int32_t		op_lld(t_data *data, t_carriage *current, t_op_s *op);
+int32_t		op_lldi(t_data *data, t_carriage *current, t_op_s *op);
+int32_t		op_lfork(t_data *data, t_carriage *current, t_op_s *op);
+int32_t		op_aff(t_data *data, t_carriage *current, t_op_s *op);
 
 #endif

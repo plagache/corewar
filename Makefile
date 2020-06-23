@@ -38,7 +38,9 @@ clean_asm:
 fclean_asm:
 	make -s -C $(ASM) fclean
 
-re: fclean all
+re:
+	$(MAKE) fclean
+	$(MAKE) all
 
 .PHONY: all clean fclean re vm clean_vm fclean_vm asm clean_asm fclean_asm
 

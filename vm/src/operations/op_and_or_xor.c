@@ -12,80 +12,85 @@
 
 #include "prototypes.h"
 
-int32_t	op_xor(t_data *data, t_carriage *current)
+static void	verbose_and_or_xor(t_data *data, t_carriage *current, t_op_s *op)
 {
-	t_ope	op;
+	if ((data->vm.verbose & 0b0100) == 0)
+		return ;
+	print_proc_and_ft(current);
+	ft_printf("%d %d r%d\n", op->arg[0], op->arg[1], op->arg[2]);
+}
 
-	op.dir_size = BIG_DIR;
-	op.idx_mod = true;
-	op.nb_arg = 3;
-	get_ocp(data, current, &op);
-	if (!check_ocp(data, current, &op))
+int32_t		op_xor(t_data *data, t_carriage *current, t_op_s *op)
+{
+	op->dir_size = BIG_DIR;
+	op->idx_mod = true;
+	op->nb_arg = 3;
+	get_ocp(data, current, op);
+	if (!check_ocp(data, current, op))
 		return (-1);
-	if (!ft_strchr("\x54\x64\x74\x94\xA4\xB4\xD4\xE4\xF4", op.ocp & 0xFC))
+	if (!ft_strchr("\x54\x64\x74\x94\xA4\xB4\xD4\xE4\xF4", op->ocp & 0xFC))
 		return (-1);
-	if ((op.ocp & 0xFC) == 0x54 || (op.ocp & 0xFC) == 0x64
-		|| (op.ocp & 0xFC) == 0x74)
-		current->reg[op.arg[2] - 1] = current->reg[op.arg[0] - 1];
+	if ((op->ocp & 0xFC) == 0x54 || (op->ocp & 0xFC) == 0x64
+		|| (op->ocp & 0xFC) == 0x74)
+		current->reg[op->arg[2] - 1] = current->reg[op->arg[0] - 1];
 	else
-		current->reg[op.arg[2] - 1] = op.arg[0];
-	if ((op.ocp & 0xFC) == 0x54 || (op.ocp & 0xFC) == 0x94
-		|| (op.ocp & 0xFC) == 0xD4)
-		current->reg[op.arg[2] - 1] ^= current->reg[op.arg[1] - 1];
+		current->reg[op->arg[2] - 1] = op->arg[0];
+	if ((op->ocp & 0xFC) == 0x54 || (op->ocp & 0xFC) == 0x94
+		|| (op->ocp & 0xFC) == 0xD4)
+		current->reg[op->arg[2] - 1] ^= current->reg[op->arg[1] - 1];
 	else
-		current->reg[op.arg[2] - 1] ^= op.arg[1];
-	current->carry = (current->reg[op.arg[2] - 1] == 0) ? 1 : 0;
+		current->reg[op->arg[2] - 1] ^= op->arg[1];
+	current->carry = (current->reg[op->arg[2] - 1] == 0) ? 1 : 0;
+	verbose_and_or_xor(data, current, op);
 	return (0);
 }
 
-int32_t	op_or(t_data *data, t_carriage *current)
+int32_t		op_or(t_data *data, t_carriage *current, t_op_s *op)
 {
-	t_ope	op;
-
-	op.dir_size = BIG_DIR;
-	op.idx_mod = true;
-	op.nb_arg = 3;
-	get_ocp(data, current, &op);
-	if (!check_ocp(data, current, &op))
+	op->dir_size = BIG_DIR;
+	op->idx_mod = true;
+	op->nb_arg = 3;
+	get_ocp(data, current, op);
+	if (!check_ocp(data, current, op))
 		return (-1);
-	if (!ft_strchr("\x54\x64\x74\x94\xA4\xB4\xD4\xE4\xF4", op.ocp & 0xFC))
+	if (!ft_strchr("\x54\x64\x74\x94\xA4\xB4\xD4\xE4\xF4", op->ocp & 0xFC))
 		return (-1);
-	if ((op.ocp & 0xFC) == 0x54 || (op.ocp & 0xFC) == 0x64
-		|| (op.ocp & 0xFC) == 0x74)
-		current->reg[op.arg[2] - 1] = current->reg[op.arg[0] - 1];
+	if ((op->ocp & 0xFC) == 0x54 || (op->ocp & 0xFC) == 0x64
+		|| (op->ocp & 0xFC) == 0x74)
+		current->reg[op->arg[2] - 1] = current->reg[op->arg[0] - 1];
 	else
-		current->reg[op.arg[2] - 1] = op.arg[0];
-	if ((op.ocp & 0xFC) == 0x54 || (op.ocp & 0xFC) == 0x94
-		|| (op.ocp & 0xFC) == 0xD4)
-		current->reg[op.arg[2] - 1] |= current->reg[op.arg[1] - 1];
+		current->reg[op->arg[2] - 1] = op->arg[0];
+	if ((op->ocp & 0xFC) == 0x54 || (op->ocp & 0xFC) == 0x94
+		|| (op->ocp & 0xFC) == 0xD4)
+		current->reg[op->arg[2] - 1] |= current->reg[op->arg[1] - 1];
 	else
-		current->reg[op.arg[2] - 1] |= op.arg[1];
-	current->carry = (current->reg[op.arg[2] - 1] == 0) ? 1 : 0;
+		current->reg[op->arg[2] - 1] |= op->arg[1];
+	current->carry = (current->reg[op->arg[2] - 1] == 0) ? 1 : 0;
+	verbose_and_or_xor(data, current, op);
 	return (0);
 }
 
-int32_t	op_and(t_data *data, t_carriage *current)
+int32_t		op_and(t_data *data, t_carriage *current, t_op_s *op)
 {
-	t_ope	op;
-
-	op.dir_size = BIG_DIR;
-	op.idx_mod = true;
-	op.nb_arg = 3;
-	get_ocp(data, current, &op);
-	if (!check_ocp(data, current, &op))
+	op->dir_size = BIG_DIR;
+	op->idx_mod = true;
+	op->nb_arg = 3;
+	get_ocp(data, current, op);
+	if (!check_ocp(data, current, op))
 		return (-1);
-	if (!ft_strchr("\x54\x64\x74\x94\xA4\xB4\xD4\xE4\xF4", op.ocp & 0xFC))
+	if (!ft_strchr("\x54\x64\x74\x94\xA4\xB4\xD4\xE4\xF4", op->ocp & 0xFC))
 		return (-1);
-	if ((op.ocp & 0xFC) == 0x54 || (op.ocp & 0xFC) == 0x64
-		|| (op.ocp & 0xFC) == 0x74)
-		current->reg[op.arg[2] - 1] = current->reg[op.arg[0] - 1];
+	if ((op->ocp & 0xFC) == 0x54 || (op->ocp & 0xFC) == 0x64
+		|| (op->ocp & 0xFC) == 0x74)
+		current->reg[op->arg[2] - 1] = current->reg[op->arg[0] - 1];
 	else
-		current->reg[op.arg[2] - 1] = op.arg[0];
-	if ((op.ocp & 0xFC) == 0x54 || (op.ocp & 0xFC) == 0x94
-		|| (op.ocp & 0xFC) == 0xD4)
-		current->reg[op.arg[2] - 1] &= current->reg[op.arg[1] - 1];
+		current->reg[op->arg[2] - 1] = op->arg[0];
+	if ((op->ocp & 0xFC) == 0x54 || (op->ocp & 0xFC) == 0x94
+		|| (op->ocp & 0xFC) == 0xD4)
+		current->reg[op->arg[2] - 1] &= current->reg[op->arg[1] - 1];
 	else
-		current->reg[op.arg[2] - 1] &= op.arg[1];
-	current->carry = (current->reg[op.arg[2] - 1] == 0) ? 1 : 0;
+		current->reg[op->arg[2] - 1] &= op->arg[1];
+	current->carry = (current->reg[op->arg[2] - 1] == 0) ? 1 : 0;
+	verbose_and_or_xor(data, current, op);
 	return (0);
 }
