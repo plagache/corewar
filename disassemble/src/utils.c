@@ -6,7 +6,7 @@
 /*   By: nabboufe <nabboufe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/18 15:25:04 by nabboufe          #+#    #+#             */
-/*   Updated: 2020/06/19 23:28:36 by nabboufe         ###   ########.fr       */
+/*   Updated: 2020/06/23 15:34:00 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int				check_type(uint8_t *champ, unsigned int pc)
 	uint8_t		valid_count;
 
 	op_code = champ[pc % MEM_SIZE] - 1;
+	if (op_code > 16)
+		return (0);
 	if (!g_op_tab[op_code].carry)
 		return (1);
 	encoded = champ[(pc + 1) % MEM_SIZE];

@@ -6,7 +6,7 @@
 /*   By: nabboufe <nabboufe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/19 19:30:19 by nabboufe          #+#    #+#             */
-/*   Updated: 2020/06/19 23:51:33 by nabboufe         ###   ########.fr       */
+/*   Updated: 2020/06/23 15:48:55 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ unsigned int			w_param(unsigned int type, uint8_t op_code,
 	{
 		ft_memcpy(&param, file->champ + file->index, 2);
 		param = ft_2byteswap(param);
-		write(file->fd, ":", 1);
 		ft_putnbr_fd(param, file->fd);
 		write(file->fd, " ", 1);
 		return (2);

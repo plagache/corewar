@@ -6,7 +6,7 @@
 /*   By: nabboufe <nabboufe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/18 17:49:26 by nabboufe          #+#    #+#             */
-/*   Updated: 2020/06/23 15:10:44 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/23 15:46:56 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static unsigned	int		w_program_op(uint8_t op_code, t_corefile *file)
 	if (op_code > 0 && op_code < 17)
 	{
 		ft_putstr_fd(g_op_tab[op_code - 1].keyword, file->fd);
-		write(file->fd, " ", 2);
+		write(file->fd, " ", 1);
 	}
 	return (1);
 }
