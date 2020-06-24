@@ -16,8 +16,7 @@ static void	do_check(t_data *data)
 {
 	t_carriage *current;
 
-	if (data->vm.cycle_to_die <= 0)
-		delete_all_carriages(data);
+	data->vm.nb_checks++;
 	current = data->carriages;
 	while (current)
 	{
@@ -26,6 +25,8 @@ static void	do_check(t_data *data)
 		else
 			current = current->next;
 	}
+	if (data->vm.cycle_to_die <= 0)
+		delete_all_carriages(data);
 	if (NBR_LIVE <= data->vm.nb_live || MAX_CHECKS <= data->vm.nb_checks)
 	{
 		data->vm.cycle_to_die -= CYCLE_DELTA;
@@ -33,8 +34,6 @@ static void	do_check(t_data *data)
 			ft_printf("Cycle to die is now %d\n", data->vm.cycle_to_die);
 		data->vm.nb_checks = 0;
 	}
-	else
-		data->vm.nb_checks++;
 	data->vm.nb_live = 0;
 	data->vm.cycles_since_last_check = 0;
 }
