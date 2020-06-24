@@ -113,7 +113,7 @@ LIB	disassemble/libft/Makefile	/^LIB			=		ar rcs $(NAME) $(OBJ)$/;"	m
 LIB	vm/Makefile	/^LIB = $(LIB_DIR)libft.a$/;"	m
 LIBA	asm/Makefile	/^LIBA = $(LIBDIR)\/libft.a$/;"	m
 LIBDIR	asm/Makefile	/^LIBDIR = ..\/libft$/;"	m
-LIBFT_A	disassemble/Makefile	/^LIBFT_A		=		libft.a$/;"	m
+LIBFT_A	disassemble/Makefile	/^LIBFT_A		=		libft\/libft.a$/;"	m
 LIBFT_H	disassemble/libft/includes/libft.h	14;"	d
 LIBFT_H	libft/includes/libft.h	14;"	d
 LIBHEAD	libft/Makefile	/^LIBHEAD = $(HEADDIR)\/libft.h$/;"	m

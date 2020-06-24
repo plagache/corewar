@@ -116,13 +116,18 @@ OBJ			=		$(SRC:.c=.o)
 all			:		$(NAME)
 
 $(NAME)		:		$(OBJ)
-	$(LIB) $(NAME) $(OBJ) $(INCLUDES)
-	$(RANLIB) $(NAME)
+	$(LIB)
 
 clean		:
-					$(RM) $(OBJ) $(WASTE)
+	$(RM) $(OBJ) $(WASTE)
 
-fclean		:		clean
-			$(RM) $(NAME)
+fclean		:
+	$(MAKE) clean
+	$(RM) $(NAME)
 
-re			:		fclean all
+re			:
+	$(MAKE) fclean
+	$(MAKE) all
+
+.PHONY		: all clean fclean re $(NAME)
+.SILENT		:

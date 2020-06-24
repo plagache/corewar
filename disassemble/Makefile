@@ -1,6 +1,6 @@
 NAME		=		disassembler
 
-LIBFT_A		=		libft.a
+LIBFT_A		=		libft/libft.a
 
 INCLUDES	=		-Iinclude
 
@@ -17,31 +17,35 @@ OBJ			=		$(SRCS:.c=.o)
 CC			=		gcc
 
 CFLAGS		=		-Wall -Wextra -Werror
-CFLAGS		+=		-g3 -fsanitize=address,undefined
 
 DECHET		=		*.dSYM
 
-all			:		$(LIBFT_A) $(NAME)
+all			:		$(NAME)
 
 $(LIBFT_A)	:		
-	@make -C libft/ >/dev/null
-	@echo "libft compilation is done !\n"
-	@mv libft/libft.a .
+	$(MAKE) -C libft
+	echo "libft compilation is done !"
 
 #	Original compilation line
 #	$(CC) $(CFLAGS) $(LIBFT_A) $(OBJ) $(INCLUDES) -o $(NAME)
 $(NAME)		:		$(OBJ) $(LIBFT_A)
 	$(CC) $(CFLAGS) $(INCLUDES) $(OBJ) $(LIBFT_A) -o $(NAME)
-	@rm -rf $(DECHET)
+	rm -rf $(DECHET)
+	echo "disassembler created"
 
 clean		:
-	@rm -rf $(OBJ) $(DECHET)
-	@echo "clean completed !"
+	rm -rf $(OBJ) $(DECHET)
+	$(MAKE) -C libft/ clean
+	echo "clean disassembler completed !"
 
-fclean		:		clean
-	@rm -rf $(NAME) $(LIBFT_A) $(DECHET) &>/dev/null
-	@echo "fclean completed !\n"
+fclean		:
+	rm -rf $(NAME) $(LIBFT_A) $(DECHET) $(OBJ)
+	$(MAKE) -C libft/ fclean
+	echo "fclean disassembler completed !"
 
-re			:		fclean all
+re			:
+	$(MAKE) fclean
+	$(MAKE) all
 
-.PHONY		:		fclean all
+.PHONY		:		fclean clean re all $(LIBFT_A) $(NAME)
+.SILENT		:

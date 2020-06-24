@@ -6,7 +6,7 @@
 /*   By: alagache <alagache@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 19:25:29 by plagache          #+#    #+#             */
-/*   Updated: 2020/06/09 23:01:10 by alagache         ###   ########.fr       */
+/*   Updated: 2020/06/24 02:28:04 by alagache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,17 @@ static void	split_header(t_file *file)
 	{
 		if (file->header_str[iterator] == '\n')
 			file->header_str[iterator] = '\0';
-		if (file->header_str[iterator] == '"')
+		else if (file->header_str[iterator] == '"')
 		{
 			iterator++;
 			while (file->header_str[iterator] != '"')
 				iterator++;
+		}
+		else if (ft_strchr(";#", file->header_str[iterator]) != NULL)
+		{
+			while (file->header_str[iterator] != '\n')
+				file->header_str[iterator++] = '\0';
+			file->header_str[iterator] = '\0';
 		}
 	}
 }

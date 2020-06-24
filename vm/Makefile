@@ -67,7 +67,7 @@ all: $(OBJ_DIR) $(NAME)
 $(NAME): $(LIB) $(OBJ)
 	$(CC) $(CFLAGS) $(INCLUDES) $(OBJ) $(LIB_FLAGS) -o $@
 	# $(CC) $(CFLAGS) $(INCLUDES) $(OBJ) -o $@ $(LIB_FLAGS)
-	echo "\033[32mmake vm done\033[0m"
+	echo "\33[2K\r\033[32mmake vm done\033[0m"
 
 $(LIB): FORCE
 	$(MAKE) -C $(LIB_DIR)
@@ -78,17 +78,16 @@ $(OBJ_DIR):
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INC)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-	echo "$@ [\033[32mOK\033[0m]"
+	printf "\33[2K\r$@ [\033[32mOK\033[0m]"
 
 clean:
-	$(MAKE) -C $(LIB_DIR) clean
 	rm -rf $(OBJ_DIR)
+	$(MAKE) -C $(LIB_DIR) clean
 	echo "\033[35mclean vm done\033[0m"
 
 fclean:
-	make -C $(LIB_DIR) fclean
-	$(MAKE) clean
-	rm -rf $(NAME)
+	rm -rf $(OBJ_DIR) $(NAME)
+	$(MAKE) -C $(LIB_DIR) fclean
 	echo "\033[35mfclean vm done\033[0m"
 
 re:

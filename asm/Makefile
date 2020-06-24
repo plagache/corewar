@@ -48,7 +48,7 @@ LNECLR = "\\33[2K\\r"
 all: $(NAME)
 
 $(NAME): $(OBJECT)
-	make -s -C $(LIBDIR)
+	$(MAKE) -C $(LIBDIR)
 #	$(CC) $(CFLAGS) -I includes -I $(LIBDIR)/includes -o $(NAME) $(OBJECT) $(LIBA)
 	$(CC) $(CFLAGS) $(INC_FLAG) -o $(NAME) $(OBJECT) $(LIB_FLAG)
 	printf "$(LNECLR)$(GREEN)make asm done$(WHITE)\n"
@@ -61,18 +61,18 @@ out/%.o: srcs/%.c includes/asm.h includes/op.h includes/manage_error.h
 
 clean:
 	$(RM) -rf out
-	make -s -C $(LIBDIR) clean
+	$(MAKE) -C $(LIBDIR) clean
 	printf "$(PURPLE)clean asm done$(WHITE)\n"
 
 fclean:
 	$(RM) -rf out $(NAME)
-	make -s -C $(LIBDIR) fclean
+	$(MAKE) -C $(LIBDIR) fclean
 	printf "$(PURPLE)fclean asm done$(WHITE)\n"
 
-re: fclean all
+re:
+	$(MAKE) fclean
+	$(MAKE) all
 
 .PHONY: all fclean clean re FORCE
 
-.SILENT: all fclean clean re FORCE $(NAME) $(OBJECT)
-
-.NOTPARALLEL: re
+.SILENT:
